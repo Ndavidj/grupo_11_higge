@@ -1,0 +1,10 @@
+Logo: Nombre en mayuscula con letras negras.
+tipografía del logo: 
+"PT Sans Narrow" - 700
+Size: 28px
+Line Height: 20px
+Color: #000000
+
+Colores: negro y blanco  
+
+Tipografía general :PT Sans Narrow
