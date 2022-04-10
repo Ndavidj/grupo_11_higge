@@ -1,89 +1,182 @@
 * {
   box-sizing: border-box;
-}
-body {
   margin: 0;
   padding: 0;
   font-family: "PT Sans Narrow", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  /*  background-color: rgba(249,250,252,0.5) */
 }
 
-.contenedor {
-  margin: 3px 5px 3px 5px;
-  padding: 5px;
+/* --------- HEADER -- */
+.first-container {
+  padding: 2px;
+  /*  width: 100%;
+  height: 50%; */
+}
+
+header {
   width: 100%;
-  border-bottom: 1px solid #ebebeb;
-  height: 50%;
+  padding: 2px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  /*   position: fixed;
+  z-index: 10;
+  top:0;
+  left: 0; */
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
 }
 
-.header {
-  width: 100%;
+.top-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7px;
+}
+
+.burger-menu {
+    background-color: #050505;
+    color: #ebebeb;
+    width: 3em;
+    height: 1.8em;
+    margin: auto;
+    border-radius: 20%;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
 .logo {
-  justify-content: center;
+  width: 105%;
+  margin-top: 5px;
+  margin-left: 10px;
 }
 
 header div img {
-  width: 35%;
+  width: 55%;
   margin: auto;
   max-width: 200px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: stretch;
-}
-
-#barra-busqueda {
-  width: 50%;
-  margin-left: 2px;
   position: relative;
-  display: flex;
-  justify-content: flex-start;
+  top: 3px;
+  right: -6px;
 }
 
-#barra-busqueda input {
-  border: solid 1px #ebebeb;
-  display: block;
-  width: 100%;
-  padding: 7px 7px 7px 7px;
-  height: 40px;
-}
-
-#barra-busqueda button {
-  position: absolute;
-  bottom: 8px;
-  right: 9px;
-  font-size: 1.1em;
-  background-color: #fff;
-  border-left: solid 2px #666;
-  color: #666;
+button {
+  background: none;
   border: none;
+  color: inherit;
+  font: inherit;
+  margin: 10px;
+}
+.usser-management {
+  display: flex;
+  width: 33%;
+  flex-direction: column-reverse;
+  align-content: flex-end;
+  align-items: center;
+  margin-top: 28px;
+  margin-right: 5px;
+}
+.account-management {
+  font-size: 0.8em;
 }
 
-@media (min-width: 361px) {
-  header div img {
-    width: 50%;
-    margin: auto;
-    display: block;
-    justify-content: center;
-    align-items: center;
+.fa-cart-shopping {
+  color: #050505;
+  font-size: 22px;
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  transition: all 450ms;
+}
+.register{
+  padding-bottom: 5px;
+}
+.bottom-header {
+  width: 100%;
+  display: flex;
+}
+
+.form-search {
+  width: 100%;
+  height: 50px;
+  border-top: solid 1px #ebebeb;
+  border-left: solid 1px #ebebeb;
+  border-bottom: solid 1px #ebebeb;
+  border-right: none;
+  display: flex;
+}
+
+.input-busqueda {
+  width: 100%;
+  font-size: 1.05rem;
+  padding: 7px 0px 7px 5px;
+  border: 0;
+  outline: none;
+}
+
+.search-button {
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: #666;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.gallery-products {
+  width: 100%;
+  height: 50px;
+  border: solid 1px #ebebeb;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #262626;
+}
+
+.gallery-products p {
+  font-size: 1.05rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.fa-angle-down{
+  margin-left: 15px;
+}
+
+
+a:link, a:visited{
+  color:#050505;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* --------- FIN HEADER -- */
+
+/* ------------------- MOBILE  */
+
+@media (max-width: 768px) {
+  .main-navbar {
+    display: none;
+  }
+}
+
+/* ------------------- DESKTOP  */
+
+@media (min-width: 1020px) {
+  /* --------- HEADER -- */
+
+  .burger-menu {
+    display: none;
   }
 
-  .contenedor {
-    width: 100%;
-    height: 80%;
+  .first-container {
+    display: flex;
   }
 
-  .header {
-    width: 100%;
-  }
-
-  .logo {
-    display: block;
-    justify-content: center;
+  .usser-management {
+    display: flex;
   }
 }

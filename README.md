@@ -28,3 +28,7 @@ https://www.basygarcia.com/ nos atrajo su diseño web.
 - Soy David Nuñez. Tengo 30 años. Vengo totalmente de otro rubro y siento que aprender a programar siempre fue un asiento pendiente. Por lo que me gustaría poder lograr finalizar el curso y insertarme en el mundo IT.
 - Soy Sebas. Emprendedor desde siempre. Vine a actualizar conocimientos y a seguir construyendo autonomía profesional.
 - Soy Mayda ❣️  tengo 24 años y me gusta mucho viajar, es por eso quiero tener un trabajo en remoto 🛫. Siempre me gusto aprender cosas nuevas y aprender a programar es mi objetivo personal y profesional.En mis tiempos libres disfruto leer, hacer amigos e ir al gym 💪.
+
+
+## Trello del grupo 11:
+https://trello.com/grupo11132
