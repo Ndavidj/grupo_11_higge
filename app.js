@@ -24,12 +24,12 @@ app.get('/login', (req, res) =>{
 
 // ----- REGISTRO -----
 app.get('/registro', (req, res) =>{
-    res.sendFile(path.resolve(__dirname,'/views/registro.html'))
+    res.sendFile(path.resolve(__dirname,'./views/registro.html'))
 })
 
-// ----- GALERIA -----
-app.get("/galeria", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/galeria.html"));
+// ----- CATÁLOGO -----
+app.get("/catalogo", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/catalogo.html"));
   });
   
 // ----- DETALLE DEL PRODUCTO -----

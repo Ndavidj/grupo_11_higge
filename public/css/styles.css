@@ -11,8 +11,8 @@
 /* --------- HEADER -- */
 .first-container {
   padding: 2px;
-  /*  width: 100%;
-  height: 50%; */
+   width: 100%;
+  height: 25%;
 }
 
 header {
@@ -62,13 +62,6 @@ header div img {
   right: -6px;
 }
 
-button {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  margin: 10px;
-}
 .usser-management {
   display: flex;
   width: 33%;
@@ -81,6 +74,15 @@ button {
 .account-management {
   font-size: 0.8em;
 }
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  margin: 10px;
+}
+
 
 .fa-cart-shopping {
   color: #050505;
@@ -123,6 +125,8 @@ button {
   margin: 0;
   display: flex;
   align-items: center;
+  position: relative;
+  right: 10px;
 }
 
 .gallery-products {
@@ -145,6 +149,9 @@ button {
   margin-left: 15px;
 }
 
+a {
+  transition: all 1000ms;
+}
 
 a:link, a:visited{
   color:#050505;
@@ -155,7 +162,95 @@ a:hover {
 }
 /* --------- FIN HEADER -- */
 
+/* --------- comienzo MAIN -- */
+
+.second-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+div main h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+section {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main section article {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 15px 0;
+  transition: all 450ms;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+section article img {
+  width: 92%;
+  display: flex;
+  margin: 10px
+
+}
+
+section article:hover {
+  padding: 0;
+  box-shadow: 0px 0px 5px rgb(100, 100, 100);
+}
+
+
+.precios {
+  font-size: 18px;
+}
+
+
+
+.descripcion {
+  color: #666;
+  margin-top: 15px;
+}
+
+
+.info-producto {
+  background: white;
+  border-top: 1px solid #ebebeb;
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+  margin-top: 0;
+  transition: all 450ms;
+}
+
+.descuentos {
+  font-size: 16px;
+  color: #39b54a;
+}
+
+
+
+
 /* ------------------- MOBILE  */
+
+@media (max-width: 480px) {
+  .main-navbar {
+    display: none;
+  }
+}
+
+/* ------------------- TABLET  */
 
 @media (max-width: 768px) {
   .main-navbar {
