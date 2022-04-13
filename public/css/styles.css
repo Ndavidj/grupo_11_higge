@@ -6,7 +6,6 @@
   text-decoration: none;
   list-style: none;
   text-transform: uppercase;
-  /*  background-color: rgba(249,250,252,0.5) */
 }
 
 
@@ -35,7 +34,7 @@
   text-align: center;
   padding: 5px;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 .logo {
@@ -58,11 +57,12 @@ header div img {
   display: flex;
   width: 33%;
   flex-direction: column-reverse;
-  align-content: flex-end;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 35px;
   margin-right: 5px;
+  justify-content: center;
 }
+
 .account-management {
   margin-top: 7px;
   font-size: 0.7em;
