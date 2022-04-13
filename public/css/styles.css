@@ -5,25 +5,17 @@
   font-family: "PT Sans Narrow", sans-serif;
   text-decoration: none;
   list-style: none;
+  text-transform: uppercase;
   /*  background-color: rgba(249,250,252,0.5) */
 }
 
-/* --------- HEADER -- */
-.first-container {
-  padding: 2px;
-   width: 100%;
-  height: 25%;
-}
 
-header {
+/* --------- HEADER -- */
+.main-header {
   width: 100%;
   padding: 2px;
   display: flex;
   flex-direction: column;
-  /*   position: fixed;
-  z-index: 10;
-  top:0;
-  left: 0; */
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -34,16 +26,16 @@ header {
 }
 
 .burger-menu {
-    background-color: #050505;
-    color: #ebebeb;
-    width: 3em;
-    height: 1.8em;
-    margin: auto;
-    border-radius: 20%;
-    text-align: center;
-    padding: 5px;
-    cursor: pointer;
-    margin-left: 5px;
+  background-color: #050505;
+  color: #ebebeb;
+  width: 3em;
+  height: 1.8em;
+  margin: auto;
+  border-radius: 20%;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .logo {
@@ -59,7 +51,7 @@ header div img {
   display: flex;
   position: relative;
   top: 3px;
-  right: -6px;
+  right: -8px;
 }
 
 .usser-management {
@@ -68,11 +60,12 @@ header div img {
   flex-direction: column-reverse;
   align-content: flex-end;
   align-items: center;
-  margin-top: 28px;
+  margin-top: 30px;
   margin-right: 5px;
 }
 .account-management {
-  font-size: 0.8em;
+  margin-top: 7px;
+  font-size: 0.7em;
 }
 
 button {
@@ -80,9 +73,7 @@ button {
   border: none;
   color: inherit;
   font: inherit;
-  margin: 10px;
 }
-
 
 .fa-cart-shopping {
   color: #050505;
@@ -92,12 +83,18 @@ button {
   padding: 5px;
   transition: all 450ms;
 }
-.register{
-  padding-bottom: 5px;
+
+.login {
+  margin-bottom: 5px;
+}
+
+.register {
+  margin-top: 5px;
 }
 .bottom-header {
   width: 100%;
   display: flex;
+  position: relative;
 }
 
 .form-search {
@@ -142,10 +139,9 @@ button {
 .gallery-products p {
   font-size: 1.05rem;
   font-weight: lighter;
-  text-transform: uppercase;
 }
 
-.fa-angle-down{
+.fa-angle-down {
   margin-left: 15px;
 }
 
@@ -153,8 +149,9 @@ a {
   transition: all 1000ms;
 }
 
-a:link, a:visited{
-  color:#050505;
+a:link,
+a:visited {
+  color: #050505;
 }
 
 a:hover {
@@ -164,17 +161,12 @@ a:hover {
 
 /* --------- comienzo MAIN -- */
 
-.second-container {
-  width: 100%;
-  margin: auto;
-  display: flex;
-}
-
 main {
   width: 90%;
   margin: auto;
   margin-top: 20px;
 }
+
 
 div main h2 {
   text-transform: uppercase;
@@ -188,22 +180,21 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 main section article {
   display: flex;
   flex-direction: column;
-  width: 90%;
   margin: 15px 0;
   transition: all 450ms;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  align-items: center;
 }
 
 section article img {
   width: 92%;
-  display: flex;
-  margin: 10px
-
+  margin: 10px;
 }
 
 section article:hover {
@@ -211,18 +202,14 @@ section article:hover {
   box-shadow: 0px 0px 5px rgb(100, 100, 100);
 }
 
-
 .precios {
   font-size: 18px;
 }
-
-
 
 .descripcion {
   color: #666;
   margin-top: 15px;
 }
-
 
 .info-producto {
   background: white;
@@ -238,9 +225,6 @@ section article:hover {
   font-size: 16px;
   color: #39b54a;
 }
-
-
-
 
 /* ------------------- MOBILE  */
 
@@ -262,16 +246,139 @@ section article:hover {
 
 @media (min-width: 1020px) {
   /* --------- HEADER -- */
+  
+  .main-header {
+   height: 80%;
+}
+
 
   .burger-menu {
     display: none;
   }
 
-  .first-container {
-    display: flex;
+  .top-header {
+    width: calc(100% - 30px);
+    margin: 0 15px;
+    height: 120px;
+  }
+
+  .logo {
+    max-width: 150px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    left: 100px;
+}
+
+
+  header div img {
+    width: 100%;
+    height: 150px;
+    margin: auto;
+    margin-bottom: 20px;
   }
 
   .usser-management {
     display: flex;
+    width: 23%;
+    flex-direction: row;
+    margin-right: 3px;
+  }
+
+  .account-management {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    font-size: 0.9em;
+    margin: auto;
+  }
+
+  .login {
+    padding-right: 8px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .register {
+    margin-top: 0;
+    padding-left: 8px;
+  }
+
+  .fa-cart-shopping {
+    font-size: 28px;
+    position: relative;
+    top: -3px;
+    right: 19px;
+  }
+
+  .form-search {
+    width: 15%;
+    height: 40px;
+    position: absolute;
+    left: 20px;
+    top: -115px;
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-products {
+    display: none;
+    width: 0;
+  }
+
+  .bottom-header{
+    width: calc(100% - 30px);
+    margin: 40px 15px 0px 15px ;
+  }
+
+  .main-navbar {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div.main-navbar ul li {
+    display: inline-block;
+    margin-right: 50px;
+    background-color: #ffffff;
+    border-top: 3px solid #e8e8e8;
+    border-bottom: 3px solid #e8e8e8;
+  }
+
+  .main-navbar .about-us {
+    margin-right: 0;
+  }
+
+
+  main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  
+
+  section {
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  main section article {
+    margin: 5px 5px;
+    transition: all 450ms;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  section article img {
+    margin: 10px;
+    height: 100%;
+    width: auto;
+    max-height: 220px;
   }
 }
