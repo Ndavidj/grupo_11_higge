@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-es">
   <head>
     <meta charset="UTF-8" />
     <title>Bienvenidxs a HIGGE</title>
@@ -16,7 +16,6 @@
       src="https://kit.fontawesome.com/6c995d925a.js"
       crossorigin="anonymous"
     ></script>
-  </head>
 
   <body>
     <!-- ------------ Comienzo del HEADER  -->
@@ -65,10 +64,10 @@
 
         <div class="main-navbar">
             <ul>
-              <li class="home"><a href="/home">Inicio</a></li>
-              <li class="images"><a href="/catalogo">catálogo</a></li>
-              <li class="contac"><a href="#contacto">Contacto</a></li>
-              <li class="about-us">
+              <li class="home" id="home"><a href="/home">Inicio</a></li>
+              <li class="images" id="catalogo"><a href="/catalogo">catálogo</a></li>
+              <li class="contact" id="contact"><a href="#contacto">Contacto</a></li>
+              <li class="about-us" id="about-us">
                 <a href="#about-us">Acerca de nosotros</a>
               </li>
             </ul>
@@ -77,5 +76,50 @@
       </header>
 
     <!-- ------------ Fin del HEADER  -->
-</body>
+
+    <!-- comienzo Main LOGIN -->
+    <main>
+      
+      <form action="/login" method="get" class="login-form">
+          <div>
+              <p class="login-title">iniciar sesión</p>
+          </div>
+          <div class="field">
+              <label>usuario</label>
+              <input type="text">
+          </div>
+          <div class="field">
+              <label>Contraseña</label>
+              <input type="password" minlength="8" maxlength="16">
+          </div>
+          <button class="login-button" type="submit"><a href="/">Ingresar</a></button>
+      </form>
+  </main>
+    <!-- fin del Main LOGIN -->
+    
+    
+  
+  <!-- ------------ comienzo del FOOTER  -->
+   <section class="footer">
+    <div class="share">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin-in"></a>
+    </div>
+
+    <div class="links">
+      <a href="#home">Inicio</a>
+      <a href="#images">catalogo</a>
+      <a href="#contact">contacto</a>
+      <a href="#about-us">Acerca de nosotros</a>
+    </div>
+
+    <div class="creditos">creado por <span>grupo 11</span> | todos los derechos reservados </div>
+  </section>
+
+   <!-- ------------ Fin del FOOTER  -->
+
+
+ </body>
 </html>
