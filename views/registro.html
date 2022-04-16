@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
     <link rel="stylesheet" href="css/styles-registro.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
@@ -77,23 +78,29 @@
       </header>
 
     <!-- ------------ Fin del HEADER  -->
+     <!-- ------------ Inicio del Formulario de registro  -->
     <form class="registro" action= "/registro.html" method="POST">
-      <div>
-          <label for="name"> Nombre y apellido </label> <input type="name" id="name">
+      <div class="control-form">
+          <label for="name"> Nombre y apellido </label> 
+          <input type="name" id="name" class="control">
       </div>
-      <div>
-          <label for="usuario"> Nombre de usuario </label><input type="text" id="usuario">
+      <div class="control-form">
+          <label for="usuario"> Nombre de usuario </label>
+          <input type="text" id="usuario" class="control">
       </div>
-      <div>
-          <label for="email"> E-mail </label><input type="email" id="email">
+      <div class="control-form">
+          <label for="email"> E-mail </label>
+          <input type="email" id="email" placeholder="@" class="control">
       </div>
-      <div>
-        <label for="birthdate"> Fecha de nacimiento </label><input type="date" name="birthdate" id="birthdate"> 
+      <div class="control-form">
+        <label for="birthdate"> Fecha de nacimiento </label>
+        <input type="date" name="birthdate" id="birthdate"> 
     </div>
-    <div>
-        <label for="address"> Domicilio </label><input type="text" name="address" id="address">
+    <div class="control-form">
+        <label for="address"> Domicilio </label>
+        <input type="text" name="address" id="address" class="control">
     </div>
-    <div>
+    <div class="control-form">
         <div>Categorías de interés</div>
         <label>Cine
             <input type="checkbox" name="interest" value="Cine"></label>
@@ -106,20 +113,17 @@
         <label>Deportes
             <input type="checkbox" name="interest" value="Deportes"></label>
     </div>
-    <div>
+    <div class="control-formulario">
         <label for="password"> Contraseña </label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" placeholder="Elige tu contraseña" class="control">
     </div>
-    <div>
-        <label for="confirm-password"> Confirmar Contraseña </label>
-        <input type="password" name="confirm-password" id="confirm-password">
-    </div>
-    <div>
-        <button href='' type="submit">Enviar</button>
-        <button type="reset">Reset</button>
+    <div class="control-form">
+        <button href='' type="submit" class="button-form">Enviar</button>
+        <button type="reset" class="button-form">Reset</button>
     </div>
 
 </form>
+ <!-- ------------ Final del Formulario de registro  -->
 
 <div class="banner-divisor">
   <div class="logo-insta">
