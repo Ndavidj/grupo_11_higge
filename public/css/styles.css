@@ -365,6 +365,17 @@ background:#050505;
   color: white;
 }
 
+/* -----DETALLE DEL PRODUCTO-- */
+main img {
+  /* float: left; */
+  width: auto;
+  height: 700px;
+}
+section.posters {
+  display: flex;
+  justify-content: flex-start
+  
+}
 
 
 
