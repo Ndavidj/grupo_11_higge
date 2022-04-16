@@ -1,0 +1,15 @@
+.main-catalogo {
+    width: 90%;
+}
+
+@media (min-width: 768px) {
+    main section article {
+        width: 45%;
+    }
+    }
+
+@media (min-width: 1020px) {
+main section article {
+    width: 30%;
+}
+}

@@ -178,9 +178,10 @@ section {
   width: 100%;
   margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 main section article {
@@ -315,55 +316,6 @@ background:#050505;
 
 /* fin del FOOTER */
 
-/* LOGIN  */
-
-.login-form {
-  line-height: 5px;
-  margin: 100px auto;
-  padding: 15px;
-  border: 1px solid #666;
-  border-radius: 10%;
-  box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
-}
-
-.login-form .login-title{
-  text-align: center;
-  margin: 5px auto;
-  padding: 10px;
-}
-
-
-.field{
-  width: 80%;
-  display: flex;
-  margin: 20px auto;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-
-.login-button {
-  color: #fff;
-  background-color: #262626;
-  padding: 10px;
-  border-radius: 5px;
-  transition: all 450ms;
-  width: 30%;
-  font-weight: bolder;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
-  margin-left: 35%;
-  margin-top: 20px;
-}
-
-
-.login-button a {
-  text-decoration: none;
-  color: white;
-}
 
 
 
@@ -384,14 +336,10 @@ background:#050505;
   }
   
   main section article {
-    display: flex;
-    flex-direction: row;
-    margin: 15px 0;
+    width: 40%;
+    margin: 5px 5px;
     transition: all 450ms;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
   }
   
   section article img {
@@ -528,6 +476,7 @@ background:#050505;
   }
 
   main section article {
+    width: 30%;
     margin: 5px 5px;
     transition: all 450ms;
     border: 1px solid rgba(0, 0, 0, 0.2);

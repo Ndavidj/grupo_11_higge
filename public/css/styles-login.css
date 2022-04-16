@@ -1,0 +1,96 @@
+/* LOGIN  */
+
+.login-form {
+  line-height: 5px;
+  margin: 100px auto;
+  padding: 15px;
+  border: 1px solid #666;
+  border-radius: 10%;
+  box-shadow: 4px 9px 8px -4px rgb(0 0 0 / 75%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form .login-title {
+  text-align: center;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+.login-form .field ::placeholder {
+  font-size: 14px;
+}
+
+.field {
+  width: 90%;
+  display: flex;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.field label {
+  text-align: right;
+}
+
+.field input {
+  width: 60%;
+  border: 1px solid grey;
+}
+
+.check-remember {
+  text-align: center;
+  font-size: 13px;
+}
+
+.check-remember label {
+  text-transform: initial;
+}
+
+.check-remember input {
+  margin-right: 5px;
+}
+
+.forgot-pass {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot-pass a {
+  text-transform: initial;
+}
+
+.forgot-pass:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  color: #fff;
+  background-color: #262626;
+  padding: 10px;
+  transition: all 450ms;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 4px 9px 8px -4px rgb(0 0 0 / 75%);
+  margin: 15px 0;
+}
+
+.login-button a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .login-form {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-form {
+    font-size: 20px;
+  }
+}
