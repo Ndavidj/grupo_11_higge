@@ -39,3 +39,24 @@
    margin-left: 35%;
    margin-top: 20px;
 }
+
+/* ------------------- TABLET  */
+@media (min-width: 768px) {
+    .control-form {
+        max-width: 40%;
+    }
+}
+
+/* ------------------- DESKTOP  */
+
+@media (min-width: 1200px) { 
+
+    .control-form {
+        max-width: 30%;
+    }
+    .button-form {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: space-around;
+}
+}
