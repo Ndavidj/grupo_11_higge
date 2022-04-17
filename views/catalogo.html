@@ -1,81 +1,255 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Bienvenidxs a HIGGE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
-    <script
-      src="https://kit.fontawesome.com/6c995d925a.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+<html lang="en-es">
 
-  <body>
-    <!-- ------------ Comienzo del HEADER  -->
-       <header class="main-header">
-        <div class="top-header">
-          <div class="burger-menu">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Catalogo | HIGGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles-catalogo.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/6c995d925a.js" crossorigin="anonymous"></script>
+</head>
 
-          <figure class="logo">
-            <a href="home"
-              ><img src="/images/logo.svg" alt="Logo de HIGGE" />
-            </a>
-          </figure>
+<body>
+  <!-- ------------ Comienzo del HEADER  -->
+  <header class="main-header">
+    <div class="top-header">
+      <div class="burger-menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
 
-          <div class="usser-management">
-            <ul class="account-management">
-              <li class="login"><a href="/login">Iniciar sesión</a></li>
-              <li class="register"><a href="/registro">Crear cuenta</a></li>
-            </ul>
+      <figure class="logo">
+        <a href="home"><img src="/images/logo.svg" alt="Logo de HIGGE" /> </a>
+      </figure>
 
-            <div class="cart-shop">
-              <button class="cart-shopping">
-                <a href="/carrito-de-compras"
-                  ><i class="fa-solid fa-cart-shopping"></i
-                ></a>
-              </button>
-            </div>
-          </div>
-        </div>
+      <div class="usser-management">
+        <ul class="account-management">
+          <li class="login"><a href="/login">Iniciar sesión</a></li>
+          <li class="register"><a href="/registro">Crear cuenta</a></li>
+        </ul>
 
-        <div class="bottom-header">
-          <form class="form-search" action="#" method="GET">
-            <input type="search" class="input-busqueda" placeholder="Buscar" />
-            <button type="submit" class="search-button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-
-          <div class="gallery-products">
-            <a href="/catalogo">
-              <p>catálogo<i class="fa-solid fa-angle-down"></i></p>
-            </a>
-          </div>
-        
-
-        <div class="main-navbar">
-            <ul>
-              <li class="home"><a href="/home">Inicio</a></li>
-              <li class="images"><a href="/catalogo">catálogo</a></li>
-              <li class="contac"><a href="#contacto">Contacto</a></li>
-              <li class="about-us">
-                <a href="#about-us">Acerca de nosotros</a>
-              </li>
-            </ul>
+        <div class="cart-shop">
+          <button class="cart-shopping">
+            <a href="/carrito-de-compras"><i class="fa-solid fa-cart-shopping"></i></a>
+          </button>
         </div>
       </div>
-      </header>
+    </div>
 
-    <!-- ------------ Fin del HEADER  -->
+    <div class="bottom-header">
+      <form class="form-search" action="#" method="GET">
+        <input type="search" class="input-busqueda" placeholder="Buscar" />
+        <button type="submit" class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <div class="gallery-products">
+        <a href="/catalogo">
+          <p>catálogo<i class="fa-solid fa-angle-down"></i></p>
+        </a>
+      </div>
+
+      <div class="main-navbar">
+        <ul>
+          <li class="home" id="home"><a href="/home">Inicio</a></li>
+          <li class="images" id="catalogo">
+            <a href="/catalogo">catálogo</a>
+          </li>
+          <li class="contact" id="contact">
+            <a href="#contacto">Contacto</a>
+          </li>
+          <li class="about-us" id="about-us">
+            <a href="#about-us">Acerca de nosotros</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- ------------ Fin del HEADER  -->
+
+
+  <!-- ------------ inicio del main CATALOGO  -->
+  <main class="main-catalogo">
+    <h2>catalogo completo</h2>
+    <section>
+      <article>
+        <img src="./images/Cuadro 2.jpg" alt="" />
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">Jack Nicholson</p>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 3.jpg"" alt="">
+            <div class=" info-producto">
+        <div class="products-description">
+          <p class="descripcion">?</p>
+        </div>
+        </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 4.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">Sylvester Stallone</p>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 5.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">Rober de niro</p>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 6.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">?</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 7.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">al pacino</p>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 8.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">robin williams</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 9.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">?</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 10.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">Pulp fiction</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 11.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">?</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 12.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">Macaulay Culkin</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 13.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">poster david bowie '73</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 14.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">poster bruno mars</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 15.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">Jules & Vincent</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 16.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">marty mcfly</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 17.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">mia & Vincent</p>
+          </div>
+      </article>
+
+      <article>
+        <img src="./images/Cuadro 18.jpg" alt="">
+        <div class="info-producto">
+          <div class="products-description">
+            <p class="descripcion">harry dunne</p>
+          </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- ------------ fin del main CATALOGO  -->
+
+  <!-- ------------ comienzo del FOOTER  -->
+  <section class="footer">
+    <div class="share">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin-in"></a>
+    </div>
+
+    <div class="links">
+      <a href="/home">Inicio</a>
+      <a href="/catalogo">catalogo</a>
+      <a href="#contact">contacto</a>
+      <a href="#about-us">Acerca de nosotros</a>
+    </div>
+
+    <div class="creditos">
+      creado por <span>grupo 11</span> | todos los derechos reservados
+    </div>
+  </section>
+
+  <!-- ------------ Fin del FOOTER  -->
 </body>
+
+</html>
+
+</body>
+
 </html>
