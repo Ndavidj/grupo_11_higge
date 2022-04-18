@@ -41,3 +41,8 @@ app.get("/detalle-del-producto", (req, res) => {
 app.get("/carrito-de-compras", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/carrito-de-compras.html"));
 });
+
+// ----- CONTACTO -----
+app.get("/contacto", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/contacto.html"));
+});
