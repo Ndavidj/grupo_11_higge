@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalle del producto | HIGGE</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="shortcut icon" href="/images/icon_tittle.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style-detalle-del-producto.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6c995d925a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- ------------ Comienzo del HEADER  -->
+    <header class="main-header">
+      <div class="top-header">
+        <div class="burger-menu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <figure class="logo">
+          <a href="home"><img src="/images/logo.svg" alt="Logo de HIGGE" /> </a>
+        </figure>
+
+        <div class="usser-management">
+          <ul class="account-management">
+            <li class="login"><a href="/login">Iniciar sesión</a></li>
+            <li class="register"><a href="/registro">Crear cuenta</a></li>
+          </ul>
+
+          <div class="cart-shop">
+            <button class="cart-shopping">
+              <a href="/carrito-de-compras"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-header">
+        <form class="form-search" action="#" method="GET">
+          <input type="search" class="input-busqueda" placeholder="Buscar" />
+          <button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <div class="gallery-products">
+          <a href="/catalogo">
+            <p>catálogo<i class="fa-solid fa-angle-down"></i></p>
+          </a>
+        </div>
+
+        <div class="main-navbar">
+          <ul>
+            <li class="home"><a href="/home">Inicio</a></li>
+            <li class="images"><a href="/catalogo">catálogo</a></li>
+            <li class="contac"><a href="#contacto">Contacto</a></li>
+            <li class="about-us">
+              <a href="#about-us">Acerca de nosotros</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ------------ Fin del HEADER  -->
+
+    <!----------------  Cominzo del MAIN -->
+    <main class="contenedor">
+      <article class="imagen-descripciones">
+        <div>
+          <img src="./images/Cuadro 16.jpg" alt="" />
+        </div>
+        <section class="descripciones">
+          <h1>MARTY MCFLY</h1>
+
+          <h2>$3100</h2>
+
+          <div>
+            <h3>Medida:</h3>
+
+            <h4>686x1016</h4>
+          </div>
+
+          <div>
+            <h3>Cantidad:</h3>
+            <label> <input type="number" name="cantidades" min="1" /></label>
+          </div>
+          <div class="carrito">
+            <form action="/carrito-de-compras" method="GET">
+              <button type="submit">AGREGAR AL CARRITO</button>
+            </form>
+          </div>
+        </section>
+      </article>
+
+      <article class="informacion">
+        <h4>El poster es de la siguiente medida 686 x 1016 milímetros.</h4>
+        <h1>PORTER LISTO PARA COLGAR.</h1>
+        <p>
+          Imprimimos en papel satinado premium (200g), que es un papel de alta
+          calidad. Todos nuestros carteles son impresos por Higge en Córdoba
+          (Argentina) en impresoras de gran formato que tienen el certificado
+          GREENGUARD Gold por sus bajas emisiones de compuestos orgánicos
+          volátiles. El color del marco puede ser Natural, Negro o Blanco. Las
+          imágenes son de alta calidad. Todos los productos se producen a
+          pedido. No se arrugan ni amarillentan. Son lavables.
+        </p>
+        <h1>
+          EXCLUSIVAMENTE PARA VOS. HECHO EN ARGENTINA. ENVIOS A TODO EL PAÍS.
+        </h1>
+        <h5>
+          Códigos de Imágenes: En el caso de querer cambiar algún diseño de
+          lámina por otro, detallarlo una vez hecha la compra mediante un
+          mensaje privado a info@higge.com.ar
+        </h5>
+      </article>
+    </main>
+  </body>
+
+  <!-- ---------- fin del MAIN -->
+
+  <!-- ------------ comienzo del FOOTER-->
+  <section class="footer">
+    <div class="share">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin-in"></a>
+    </div>
+
+    <div class="links">
+      <a href="#home">Inicio</a>
+      <a href="#images">catalogo</a>
+      <a href="#contact">contacto</a>
+      <a href="#about-us">Acerca de nosotros</a>
+    </div>
+
+    <div class="creditos">
+      creado por <span>grupo 11</span> | todos los derechos reservados
+    </div>
+  </section>
+
+  <!-- ------------ Fin del FOOTER  -->
+</html>

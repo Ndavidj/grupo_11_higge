@@ -63,7 +63,6 @@ header div img {
   justify-content: center;
 }
 
-
 .account-management {
   margin-top: 7px;
   font-size: 0.7em;
@@ -266,7 +265,7 @@ section article:hover {
 }
 
 .footer .share {
-padding: 1rem 0;
+  padding: 1rem 0;
 }
 
 .footer .share a {
@@ -276,16 +275,15 @@ padding: 1rem 0;
   line-height: 5rem;
   color: #fff;
   border: 1px solid #7e7e7e;
-  margin:.3rem;
+  margin: 0.3rem;
   border-radius: 50%;
-
 }
 
 .footer .share a:hover {
-  background-color: #A8A8A8; 
+  background-color: #a8a8a8;
 }
 
-.footer .links{
+.footer .links {
   font-size: 14px;
   display: flex;
   justify-content: center;
@@ -295,13 +293,13 @@ padding: 1rem 0;
 }
 
 .footer .links a {
-  padding: .7rem 2rem;
+  padding: 0.7rem 2rem;
   color: #fff;
   border: 1px solid #7e7e7e;
 }
 
 .footer .links a:hover {
-background:#050505;
+  background: #050505;
 }
 
 .footer .creditos {
@@ -318,21 +316,6 @@ background:#050505;
 
 /* fin del FOOTER */
 
-
-/* -----DETALLE DEL PRODUCTO-- */
-main img {
-  /* float: left; */
-  width: auto;
-  height: 700px;
-}
-section.posters {
-  display: flex;
-  justify-content: flex-start
-  
-}
-
-
-
 /* ------------------- MOBILE  */
 
 @media (min-width: 320px) {
@@ -347,14 +330,14 @@ section.posters {
   .main-navbar {
     display: none;
   }
-  
+
   main section article {
     width: 40%;
     margin: 5px 5px;
     transition: all 450ms;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-  
+
   section article img {
     width: 90%;
     margin: 10px;
@@ -385,7 +368,7 @@ section.posters {
     width: 100%;
     height: 150px;
     margin: auto;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
 
@@ -462,10 +445,10 @@ section.posters {
     background-color: #ffffff;
     border-top: 3px solid #e8e8e8;
     border-bottom: 3px solid #e8e8e8;
-    color: #A8A8A8
+    color: #a8a8a8;
   }
 
-  .main-navbar ul li:hover{
+  .main-navbar ul li:hover {
     background-color: #f9fafc;
   }
 
@@ -501,5 +484,4 @@ section.posters {
     width: auto;
     max-height: 220px;
   }
-
 }
