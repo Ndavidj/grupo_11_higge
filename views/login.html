@@ -1,154 +1,131 @@
 <!DOCTYPE html>
 <html lang="en-es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Log in | HIGGE</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/styles-login.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/6c995d925a.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <!-- ------------ Comienzo del HEADER  -->
-    <header class="main-header">
-      <div class="top-header">
-        <div class="burger-menu">
-          <i class="fa-solid fa-bars"></i>
-        </div>
 
-        <figure class="logo">
-          <a href="home"><img src="/images/logo.svg" alt="Logo de HIGGE" /> </a>
-        </figure>
+<head>
+  <meta charset="UTF-8" />
+  <title>Log in | HIGGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="shortcut icon" href="/images/icon_tittle.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles-login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/6c995d925a.js" crossorigin="anonymous"></script>
+</head>
 
-        <div class="usser-management">
-          <ul class="account-management">
-            <li class="login"><a href="/login">Iniciar sesión</a></li>
-            <li class="register"><a href="/registro">Crear cuenta</a></li>
-          </ul>
-
-          <div class="cart-shop">
-            <button class="cart-shopping">
-              <a href="/carrito-de-compras"
-                ><i class="fa-solid fa-cart-shopping"></i
-              ></a>
-            </button>
-          </div>
-        </div>
+<body>
+  <!-- ------------ Comienzo del HEADER  -->
+  <header class="main-header">
+    <div class="top-header">
+      <div class="burger-menu">
+        <i class="fa-solid fa-bars"></i>
       </div>
 
-      <div class="bottom-header">
-        <form class="form-search" action="#" method="GET">
-          <input type="search" class="input-busqueda" placeholder="Buscar" />
-          <button type="submit" class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
+      <figure class="logo">
+        <a href="home"><img src="/images/logo.svg" alt="Logo de HIGGE" /> </a>
+      </figure>
+
+      <div class="usser-management">
+        <ul class="account-management">
+          <li class="login"><a href="/login">Iniciar sesión</a></li>
+          <li class="register"><a href="/registro">Crear cuenta</a></li>
+        </ul>
+
+        <div class="cart-shop">
+          <button class="cart-shopping">
+            <a href="/carrito-de-compras"><i class="fa-solid fa-cart-shopping"></i></a>
           </button>
-        </form>
-
-        <div class="gallery-products">
-          <a href="/catalogo">
-            <p>catálogo<i class="fa-solid fa-angle-down"></i></p>
-          </a>
-        </div>
-
-        <div class="main-navbar">
-          <ul>
-            <li class="home" id="home"><a href="/home">Inicio</a></li>
-            <li class="images" id="catalogo">
-              <a href="/catalogo">catálogo</a>
-            </li>
-            <li class="contact" id="contact">
-              <a href="#contacto">Contacto</a>
-            </li>
-            <li class="about-us" id="about-us">
-              <a href="#about-us">Acerca de nosotros</a>
-            </li>
-          </ul>
         </div>
       </div>
-    </header>
+    </div>
 
-    <!-- ------------ Fin del HEADER  -->
-
-    <!-- comienzo Main LOGIN -->
-    <main class="main-login">
-      <form action="/login" method="POST" class="login-form">
-        <div>
-          <h4 class="login-title">iniciar sesión</h4>
-        </div>
-        <div class="field">
-          <label for="email">email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder=" Ej. ejemplo@mail.com"
-          />
-        </div>
-        <div class="field">
-          <label for="password">Contraseña</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            minlength="8"
-            maxlength="16"
-            placeholder=" ingrese su Contraseña"
-          />
-        </div>
-        <div class="check-remember">
-          <label>
-            <input type="checkbox" name="remember" value="remember" />Recordarme
-          </label>
-        </div>
-        <div class="forgot-pass">
-          <a href="#" title="¿Olvidaste tu contraseña?"
-            >¿Olvidaste tu contraseña?</a
-          >
-        </div>
-        <button class="login-button" type="submit">
-          <a href="/">Ingresar</a>
+    <div class="bottom-header">
+      <form class="form-search" action="#" method="GET">
+        <input type="search" class="input-busqueda" placeholder="Buscar" />
+        <button type="submit" class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
-    </main>
-    <!-- fin del Main LOGIN -->
 
-    <!-- ------------ comienzo del FOOTER  -->
-    <section class="footer">
-      <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin-in"></a>
+      <div class="gallery-products">
+        <a href="/catalogo">
+          <p>catálogo<i class="fa-solid fa-angle-down"></i></p>
+        </a>
       </div>
 
-      <div class="links">
-        <a href="/home">Inicio</a>
-        <a href="/catalogo">catalogo</a>
-        <a href="#contact">contacto</a>
-        <a href="#about-us">Acerca de nosotros</a>
+      <div class="main-navbar">
+        <ul>
+          <li class="home" id="home"><a href="/home">Inicio</a></li>
+          <li class="images" id="catalogo">
+            <a href="/catalogo">catálogo</a>
+          </li>
+          <li class="contact" id="contact">
+            <a href="#contacto">Contacto</a>
+          </li>
+          <li class="about-us" id="about-us">
+            <a href="#about-us">Acerca de nosotros</a>
+          </li>
+        </ul>
       </div>
+    </div>
+  </header>
 
-      <div class="creditos">
-        creado por <span>grupo 11</span> | todos los derechos reservados
+  <!-- ------------ Fin del HEADER  -->
+
+  <!-- comienzo Main LOGIN -->
+  <main class="main-login">
+    <form action="/login" method="POST" class="login-form">
+      <div>
+        <h4 class="login-title">iniciar sesión</h4>
       </div>
-    </section>
+      <div class="field">
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" placeholder=" Ej. ejemplo@mail.com" />
+      </div>
+      <div class="field">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" minlength="8" maxlength="16"
+          placeholder=" ingrese su Contraseña" />
+      </div>
+      <div class="check-remember">
+        <label>
+          <input type="checkbox" name="remember" value="remember" />Recordarme
+        </label>
+      </div>
+      <div class="forgot-pass">
+        <a href="#" title="¿Olvidaste tu contraseña?">¿Olvidaste tu contraseña?</a>
+      </div>
+      <button class="login-button" type="submit">
+        <a href="/">Ingresar</a>
+      </button>
+    </form>
+  </main>
+  <!-- fin del Main LOGIN -->
 
-    <!-- ------------ Fin del FOOTER  -->
-  </body>
+  <!-- ------------ comienzo del FOOTER  -->
+  <section class="footer">
+    <div class="share">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin-in"></a>
+    </div>
+
+    <div class="links">
+      <a href="/home">Inicio</a>
+      <a href="/catalogo">catalogo</a>
+      <a href="#contact">contacto</a>
+      <a href="#about-us">Acerca de nosotros</a>
+    </div>
+
+    <div class="creditos">
+      creado por <span>grupo 11</span> | todos los derechos reservados
+    </div>
+  </section>
+
+  <!-- ------------ Fin del FOOTER  -->
+</body>
+
 </html>
