@@ -33,10 +33,41 @@ app.get("/catalogo", (req, res) => {
 });
 
 // ----- DETALLE DEL PRODUCTO -----
-app.get("/detalle-del-producto", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/detalle-del-producto.html"));
+app.get("/detalle-producto-jack-nicholson", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "./views/detalle-producto-jack-nicholson.html")
+  );
 });
-
+app.get("/detalle-producto-sylvester-stallone", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "./views/detalle-producto-sylvester-stallone.html")
+  );
+});
+app.get("/detalle-producto-steven-spielberg", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "./views/detalle-producto-steven-spielberg.html")
+  );
+});
+app.get("/detalle-producto-mi-pobre-angelito", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "./views/detalle-producto-mi-pobre-angelito.html")
+  );
+});
+app.get("/detalle-producto-pulp-fiction", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "./views/detalle-producto-pulp-fiction.html")
+  );
+});
+app.get("/detalle-producto-marty-mcfly", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "./views/detalle-producto-marty-mcfly.html")
+  );
+});
+app.get("/detalle-producto-jules-and-vincent", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "./views/detalle-producto-jules-and-vincent.html")
+  );
+});
 // ----- CARRITO DE COMPRAS -----
 app.get("/carrito-de-compras", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/carrito-de-compras.html"));
