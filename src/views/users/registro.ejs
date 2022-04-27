@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-es">
+
+  <%- include('partials/head') %>
+
+<body>
+  <!-- ------------ Comienzo del HEADER  -->
+  <%- include('partials/header') %>
+  
+  <!-- ------------ Fin del HEADER  -->
+  <!-- ------------ Inicio del Formulario de registro  -->
+  <form class="registro" action="/registro.html" method="POST">
+    <div class="control-form">
+      <label for="name"> Nombre y apellido </label>
+      <input type="name" id="name" class="control">
+    </div>
+    <div class="control-form">
+      <label for="usuario"> Nombre de usuario </label>
+      <input type="text" id="usuario" class="control">
+    </div>
+    <div class="control-form">
+      <label for="email"> E-mail </label>
+      <input type="email" id="email" placeholder="@" class="control">
+    </div>
+    <div class="control-form">
+      <label for="birthdate"> Fecha de nacimiento </label>
+      <input type="date" name="birthdate" id="birthdate">
+    </div>
+    <div class="control-form">
+      <label for="address"> Domicilio </label>
+      <input type="text" name="address" id="address" class="control">
+    </div>
+    <div class="control-form">
+      <div>Categorías de interés</div>
+      <label>Cine
+        <input type="checkbox" name="interest" value="Cine"></label>
+      <label>Música
+        <input type="checkbox" name="interest" value="Música"></label>
+      <label>Naturaleza
+        <input type="checkbox" name="interest" value="Naturaleza"></label>
+      <label>Arte
+        <input type="checkbox" name="interest" value="Arte"></label>
+      <label>Deportes
+        <input type="checkbox" name="interest" value="Deportes"></label>
+    </div>
+    <div class="control-form">
+        <label for="password"> Contraseña </label>
+        <input type="password" name="password" id="password" placeholder="Elige tu contraseña" class="control">
+    </div>
+    <div class="control-form">
+      <button href='' type="submit" class="button-form">Enviar</button>
+      <button type="reset" class="button-form">Reset</button>
+    </div>
+
+  </form>
+  <!-- ------------ Final del Formulario de registro  -->
+
+  <div class="banner-divisor">
+    <div class="logo-insta">
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+
+    <div class="mensaje">
+      <p>buscanos en instagram</p>
+      <h4>@higge_11</h4>
+    </div>
+
+  </div>
+
+
+   <!-- ------------ comienzo del FOOTER  -->
+   <%- include('partials/footer') %>
+ 
+   <!-- ------------ Fin del FOOTER  -->
+
+
+</body>
+
+</html>
