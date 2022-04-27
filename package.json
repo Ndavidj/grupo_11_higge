@@ -4,8 +4,8 @@
   "description": "Higge será una tienda online de láminas,afiches y posters decorativos para hogares con estilo.",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js",
-    "start": "nodemon app.js"
+    "test": "node ./src/app.js",
+    "start": "nodemon ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Ndavidj/grupo_11_higge",
   "dependencies": {
+    "ejs": "^3.1.7",
     "express": "^4.17.3",
     "nodemon": "^2.0.15"
   }
