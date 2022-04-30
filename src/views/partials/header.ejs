@@ -1,54 +1,56 @@
 <header class="main-header">
-    <div class="top-header">
-      <div class="burger-menu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-
-      <figure class="logo">
-        <a href="home"><img src="/images/logo.svg" alt="Logo de HIGGE" /> </a>
-      </figure>
-
-      <div class="usser-management">
-        <ul class="account-management">
-          <li class="login"><a href="/login">Iniciar sesión</a></li>
-          <li class="register"><a href="/registro">Crear cuenta</a></li>
-        </ul>
-
-        <div class="cart-shop">
-          <button class="cart-shopping">
-            <a href="/carrito-de-compras"><i class="fa-solid fa-cart-shopping"></i></a>
-          </button>
-        </div>
-      </div>
+  <div class="top-header">
+    <div class="burger-menu">
+      <i class="fa-solid fa-bars"></i>
     </div>
 
-    <div class="bottom-header">
-      <form class="form-search" action="#" method="GET">
-        <input type="search" class="input-busqueda" placeholder="Buscar" />
-        <button type="submit" class="search-button">
-          <i class="fa-solid fa-magnifying-glass"></i>
+    <figure class="logo">
+      <a href="/"><img src="/images/logo.svg" alt="Logo de HIGGE" /> </a>
+    </figure>
+
+    <div class="usser-management">
+      <ul class="account-management">
+        <li class="login"><a href="/users/login">Iniciar sesión</a></li>
+        <li class="register"><a href="/users/register">Crear cuenta</a></li>
+      </ul>
+
+      <div class="cart-shop">
+        <button class="cart-shopping">
+          <a href="/products/productsCart"><i class="fa-solid fa-cart-shopping"></i></a>
         </button>
-      </form>
-
-      <div class="gallery-products">
-        <a href="/catalogo">
-          <p>catálogo<i class="fa-solid fa-angle-down"></i></p>
-        </a>
-      </div>
-
-      <div class="main-navbar">
-        <ul>
-          <li class="home" id="home"><a href="/home">Inicio</a></li>
-          <li class="images" id="catalogo">
-            <a href="/catalogo">catálogo</a>
-          </li>
-          <li class="contact" id="contact">
-            <a href="/contacto">Contacto</a>
-          </li>
-          <li class="about-us" id="about-us">
-            <a href="#about-us">Acerca de nosotros</a>
-          </li>
-        </ul>
       </div>
     </div>
-  </header>
+  </div>
+
+  <div class="bottom-header">
+    <form class="form-search" action="#" method="GET">
+      <input type="search" class="input-busqueda" placeholder="Buscar" />
+      <button type="submit" class="search-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
+    <div class="gallery-products">
+      <a href="/products/catalogue">
+        <p>catálogo<i class="fa-solid fa-angle-down"></i></p>
+      </a>
+    </div>
+
+    <div class="main-navbar">
+      <ul>
+        <li class="home" id="home">
+          <a href="/">Inicio</a>
+        </li>
+        <li class="images" id="catalogo">
+          <a href="/products/catalogue">catálogo</a>
+        </li>
+        <li class="contact" id="contact">
+          <a href="/users/contact">Contacto</a>
+        </li>
+        <li class="about-us" id="about-us">
+          <a href="#about-us">Acerca de nosotros</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
