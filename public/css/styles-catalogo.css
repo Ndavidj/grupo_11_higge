@@ -1,6 +1,11 @@
 .main-catalogo {
     width: 90%;
-}
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 @media (min-width: 768px) {
     main section article {

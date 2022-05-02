@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans Narrow", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    text-transform: uppercase;
+    line-height: 20px;
+  }
+
+  .containerAboutUs{
+    line-height: 5px;
+    margin: 100px auto;
+    padding: 15px;
+    display: flex;
+  }
+
+  .imageAboutUs {
+    width: 50%
+  }
+  .imageAboutUs img{
+    width: 100%;
+  }
+
+  .leyendAboutUs {
+    width: 50%;
+    padding: 10px 40px;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .leyendAboutUs h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+    margin-bottom: 50px;
+  }
+
+  .leyendAboutUs p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .leyendAboutUs p span{
+    background-color: black;
+    color:white;
+    font-size: 21px;
+  }
+
+  /* ------------------- MOBILE  */
+
+@media (max-width: 768px) {
+  .imageAboutUs {
+    display: none;
+  }
+
+  .containerAboutUs {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leyendAboutUs {
+    width: 100%;
+  }
+
+  .leyendAboutUs h1{
+    width: 80%;
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+}
+
+/* ------------------- TABLET  */
+
+@media (max-width: 1023px) {
+  .imageAboutUs {
+    display: flex;
+  }
+}
