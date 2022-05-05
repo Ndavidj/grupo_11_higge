@@ -10,3 +10,7 @@ Dejar de hacer: debemos dejar de intentar resolver solos los obstacúlos que se 
 SPRINT 2
 El Sprint 2 requirió de mayor dedicación que el anterior pero no significó una complicación para cumplir en tiempo y forma con el trabajo requerido pàra el mismo. Hubieron algunos pequeños problemas que logramos resolver sin mayores complicaciones.  La estética visual de la identidad del sitio logró una mejora sustancial y quedamos conformes con ello.
 Debemos seguir trabajando en una administración de los plazos más organizada ya que cada sprint suma dificultad respecto del anterior y debemos estar preparados para tener recursos de tiempo para compicaciones futuras que pùdieran existir.
+Empezar a hacer: distribuir las tareas entre los miembros del grupo al inicio del sprint.
+Hacer igual (mantener): el entusiasmo.
+Hacer menos: 
+Dejar de hacer: permitir que avancen los días sin tener un plan de trabajo individual para que luego pueda integrarse con el aporte del resto del grupo.
