@@ -8,6 +8,9 @@ const productsController = {
   catalogue: (req, res) => {
     res.render("products/catalogue");
   },
+  productsCreateForm: (req, res) => {
+    res.render("products/productsCreateForm");
+  }
 };
 
 module.exports = productsController;

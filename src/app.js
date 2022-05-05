@@ -26,6 +26,6 @@ app.use("/products", productsRouter);
 
 
 app.listen(process.env.PORT || 4000, () => {
-  console.log("Servidor corriendo en el puerto http://localhost:4001");
+  console.log("Servidor corriendo en el puerto http://localhost:4000");
 });
 
