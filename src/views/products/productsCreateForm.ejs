@@ -1,49 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"></html>
+
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/styles-productsCreateForm.css">
+
 
     <%- include('../partials/head', {titleWeb: 'Formulario Creación Nuevo Producto'}) %>
 
     <body>
       <!-- ------------ Comienzo del HEADER  -->
       <%- include('../partials/header') %>
-        <!-- ------------ fin del HEADER  -->
+  <!-- ------------ Fin del HEADER  -->
+  <!-- ------------ Inicio del Formulario de Creación de Producto  -->
 
 	<h2 class="product-title">Crear nuevo Producto</h2>
     <form action="/products" method="POST">
-        <div>
-            <label for="name" class="form-label">Nombre del Producto</label>
-            <input type="text" id="name" name="name" placeholder="Título del producto nuevo" class="form-input">
-        </div>
-        <div>
-            <label for="price" class="form-label">Precio del producto</label>
-            <input type="number" id="price" name="price" placeholder="0000" class="form-input">
-        </div>
-        <div>
-            <label for="discount" class="form-label">Descuento</label>
-            <input type="number" id="discount" name="discount" placeholder="10%" class="form-input">
-        </div>
-        <div>
-            <label for="size" class="form-label">Medidas Disponibles</label>
-                <label>80 x 60 CM
-                    <input type="checkbox" name="size" value="80 x 60 CM"></label>
-                <label>60 x 40 CM
-                    <input type="checkbox" name="size" value="60 x 40 CM"></label>
-        </div>
-        <div>
-            <label for="category" class="form-label">Categoría:</label>
-            <select name="category" id="category" class="form-input">
+            <div class="control-form">
+              <label for="name"> Nombre del Producto Nuevo </label>
+              <input type="name" id="name" class="control">
+            </div>
+            <div class="control-form">
+                <label for="description"> Descripción </label>
+                <input type="description" id="description" class="control">
+              </div>
+            <div class="control-form">
+              <label for="price"> Precio </label>
+              <input type="text" id="price" class="control">
+            </div>
+            <div class="control-form">
+                <label for="price"> Descuento </label>
+                <input type="text" id="discount" class="control">
+              </div>
+            <div class="control-form">
+              <div>Medidas</div>
+              <label>80 x 60 CM
+                <input type="checkbox" name="size" value="60 x 80 CM"></label>
+              <label>60 x 40 CM
+                <input type="checkbox" name="size" value="60 x 40 CM"></label>
+            </div>
+            <div class="control-form">
+                <label for="category" class="control">Categoría></label>
+                <select name="category" id="category" class="control">
                 <option value="">Elegí</option>
-                <option value="recently-added">Nuestras Novedades</option>
-                <option value="in-sale">En Oferta</option>
+                <option value="recentlyAdded">Nuestras Novedades</option>
+                <option value="on-sale">En Oferta</option>
+                <option value="limitedEdition">Edición Limitada</option>
             </select>
-        </div>
-        <div>
-            <label for="description" class="form-label">Descripción del Producto</label>
-            <input type="text" id="description" name="description" placeholder="Descripción del producto nuevo" class="form-input">
-        </div>
-        <button type="submit" class="createButton">Guardar producto</button>
+            </div>
+            <div class="control-form">
+              <button href='' type="submit" class="button-form">Guardar Producto</button>
+            </div>
+        
+          </form>
 
-    </form>
 	<!-- /todos los productos -->
 
 	<!-- footer -->
