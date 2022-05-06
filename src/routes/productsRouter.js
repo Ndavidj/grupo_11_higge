@@ -26,6 +26,9 @@ router.get('/catalogue', productsController.catalogue);
 router.get('/productsCreateForm', productsController.productsCreateForm);
 //Ruta para el Procesamiento del formulario que crea un nuevo producto -viaja por POST- Esta parte corresponde al sprint 4 pero queda hecha y comentada.
 router.post('/', /*upload.single('productImage'),*/ productsController.store);
+//Ruta para ver el Formulario de edición del producto -eventualmente deberá identificar el ID del mismo y se debe crear la ruta por PUT que modifique los cambios-
+router.get('/productsEditForm', productsController.productsEditForm);
+
 
 
 module.exports = router;

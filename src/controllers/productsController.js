@@ -19,8 +19,8 @@ const productsController = {
   /*un store de prueba para asegurarnos que viaja por POST correctamente la petición*/ 
   store: (req, res) => {
   
-  res.send("hola");
-  }
+  res.send("el producto se habría guardado ok");
+  },
   /* (El store funcionando corresponde al sprint 4 y le hacen falta los Json para ser operativos correctamente)
   store: (req, res) => {
     let newProduct = {
@@ -38,6 +38,10 @@ const productsController = {
     res.redirect('/productsDetails/' + productId);
 
   }*/
+  productsEditForm: (req, res) => {
+    res.render("products/productsEditForm")
+  },
+  /*Faltará establecer el controlador que guarde la edición y sus cambios. Se hará en conjunto con la ruta y el metodo PUT*/
 };
 
 module.exports = productsController;
