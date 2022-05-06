@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../css/styles-productsCreateForm.css">
 
 
-    <%- include('../partials/head', {titleWeb: 'Formulario Creación Nuevo Producto'}) %>
+    <%- include('../partials/head', {titleWeb: 'Formulario Creación Nuevo Producto', cssSheet:'styles-productsCreateForm'}) %>
 
     <body>
       <!-- ------------ Comienzo del HEADER  -->
@@ -14,29 +14,29 @@
   <!-- ------------ Inicio del Formulario de Creación de Producto  -->
 
 	<h2 class="product-title">Crear nuevo Producto</h2>
-    <form action="/products" method="POST">
+    <!--<form action="/products" method="POST" enctype="multipart/form-data">
             <div class="control-form">
               <label for="name"> Nombre del Producto Nuevo </label>
-              <input type="name" id="name" class="control">
+              <input type="text" name="name" id="name" class="control">
             </div>
             <div class="control-form">
                 <label for="description"> Descripción </label>
-                <input type="description" id="description" class="control">
+                <input type="text" name="description" id="description" class="control">
               </div>
             <div class="control-form">
               <label for="price"> Precio </label>
-              <input type="text" id="price" class="control">
+              <input type="number" name="price" id="price" class="control">
             </div>
             <div class="control-form">
-                <label for="price"> Descuento </label>
-                <input type="text" id="discount" class="control">
+                <label for="discount"> Descuento </label>
+                <input type="number" name="discount" id="discount" class="control">
               </div>
             <div class="control-form">
-              <div>Medidas</div>
-              <label>80 x 60 CM
-                <input type="checkbox" name="size" value="60 x 80 CM"></label>
+              <p>Medidas</p>
+              <label class="list-options">80 x 60 CM
+                <input type="checkbox" name="size" id="size" value="60 x 80 CM"></label>
               <label>60 x 40 CM
-                <input type="checkbox" name="size" value="60 x 40 CM"></label>
+                <input type="checkbox" name="size" id="size" value="60 x 40 CM"></label>
             </div>
             <div class="control-form">
                 <label for="category" class="control">Categoría></label>
@@ -48,11 +48,24 @@
             </select>
             </div>
             <div class="control-form">
+              <label for="productImage"> Imagen del producto</label>
+              <input type="file" name="productImage" id="productImage" class="control">
+            </div>
+
+            <div class="control-form">
               <button href='' type="submit" class="button-form">Guardar Producto</button>
             </div>
         
-          </form>
-
+          </form>-->
+          <form action="/products" method="POST" enctype="multipart/form-data">
+            <div class="control-form">
+              <label for="name"> Nombre del Producto Nuevo </label>
+              <input type="text" name="name" id="name" class="control">
+            </div>
+            <div class="control-form">
+              <button href='' type="submit" class="button-form">Guardar Producto</button>
+            </div>
+            </form>
 	<!-- /todos los productos -->
 
 	<!-- footer -->
