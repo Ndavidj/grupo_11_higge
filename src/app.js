@@ -1,15 +1,20 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require('method-override');
 
 
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+// Middlewares
+
 app.use(express.static("public"));
 //Para que pueda tomar el body de formularios
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(methodOverride("_method"));
 
 // --Routes--
 
