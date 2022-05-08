@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "node ./src/app.js",
-    "start": "nodemon ./src/app.js"
+    "start": "nodemon ./src/app.js",
+    "install": "npm i ejs express method-override multer"
   },
   "repository": {
     "type": "git",
