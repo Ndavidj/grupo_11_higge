@@ -12,82 +12,50 @@
       <!-- ------------ comienzo del MAIN  -->
       <main>
         <h2>nuestras novedades</h2>
-        <section>
-          <article>
-            <a href="/products/productsDetails"><img src="./images/Cuadro 2.jpg" alt="" /></a>
-            <div class="info-producto">
-              <div class="products-description">
-                <p class="descripcion">Jack Nicholson</p>
-                <p class="precios">$2.500</p>
-              </div>
-            </div>
-          </article>
 
-          <article>
-            <a href="/detalle-producto-sylvester-stallone"><img src="./images/Cuadro 4.jpg" alt=""></a>
-            <div class="info-producto">
-              <div class="products-description">
-                <p class="descripcion">Sylvester Stallone</p>
-                <p class="precios">$3.150</p>
+  <!-- Se recorre el JSON de manera tal que muestre aquellos productos que son 'novedad' para mostrar en index -->
+        <>
+          <% newArrivals.forEach(function(product){ let finalPrice=(product.price * ((100 - product.discount) /
+            100)).toFixed(0) %>
+            <article>
+              <a href="/products/detail/<%= product.id %>">
+                <img src="/images/<%= product.image %>" alt="imagen de producto" /></a>
+              <div class="info-producto">
+                <div class="products-description">
+                  <p class="descripcion"><%= product.name %></p>
+                  <p class="precios"> $ <%= product.price %></p>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article>
-            <a href="/detalle-producto-steven-spielberg"><img src="./images/Cuadro 11.jpg" alt=""></a>
-            <div class="info-producto">
-              <div class="products-description">
-                <p class="descripcion">Steven Spielberg</p>
-                <p class="precios">$2.750</p>
-              </div>
-            </div>
-          </article>
+            <% }) %>
 
-          <article>
-            <a href="/detalle-producto-mi-pobre-angelito"><img src="./images/Cuadro 12.jpg" alt=""></a>
-            <div class="info-producto">
-              <div class="products-description">
-                <p class="descripcion">Mi pobre angelito</p>
-                <p class="precios">$3.000</p>
-              </div>
-            </div>
-          </article>
         </section>
 
+
+  <!-- Se recorre el JSON de manera tal que muestre aquellos productos que son 'oferta' para mostrar en index -->
         <h2>En oferta</h2>
         <section>
-          <article>
-            <a href="/detalle-producto-pulp-fiction"><img src="./images/Cuadro 17.jpg" alt=""></a>
-            <div class="info-producto">
-              <div class="products-description">
-                <p class="descripcion">Pulp Fiction</p>
-                <p class="precios">$3.500</p>
-                <p class="descuentos">10% off</p>
+          <% inOffer.forEach(function(product){ let finalPrice=(product.price * ((100 - product.discount) /
+            100)).toFixed(0) %>
+            <article>
+              <a href="/products/detail/<%= product.id %>">
+                <img src="/images/<%= product.image %>" alt="imagen de producto" /></a>
+              <div class="info-producto">
+                <div class="products-description">
+                  <p class="descripcion"><%= product.name %></p>
+                  <p class="precios-discount"> $ <%= product.price %></p>
+                  <span><%= product.discount %> %OFF</span>
+                  <h2>$<%= finalPrice %></h2>
+                </div>
               </div>
-          </article>
-
-          <article>
-            <a href="/detalle-producto-marty-mcfly"><img src="./images/Cuadro 16.jpg" alt=""></a>
-            <div class="info-producto">
-              <div class="products-description">
-                <p class="descripcion">Marty McFly</p>
-                <p class="precios">$6.770</p>
-                <p class="descuentos">10% off</p>
-              </div>
-            </div>
-          </article>
-
-          <article>
-            <a href="/detalle-producto-jules-and-vincent"><img src="./images/Cuadro 15.jpg" alt=""></a>
-            <div class="info-producto">
-              <div class="products-description">
-                <p class="descripcion">Jules & Vincent</p>
-                <p class="precios">$5.000</p>
-                <p class="descuentos">10% off</p>
-              </div>
-          </article>
+            </article>
+            <% }) %>
         </section>
+
+
       </main>
+
       <!-- ------------ Fin del MAIN  -->
 
       <div class="banner-divisor">

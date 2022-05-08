@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "al Pacino",
+        "price": 72999,
+        "discount": " ",
+        "category": "in-sale",
+        "description": ".",
+        "image": "/public/images/alPacino.jpg"
+       },
+       {
+        "id": 2,
+        "name": "clint Eastwood",
+        "price": 72999,
+        "discount": " ",
+        "category": "in-sale",
+        "description": ".",
+        "image": "/public/images/clintEastwood.jpg"
+       },
+       {
+        "id": 3,
+        "name": "Escena Pulp Fiction",
+        "price": 72999,
+        "discount": " ",
+        "category": "in-sale",
+        "description": ".",
+        "image": "/public/images/escenaPulpFiction.jpg"
+       }
+]

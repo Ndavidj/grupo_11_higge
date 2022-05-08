@@ -1,0 +1,102 @@
+[
+   
+    {
+        "id": 1,
+        "name": "al Pacino",
+        "price": 2500,
+        "discount": " ",
+        "category": "novedad",
+        "description": "Retrato Al Pacino",
+        "image": "alPacino.jpg"
+       },
+       {
+        "id": 2,
+        "name": "clint Eastwood",
+        "price": 2500,
+        "discount": "15",
+        "category": "en oferta",
+        "description": " ",
+        "image": "clintEastwood.jpg"
+       },
+       {
+        "id": 3,
+        "name": "Escena Pulp Fiction",
+        "price": 2000,
+        "discount": " ",
+        "category": "novedad",
+        "description": ".",
+        "image": "escenaPulpFiction.jpg"
+       },
+
+       {
+        "id": 4,
+        "name": "Harry Dunne",
+        "price": 1500,
+        "discount": " ",
+        "category": "novedad",
+        "description": ".",
+        "image": "harryDunne.jpg"
+       },
+
+       {
+        "id": 5,
+        "name": "Jack Nicholson",
+        "price": 1200,
+        "discount": "20",
+        "category": "en oferta",
+        "description": ".",
+        "image": "jackNicholson.jpg"
+       },
+
+
+       {
+        "id": 6,
+        "name": "Jim Carrey",
+        "price": 2500,
+        "discount": "5",
+        "category": "en oferta",
+        "description": ".",
+        "image": "jimCarrey.jpg"
+       },
+
+
+       {
+        "id": 7,
+        "name": "Jules & Vincent",
+        "price": 4000,
+        "discount": " ",
+        "category": "novedad",
+        "description": ".",
+        "image": "jules&Vincent.jpg"
+       },
+
+       {
+        "id": 8,
+        "name": "macaulay culkin",
+        "price": 1500,
+        "discount": "18",
+        "category": "en oferta",
+        "description": ".",
+        "image": "macaulayCulkin.jpg"
+       },
+
+       {
+        "id": 9,
+        "name": "Marty Mcfly",
+        "price": 5000,
+        "discount": " ",
+        "category": "novedad",
+        "description": ".",
+        "image": "martyMcfly.jpg"
+       },
+
+       {
+        "id": 10,
+        "name": "Mia & Vincent",
+        "price": 2400,
+        "discount": "10",
+        "category": "en oferta",
+        "description": ".",
+        "image": "mia&Vicent.jpg"
+       }
+]

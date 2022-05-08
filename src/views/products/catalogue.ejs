@@ -1,169 +1,43 @@
 <!DOCTYPE html>
 <html lang="en-es">
 
-  <%- include('../partials/head', {titleWeb: 'Catalogo'}) %>
+<%- include('../partials/head', {titleWeb: 'Catalogo' }) %>
 
-<body>
-  <!-- ------------ Comienzo del HEADER  -->
-  <%- include('../partials/header') %>
-    <!-- ------------ fin del HEADER  -->
+  <body>
+    <!-- ------------ Comienzo del HEADER  -->
+    <%- include('../partials/header') %>
+      <!-- ------------ fin del HEADER  -->
 
+      <!-- VER COMO SEPARLOS  -->
+      <!-- ------------ inicio del main CATALOGO  -->
+      <main class="main-catalogo">
+        <h2>catalogo completo</h2>
+        <section>
+          <% products.forEach(function(product){ %>
+            <article>
+              <a href="/products/detail/<%= product.id %>">
+                <img src="/images/<%= product.image %>" alt="imagen de producto" />
+              </a>
+              <div class="info-producto">
+                <div class="products-description">
+                  <p class="descripcion">
+                    <%= product.name %>
+                  </p>
+                </div>
+              </div>
 
-  <!-- ------------ inicio del main CATALOGO  -->
-  <main class="main-catalogo">
-    <h2>catalogo completo</h2>
-    <section>
-      <article>
-        <img src="/images/Cuadro 2.jpg" alt="" />
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">Jack Nicholson</p>
-          </div>
-        </div>
-      </article>
+            </article>
+            <% }) %>
+        </section>
+      </main>
 
-      <article>
-        <img src="/images/Cuadro 3.jpg"" alt="">
-            <div class=" info-producto">
-        <div class="products-description">
-          <p class="descripcion">clint eastwood</p>
-        </div>
-        </div>
-      </article>
+      <!-- ------------ fin del main CATALOGO  -->
 
-      <article>
-        <img src="/images/Cuadro 4.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">Sylvester Stallone</p>
-          </div>
-        </div>
-      </article>
+      <!-- ------------ comienzo del FOOTER  -->
+      <%- include('../partials/footer') %>
 
-      <article>
-        <img src="/images/Cuadro 5.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">Robert de niro</p>
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 6.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">Jim Carrey</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 7.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">al pacino</p>
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 8.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">robin williams</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 9.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">robin williams con barba</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 10.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">Pulp fiction</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 11.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">STEVEn SPIELBERG</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 12.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">Macaulay Culkin</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 13.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">poster david bowie '73</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 14.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">poster bruno mars</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 15.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">Jules & Vincent</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 16.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">marty mcfly</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 17.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">mia & Vincent</p>
-          </div>
-      </article>
-
-      <article>
-        <img src="/images/Cuadro 18.jpg" alt="">
-        <div class="info-producto">
-          <div class="products-description">
-            <p class="descripcion">harry dunne</p>
-          </div>
-      </article>
-
-    </section>
-  </main>
-
-  <!-- ------------ fin del main CATALOGO  -->
-
- <!-- ------------ comienzo del FOOTER  -->
- <%- include('../partials/footer') %>
- 
- <!-- ------------ Fin del FOOTER  -->
-</body>
+        <!-- ------------ Fin del FOOTER  -->
+  </body>
 
 </html>
 

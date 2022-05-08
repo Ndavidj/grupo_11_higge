@@ -171,6 +171,8 @@ main {
 main h2 {
   font-size: 24px;
   font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 section {
@@ -217,13 +219,29 @@ section article:hover {
   text-align: center;
 }
 
-.products-description {
-  color: #262626;
+.precios {
+  font-size: 24px;
+  margin-top: 8px;
+  font-weight: 400;
 }
 
-.descuentos {
+.products-description {
+  color: #262626;
+  line-height: 5px;
+}
+
+.products-description span {
   font-size: 16px;
   color: #39b54a;
+  margin-bottom: 10px;
+}
+
+.precios-discount {
+  text-decoration: line-through;
+}
+
+.products-description h2 {
+  margin: 10px 0 0 0;
 }
 
 .banner-divisor {

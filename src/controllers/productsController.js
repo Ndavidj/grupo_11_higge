@@ -1,18 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 // agrego lo de aqui para arriba
 const productsController = {
-  productsDetails: (req, res) => {
-    res.render("products/productsDetails");
-  },
+	// Root - Show all products
+	index: (req, res) => {
+		res.render('products/catalogue', {
+			products
+		})
+	},
+
+	// Detail - Detail from one product
+	productsDetail: (req, res) => {
+		let id = req.params.id
+		let product = products.find(product => product.id == id)
+		res.render('products/productsDetails', {
+      product
+		})
+	},
   productsCart: (req, res) => {
     res.render("products/productsCart");
   },
-  catalogue: (req, res) => {
-    res.render("products/catalogue");
-  },
+
   productsCreateForm: (req, res) => {
     res.render("products/productsCreateForm");
   },

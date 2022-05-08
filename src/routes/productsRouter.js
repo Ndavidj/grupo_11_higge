@@ -4,6 +4,8 @@ const multer = require('multer');
 const path = require('path');
 const productsController = require("../controllers/productsController.js")
 
+
+
 /*el store que será necesario en el srpint 4 ya planteado según el proyecto*/
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
@@ -17,11 +19,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 //Ruta para ver los detalles de producto
-router.get('/productsDetails', productsController.productsDetails);
+router.get('/', productsController.index);
+router.get('/detail/:id', productsController.productsDetail); 
 //Ruta para ver el carrito 
 router.get('/productsCart', productsController.productsCart);
-//Ruta para ver el catálogo completo de productos
-router.get('/catalogue', productsController.catalogue);
 //Ruta para ver el Formulario que llega para la creación de producto -este viaja por GET porque trae la vista del form-
 router.get('/productsCreateForm', productsController.productsCreateForm);
 //Ruta para el Procesamiento del formulario que crea un nuevo producto -viaja por POST- Esta parte corresponde al sprint 4 pero queda hecha y comentada.

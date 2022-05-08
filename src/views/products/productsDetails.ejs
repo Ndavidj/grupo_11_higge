@@ -12,12 +12,14 @@
     <main class="contenedor">
       <article class="imagen-descripciones">
         <div>
-          <img src="/images/Cuadro 2.jpg" alt="" />
+          <img src="/images/<%= product.image %>" alt="product image"/>
         </div>
         <section class="descripciones">
-          <h1>JACK NICHOLSON</h1>
+          <h1><%= product.name %></h1>
 
-          <h2>$3100</h2>
+          <h2>$<%= product.price %></h2>
+
+          <h2>$<%= product.description %></h2>
 
           <div>
             <h3>Medida:</h3>
