@@ -1,82 +1,74 @@
 <!DOCTYPE html>
 <html lang="en-es">
-
-<%- include('partials/head', {titleWeb: 'Bienvenidxs a HIGGE' }) %>
+  <%- include('partials/head', {titleWeb: 'Bienvenidxs a HIGGE' }) %>
 
   <body>
     <!-- ------------ Comienzo del HEADER  -->
     <%- include('partials/header') %>
 
-      <!-- ------------ Fin del HEADER  -->
+    <!-- ------------ Fin del HEADER  -->
 
-      <!-- ------------ comienzo del MAIN  -->
-      <main>
-        <h2>nuestras novedades</h2>
+    <!-- ------------ comienzo del MAIN  -->
+    <main>
+      <h2>nuestras novedades</h2>
 
-  <!-- Se recorre el JSON de manera tal que muestre aquellos productos que son 'novedad' para mostrar en index -->
-        <>
-          <% newArrivals.forEach(function(product){ let finalPrice=(product.price * ((100 - product.discount) /
-            100)).toFixed(0) %>
-            <article>
-              <a href="/products/detail/<%= product.id %>">
-                <img src="/images/<%= product.image %>" alt="imagen de producto" /></a>
-              <div class="info-producto">
-                <div class="products-description">
-                  <p class="descripcion"><%= product.name %></p>
-                  <p class="precios"> $ <%= product.price %></p>
-                </div>
-              </div>
-            </article>
+      <!-- Se recorre el JSON de manera tal que muestre aquellos productos que son 'novedad' para mostrar en index -->
+      <section>
+        <% newArrivals.forEach(function(product){ let finalPrice=(product.price
+        * ((100 - product.discount) / 100)).toFixed(0) %>
+        <article>
+          <a href="/products/detail/<%= product.id %>">
+            <img src="/images/<%= product.image %>" alt="imagen de producto"
+          /></a>
+          <div class="info-producto">
+            <div class="products-description">
+              <p class="descripcion"><%= product.name %></p>
+              <p class="precios">$ <%= product.price %></p>
+            </div>
+          </div>
+        </article>
 
-            <% }) %>
+        <% }) %>
+      </section>
 
-        </section>
+      <!-- Se recorre el JSON de manera tal que muestre aquellos productos que son 'oferta' para mostrar en index -->
+      <h2>En oferta</h2>
+      <section>
+        <% inOffer.forEach(function(product){ let finalPrice=(product.price *
+        ((100 - product.discount) / 100)).toFixed(0) %>
+        <article>
+          <a href="/products/detail/<%= product.id %>">
+            <img src="/images/<%= product.image %>" alt="imagen de producto"
+          /></a>
+          <div class="info-producto">
+            <div class="products-description">
+              <p class="descripcion"><%= product.name %></p>
+              <p class="precios-discount">$ <%= product.price %></p>
+              <span><%= product.discount %> %OFF</span>
+              <h2>$<%= finalPrice %></h2>
+            </div>
+          </div>
+        </article>
+        <% }) %>
+      </section>
+    </main>
 
+    <!-- ------------ Fin del MAIN  -->
 
-  <!-- Se recorre el JSON de manera tal que muestre aquellos productos que son 'oferta' para mostrar en index -->
-        <h2>En oferta</h2>
-        <section>
-          <% inOffer.forEach(function(product){ let finalPrice=(product.price * ((100 - product.discount) /
-            100)).toFixed(0) %>
-            <article>
-              <a href="/products/detail/<%= product.id %>">
-                <img src="/images/<%= product.image %>" alt="imagen de producto" /></a>
-              <div class="info-producto">
-                <div class="products-description">
-                  <p class="descripcion"><%= product.name %></p>
-                  <p class="precios-discount"> $ <%= product.price %></p>
-                  <span><%= product.discount %> %OFF</span>
-                  <h2>$<%= finalPrice %></h2>
-                </div>
-              </div>
-            </article>
-            <% }) %>
-        </section>
-
-
-      </main>
-
-      <!-- ------------ Fin del MAIN  -->
-
-      <div class="banner-divisor">
-        <div class="logo-insta">
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-
-        <div class="mensaje">
-          <p>buscanos en instagram</p>
-          <h4>@higge_11</h4>
-        </div>
-
+    <div class="banner-divisor">
+      <div class="logo-insta">
+        <i class="fa-brands fa-instagram"></i>
       </div>
 
+      <div class="mensaje">
+        <p>buscanos en instagram</p>
+        <h4>@higge_11</h4>
+      </div>
+    </div>
 
-      <!-- ------------ comienzo del FOOTER  -->
-      <%- include('partials/footer') %>
+    <!-- ------------ comienzo del FOOTER  -->
+    <%- include('partials/footer') %>
 
-        <!-- ------------ Fin del FOOTER  -->
-
-
+    <!-- ------------ Fin del FOOTER  -->
   </body>
-
 </html>
