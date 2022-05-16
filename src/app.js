@@ -1,8 +1,9 @@
-const express = require("express");
-const app = express();
-const path = require("path");
+const express = require ("express");
+const app = express ();
+const path = require ("path");
 const methodOverride = require('method-override');
-
+const session = require ("express-session");
+const cookieParser = require('cookie-parser');
 
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -30,7 +31,7 @@ app.use("/users", usersRouter);
 const productsRouter = require("./routes/productsRouter.js");
 app.use("/products", productsRouter);
 
-
+// Listen to server for server up!
 app.listen(process.env.PORT || 4000, () => {
   console.log("Servidor corriendo en el puerto http://localhost:4000");
 });

@@ -18,15 +18,20 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({storage: storage});
+
 //Ruta para ver los detalles de producto
 router.get('/', productsController.index);
 router.get('/detail/:id', productsController.productsDetail); 
+
 //Ruta para ver el carrito 
 router.get('/productsCart', productsController.productsCart);
+
 //Ruta para ver el Formulario que llega para la creación de producto -este viaja por GET porque trae la vista del form-
 router.get('/productsCreateForm', productsController.productsCreateForm);
+
 //Ruta para el Procesamiento del formulario que crea un nuevo producto -viaja por POST- Esta parte corresponde al sprint 4 pero queda hecha y comentada.
 router.post('/', /*upload.single('productImage'),*/ productsController.store);
+
 //Ruta para ver el Formulario de edición del producto -eventualmente deberá identificar el ID del mismo y se debe crear la ruta por PUT que modifique los cambios-
 router.get('/productsEditForm', productsController.productsEditForm);
 

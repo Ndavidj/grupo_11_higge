@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "firstName": "David",
+    "lastName": "Nunez",
+    "email": "ndavidj@higge.com",
+    "password": "123456",
+    "category": "admin",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "firstName": "Sebastian",
+    "lastName": "Pereyra",
+    "email": "sebasPereyra@higge.com",
+    "password": "123456",
+    "category": "admin",
+    "image":""
+  },
+  {
+    "id": 3,
+    "firstName": "Mayda",
+    "lastName": "Mutura",
+    "email": "maydamutura@higge.com",
+    "password": "123456",
+    "category": "admin",
+    "image":""
+  },
+  {
+    "id": 4,
+    "firstName": "Esther",
+    "lastName": "Sanz",
+    "email": "esthersanz@higge.com",
+    "password": "123456",
+    "category": "client",
+    "image":""
+  }
+]
