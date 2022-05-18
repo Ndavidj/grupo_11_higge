@@ -14,7 +14,7 @@
   <!-- ------------ Inicio del Formulario de Creación de Producto  -->
 
 	<h2 class="product-title">Crear nuevo Producto</h2>
-    <form action="/products" method="POST" enctype="multipart/form-data">
+    <form action="/products/" method="POST" enctype="multipart/form-data">
             <div class="control-form">
               <label for="name"> Nombre del Producto Nuevo </label>
               <input type="text" name="name" id="name" class="control">
@@ -42,9 +42,9 @@
                 <label for="category" class="control">Categoría></label>
                 <select name="category" id="category" class="control">
                 <option value="">Elegí</option>
-                <option value="recentlyAdded">Nuestras Novedades</option>
-                <option value="on-sale">En Oferta</option>
-                <option value="limitedEdition">Edición Limitada</option>
+                <option value="novedad">Nuestras Novedades</option>
+                <option value="en oferta">En Oferta</option>
+                <!-- <option value="limitedEdition">Edición Limitada</option> -->
             </select>
             </div>
             <div class="control-form">
