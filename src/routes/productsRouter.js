@@ -31,10 +31,10 @@ router.get('/', productsController.index);
 router.get('/detail/:id', productsController.productsDetail);
 
 //Ruta para ver el carrito 
-router.get('/productsCart', productsController.productsCart);
+router.get('/cart', productsController.productsCart);
 
 //Ruta para ver el Formulario que llega para la creación de producto -este viaja por GET porque trae la vista del form-
-router.get('/productsCreate', productsController.productsCreateForm);
+router.get('/create', productsController.productsCreateForm);
 
 //Ruta para el Procesamiento del formulario que crea un nuevo producto -viaja por POST- .
 router.post('/', upload.single('productImage'), productsController.productsStore);
