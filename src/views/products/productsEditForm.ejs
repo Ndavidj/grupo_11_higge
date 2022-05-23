@@ -14,7 +14,7 @@
   <!-- ------------ Inicio del Formulario de Creación de Producto  -->
 
 	<h2 class="product-title">Editar Producto <%= productToEdit.name%></h2>
-    <form action="/products/productsEditForm?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/products/productsEditForm/<%=productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="control-form">
               <label for="name"> Nombre del Producto </label>
               <input type="text" name="name" id="name" class="control" value="<%= productToEdit.name %>">
@@ -34,14 +34,14 @@
             <div class="control-form">
               <p>Medidas</p>
               <label class="list-options">80 x 60 CM
-                <input type="checkbox" name="size" id="size" value="60 x 80 CM" value="<%= productToEdit.size %>"></label>
+                <input type="checkbox" name="size" id="size" value="60 x 80 CM"></label>
               <label>60 x 40 CM
-                <input type="checkbox" name="size" id="size" value="60 x 40 CM" value="<%= productToEdit.size %>"></label>
+                <input type="checkbox" name="size" id="size" value="60 x 40 CM"></label>
             </div>
             <div class="control-form">
                 <label for="category" class="control">Categoría></label>
-                <select name="category" id="category" class="control" value="<%= productToEdit.category %>">
-                <option value="">Elegí</option>
+                <select name="category" id="category" class="control">
+                <option value="" selected disabled>Elegí</option>
                 <option value="novedad">Nuestras Novedades</option>
                 <option value="en oferta">En Oferta</option>
                 <!-- <option value="limitedEdition">Edición Limitada</option> -->
