@@ -41,8 +41,10 @@ router.post('/', upload.single('productImage'), productsController.productsStore
 
 //Ruta para ver el Formulario de edición del producto 
 router.get('/productsEditForm/:id', productsController.productsEditForm);
+
 //Actualiza  un solo producto.
-router.put('/productsEditForm/:id', upload.single('productImage'), productsController.productsUpdate);
+router.put('/productsEditForm/:id', upload.single('productImage'), productsController.update);
+
 
 //Elimina un producto en cuestion.
 router.delete('/delete/:id', productsController.delete);

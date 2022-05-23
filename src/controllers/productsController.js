@@ -55,10 +55,10 @@ const productsController = {
   productsEditForm: (req, res) => {
     let id = req.params.id
     let productToEdit = products.find(product => product.id == id)
-    res.render("products/productsEditForm", ({ productToEdit }));
+    res.render("products/productsEditForm", ({ productToEdit: productToEdit }));
   },
 
-  productsUpdate: (req, res) => {
+  update: (req, res) => {
     const id = req.params.id;
     let productToEdit = products.find(product => product.id == id);
 
