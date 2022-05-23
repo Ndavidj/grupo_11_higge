@@ -77,7 +77,6 @@ main img {
   text-transform: capitalize;
   font-style: italic;
 }
-
 @media (min-width: 768px) {
   main img {
     width: 100%;
