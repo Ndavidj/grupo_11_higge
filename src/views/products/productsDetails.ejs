@@ -36,7 +36,12 @@
               <button type="submit">AGREGAR AL CARRITO</button>
             </form>
           </div>
-        </section>
+        <div class="eliminar-producto">
+        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+          <button type="submit" class="action-button delete">ELIMINAR</button>
+        </form>
+      </div>
+      </section>
       </article>
 
       <article class="informacion">
