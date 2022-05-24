@@ -85,6 +85,7 @@ const productsController = {
 		const id = req.params.id;
 		let finalProducts = products.filter(product => product.id != id);
 
+    products.splice(finalProducts)
     //ver que aqui creo que se debe aplicar Javascript para quitar este producto del array al borrarlo.
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));

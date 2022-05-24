@@ -1,15 +1,5 @@
 [
  {
-  "id": 1,
-  "name": "al Pacino",
-  "price": 2500,
-  "discount": " ",
-  "category": "novedad",
-  "description": "Retrato Al Pacino",
-  "size": " ",
-  "image": "alPacino.jpg"
- },
- {
   "id": 4,
   "name": "Harry Dunne",
   "price": 1500,
