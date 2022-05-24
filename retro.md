@@ -21,3 +21,12 @@ Empezar a hacer: disdribuir equitativamente lo que cada integrande del grupo deb
 Hacer igual (mantener): estar siempre un paso adelante en las tareas a realizar.
 Hacer menos: 
 Dejar de hacer: dejar tareas para último momento pensando que todo va a salir como lo planeado.
+
+SPRINT 4
+El Sprint 4 fue un desafío que superamos sin demasiadas complicaciones, ya que, gran parte del trabajo se había adelantado en el sprint anterior.
+Empezar a hacer: creemos conveniente comenzar a tener una comunicación más fluida con los compañeros del equipo y también seria más productivo para el equipo dejar claras las actividades que cada uno debe realizar para lograr el objetivo del siguiente sprint de la mejor manera posible. 
+Más de: este apartado va de la mano con el anterior ya que para lograr nuestros objetivos de manera exitosa debemos mejorar las prácticas que aún no hemos logrado desarrollar a lo largo del trabajo en equipo, como la comunicación y la división de tareas.
+Mantenerse haciendo: lograr los objetivos propuestos en cada sprint en tiempo y forma como lo venimos haciendo en cada ocasión que se nos presenta un desafío. Trabajar de manera colaborativa con todos los integrantes del equipo para lograr la entrega del sprint exitosamente.
+Hacer menos:
+Parar de hacer:  dejar entregables importantes para último momento. No dejarse estar cuando el trabajo este casi listo.
+
