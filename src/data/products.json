@@ -1,5 +1,25 @@
 [
  {
+  "id": 2,
+  "name": "clint Eastwood",
+  "price": 2500,
+  "discount": "15",
+  "category": "en oferta",
+  "description": " ",
+  "size": " ",
+  "image": "clintEastwood.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Escena Pulp Fiction",
+  "price": 2000,
+  "discount": " ",
+  "category": "novedad",
+  "description": ".",
+  "size": " ",
+  "image": "escenaPulpFiction.jpg"
+ },
+ {
   "id": 4,
   "name": "Harry Dunne",
   "price": 1500,
@@ -68,14 +88,5 @@
   "description": ".",
   "size": " ",
   "image": "mia&Vicent.jpg"
- },
- {
-  "id": 11,
-  "name": "",
-  "description": "",
-  "price": null,
-  "discount": null,
-  "category": "",
-  "image": "defaultImage.png"
  }
 ]
