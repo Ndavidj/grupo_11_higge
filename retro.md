@@ -13,3 +13,11 @@ Empezar a hacer: distribuir las tareas entre los miembros del grupo al inicio de
 Hacer igual (mantener): el entusiasmo.
 Hacer menos: 
 Dejar de hacer: permitir que avancen los días sin tener un plan de trabajo individual para que luego pueda integrarse con el aporte del resto del grupo.
+
+SPRINT 3
+El Sprint 3 fue otro desafío que supimos superar en equipo y aunque tuvimos pequeñas complicaciones no significaron una imposibilidad para cumplir en tiempo y forma con el trabajo solicitado para el mismo. Aparte nos pareció muy interesante que se muestre contenido dinámicamente a través de un motor de templates.
+Debemos seguir trabajando en una mejor administración de los plazos más organizada ya que cada sprint suma dificultad respecto del anterior y debemos estar preparados para tener recursos de tiempo para complicaciones futuras que pudieran existir.
+Empezar a hacer: disdribuir equitativamente lo que cada integrande del grupo debe realizar.
+Hacer igual (mantener): estar siempre un paso adelante en las tareas a realizar.
+Hacer menos: 
+Dejar de hacer: dejar tareas para último momento pensando que todo va a salir como lo planeado.
