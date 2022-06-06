@@ -13,3 +13,7 @@ Empezar a hacer: distribuir las tareas entre los miembros del grupo al inicio de
 Hacer igual (mantener): el entusiasmo.
 Hacer menos: 
 Dejar de hacer: permitir que avancen los días sin tener un plan de trabajo individual para que luego pueda integrarse con el aporte del resto del grupo.
+
+SPRINT 4
+El Sprint 4 expuso que seguimos con dificultades con la organización y la división de tareas dentro del Grupo. Algunas cuestiones ya estaban adelantadas del Sprint anterior y aún así logramos cumplir con el trabajo muy sobre la hora. Estamos viendo que la complejidad de cada nuevo Sprint supera a la anterior y debemos hacer una corrección con urgencia para que no nos traiga problemas futuros con los deadlines estipulados.
+El diagrama de estrella en este caso se repita con el anterior siendo idéntico en cuanto a las cosas a sostener y a corregir. 
