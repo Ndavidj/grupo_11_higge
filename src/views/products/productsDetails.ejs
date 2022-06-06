@@ -41,6 +41,10 @@
               <button type="submit">EDITAR PRODUCTO</button>
             </form>
           </div>
+          <div class="carrito">
+            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
         </section>
       </article>
 

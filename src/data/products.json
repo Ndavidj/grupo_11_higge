@@ -1,21 +1,12 @@
 [
  {
-  "id": 1,
-  "name": "al Pacino",
-  "price": 2500,
-  "discount": " ",
-  "category": "novedad",
-  "description": "Retrato Al Pacino",
-  "size": " ",
-  "image": "alPacino.jpg"
- },
- {
   "id": 2,
   "name": "clint Eastwood",
-  "price": "2500",
+  "price": 2500,
   "discount": "15",
-  "category": "",
+  "category": "en oferta",
   "description": " ",
+  "size": " ",
   "image": "clintEastwood.jpg"
  },
  {

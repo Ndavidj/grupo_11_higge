@@ -55,7 +55,7 @@ const productsController = {
   productsEditForm: (req, res) => {
     let id = req.params.id
     let productToEdit = products.find(product => product.id == id)
-    res.render("products/productsEditForm", ({ productToEdit: productToEdit }));
+    res.render("../views/products/productsEditForm", ({ productToEdit: productToEdit }));
   },
 
   update: (req, res) => {
@@ -85,6 +85,7 @@ const productsController = {
 		const id = req.params.id;
 		let finalProducts = products.filter(product => product.id != id);
 
+    products.splice(finalProducts)
     //ver que aqui creo que se debe aplicar Javascript para quitar este producto del array al borrarlo.
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));

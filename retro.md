@@ -14,6 +14,19 @@ Hacer igual (mantener): el entusiasmo.
 Hacer menos: 
 Dejar de hacer: permitir que avancen los días sin tener un plan de trabajo individual para que luego pueda integrarse con el aporte del resto del grupo.
 
+SPRINT 3
+El Sprint 3 fue otro desafío que supimos superar en equipo y aunque tuvimos pequeñas complicaciones no significaron una imposibilidad para cumplir en tiempo y forma con el trabajo solicitado para el mismo. Aparte nos pareció muy interesante que se muestre contenido dinámicamente a través de un motor de templates.
+Debemos seguir trabajando en una mejor administración de los plazos más organizada ya que cada sprint suma dificultad respecto del anterior y debemos estar preparados para tener recursos de tiempo para complicaciones futuras que pudieran existir.
+Empezar a hacer: disdribuir equitativamente lo que cada integrande del grupo debe realizar.
+Hacer igual (mantener): estar siempre un paso adelante en las tareas a realizar.
+Hacer menos: 
+Dejar de hacer: dejar tareas para último momento pensando que todo va a salir como lo planeado.
+
 SPRINT 4
-El Sprint 4 expuso que seguimos con dificultades con la organización y la división de tareas dentro del Grupo. Algunas cuestiones ya estaban adelantadas del Sprint anterior y aún así logramos cumplir con el trabajo muy sobre la hora. Estamos viendo que la complejidad de cada nuevo Sprint supera a la anterior y debemos hacer una corrección con urgencia para que no nos traiga problemas futuros con los deadlines estipulados.
-El diagrama de estrella en este caso se repita con el anterior siendo idéntico en cuanto a las cosas a sostener y a corregir. 
+El Sprint 4 fue un desafío que superamos sin demasiadas complicaciones, ya que, gran parte del trabajo se había adelantado en el sprint anterior.
+Empezar a hacer: creemos conveniente comenzar a tener una comunicación más fluida con los compañeros del equipo y también seria más productivo para el equipo dejar claras las actividades que cada uno debe realizar para lograr el objetivo del siguiente sprint de la mejor manera posible. 
+Más de: este apartado va de la mano con el anterior ya que para lograr nuestros objetivos de manera exitosa debemos mejorar las prácticas que aún no hemos logrado desarrollar a lo largo del trabajo en equipo, como la comunicación y la división de tareas.
+Mantenerse haciendo: lograr los objetivos propuestos en cada sprint en tiempo y forma como lo venimos haciendo en cada ocasión que se nos presenta un desafío. Trabajar de manera colaborativa con todos los integrantes del equipo para lograr la entrega del sprint exitosamente.
+Hacer menos:
+Parar de hacer:  dejar entregables importantes para último momento. No dejarse estar cuando el trabajo este casi listo.
+
