@@ -1,23 +1,89 @@
-
 <!DOCTYPE html>
-<html lang="es">
-  <%- include('../partials/header') %>
-<body
-	
-	<!-- Container -->
-	<div class="container" style="margin-top: 40px;">
-		<div class="row">
-			<div class="col-md-3">
-				<h2>Hi <%= user.firstName %> <%= user.lastName %> </h2>
-				<img src="/images/users/<%= user.avatar %> ">
-				<br>
-				<br>
-				<div class="alert alert-success"><%= user.email %> </div>
+<html lang="en-es">
+
+<%- include('../partials/head', {titleWeb: 'Mi cuenta' }) %>
+
+	<body>
+		<!-- ------------ Comienzo del HEADER  -->
+		<%- include('../partials/header') %>
+			<!-- ------------ fin del HEADER  -->
+
+			<!-- ------------ Comienzo del MAIN  -->
+
+			<div class="container-user-information">
+				<div class="first-container">
+					<div class="user-greeting">
+						<h2>Hola <%= user.firstName %>!</h2>
+					</div>
+
+					<div class="avatar-user">
+						<img src="/images/users/<%= user.avatar %>" alt="imagen de usuario" />
+					</div>
+
+				</div>
+
+
+				<div class="user-information">
+					<h2>mis datos personales</h2>
+					<p>Modifica tus datos personales a continuación para que tu cuenta esté siempre actualizada </p>
+				</div>
+
+				<div class="user-detail">
+					<h2>detalles</h2>
+					<%= user.firstName %>
+						<%= user.lastName %>
+							<%= user.birthdate %>
+								<%= user.interest %>
+				</div>
+
+				<div class="user-data-access">
+					<h2>correo electrónico</h2>
+					<%= user.email %>
+				</div>
+
+				<div class="user-password">
+					<!-- ver como hacer para que muestre puntos en lugar del password encryptado-->
+					<h2>Contraseña</h2>
+					<p>············</p>
+					<%= user.password%>
+				</div>
+
+				<div class="user-setting-account">
+
+					<h2>gestionar cuenta</h2>
+
+					<div class="edit-profile">
+						<a href="/users/editProfile">editar datos</a>
+					</div>
+
+					<div class="user-delete">
+						<form class="delete-account" action="/users/delete" method="POST" enctype="multipart/form-data">
+							<a href="/users/editProfile">eliminar cuenta</a>
+						</form>
+					</div>
+				</div>
+
+
+
 			</div>
-		</div>
-	</div>
-	<!-- //Container -->
-	
-	<%- include('../partials/footer') %>
-</body>
-</html>
+
+			<!-- //Container -->
+
+			<!-- ------------ Fin del MAIN  -->
+
+			<div class="banner-divisor">
+				<div class="logo-insta">
+					<i class="fa-brands fa-instagram"></i>
+				</div>
+
+				<div class="mensaje">
+					<p>buscanos en instagram</p>
+					<h4>@higge_11</h4>
+				</div>
+			</div>
+
+			<!-- ------------ comienzo del FOOTER  -->
+			<%- include('../partials/footer') %>
+
+				<!-- ------------ Fin del FOOTER  -->
+	</body>

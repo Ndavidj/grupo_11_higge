@@ -4,43 +4,13 @@
   "firstName": "choco",
   "lastName": "torta",
   "email": "chocotorta@higge.com",
-  "birthdate": "2022-06-06",
-  "address": "ese",
-  "interest": [
-   "Arte",
-   "Deportes"
-  ],
-  "password": "$2a$10$5uvLNmNNKPPBYqnP0tvLIeijb/l6jLIGKoLj7VFUyTCdZAkhAGLAe",
-  "avatar": "1654731292003_img.jpg"
- },
- {
-  "id": 2,
-  "firstName": "Pedro",
-  "lastName": "amarillo",
-  "email": "PEPE@PEPELANDIA.COM",
-  "birthdate": "2022-05-30",
-  "address": "asd",
-  "interest": [
-   "Naturaleza",
-   "Arte",
-   "Deportes"
-  ],
-  "password": "$2a$10$7y4gm/saUpCJ1zMlyyizne4mr2xZhf1gu4/ywg/dbN1pKlGsZ0H22",
-  "avatar": "1654732006262_img.jpg"
- },
- {
-  "id": 3,
-  "firstName": "asd",
-  "lastName": "asd",
-  "email": "asd@asd.com",
-  "birthdate": "2022-05-29",
-  "address": "asd",
+  "birthdate": "2007-08-26",
+  "address": "calle falsa 123",
   "interest": [
    "Cine",
-   "Música",
-   "Naturaleza"
+   "Deportes"
   ],
-  "password": "$2a$10$t8v3wpHd.Fetgq9FnTflk.qNmU3lHtf.Uk03tgDbzgcM0PRCJWST.",
-  "avatar": "1654732496383_img.jpg"
+  "password": "$2a$10$ejOz/PeXYwXaQjvPtWvmQ.7V5.NswBMHokNNqxtTPohHoz14v5Ina",
+  "avatar": "1654814064760_img.jpg"
  }
 ]

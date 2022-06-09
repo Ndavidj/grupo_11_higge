@@ -41,6 +41,6 @@ app.use("/users", usersRouter);
 const productsRouter = require("./routes/productsRouter.js");
 app.use("/products", productsRouter);
 // Listen to server for server up!
-app.set("port", process.env.PORT || 3500);
+app.set("port", process.env.PORT || 4000);
 app.listen (app.get("port"), () => console.log ("Server running in http://localhost:" + app.get("port")));
 
