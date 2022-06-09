@@ -72,9 +72,11 @@
  {
   "id": 9,
   "name": "Marty Mcfly",
-  "price": "5000",
-  "discount": "",
+  "price": 5000,
+  "discount": " ",
+  "category": "novedad",
   "description": ".",
+  "size": " ",
   "image": "martyMcfly.jpg"
  },
  {

@@ -18,10 +18,6 @@ const storage = multer.diskStorage({
         cb(null, newProductImg);
     }
 });
-
-
-
-
 const upload = multer({ storage: storage });
 
 //Ruta para ver todos los productos

@@ -1,44 +1,96 @@
-const fs = require('fs');
-const path = require('path');
-//Configuro a continuación el archivo de usuarios de la base de datos de Json
-const usersFilePath = path.join(__dirname, '../data/usersData.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const bcryptjs = require('bcryptjs');
+const {validationResult} = require('express-validator');
 
-const usersController = {
-  login: (req, res) => {
-    res.render("users/login");
-  },
+const User = require('../models/User')
 
-  register: (req, res) => {
-    res.render("users/register");
-  },
+const controller = {
+	register: (req, res) => {
+		return res.render('users/register');
+	},
+	processRegister: (req, res) => {
+		const resultValidation = validationResult(req);
 
-  contact: (req, res) => {
-    res.render("users/contact");
-  },
+		if (resultValidation.errors.length > 0) {
+			return res.render('users/register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
 
-  // store con la lógica para que guarde la info del nuevo usuario al registrarse
-  store: (req, res)=> {
-    let newUser = {
-      id: users[users.length - 1].id + 1,
-      name: req.body.name,
-      userName: req.body.userName,
-      email: req.body.email,
-      birthdate: Date(req.body.birthdate),
-      address: req.body.address,
-      interest: req.body.interest,
-      password: req.body.password,
-      image: req.file ? req.file.filename : "userDefaultImage.png",
-    };
+		let userInDB = User.findByField('email', req.body.email);
 
-    users.push(newUser);
+		if (userInDB) {
+			return res.render('users/register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
+		}
 
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+		let userToCreate = {
+			...req.body,
+			password: bcryptjs.hashSync(req.body.password, 10),
+			avatar: req.file ? req.file.filename : "default-image.png"
+		}
 
-    res.redirect('/login');
+		let userCreated = User.create(userToCreate);
 
-  },
-  }
-;
+		return res.redirect('users/login');
+	},
+	login: (req, res) => {
+		return res.render('users/login');
+	},
+	loginProcess: (req, res) => {
+		let userToLogin = User.findByField('email', req.body.email);
+		
+		if(userToLogin) {
+			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+			if (isOkThePassword) {
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin;
 
-module.exports = usersController;
+				if(req.body.remember) {
+					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+				}
+
+				return res.redirect('profile');
+			} 
+			return res.render('users/login', {
+				errors: {
+					email: {
+						msg: 'Las credenciales son inválidas'
+					}
+				}
+			});
+		}
+
+		return res.render('users/login', {
+			errors: {
+				email: {
+					msg: 'No se encuentra este email en nuestra base de datos'
+				}
+			}
+		});
+	},
+
+	forgotPassword: (req, res) => {
+		res.send('Se envio formulario para recuperar contraseña a su email')
+	},
+
+	profile: (req, res) => {
+		return res.render('users/profile', {
+			user: req.session.userLogged
+		});
+	},
+
+	logout: (req, res) => {
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	}
+}
+
+module.exports = controller;

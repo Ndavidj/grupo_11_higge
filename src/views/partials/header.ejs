@@ -54,6 +54,13 @@
           <a href="/products/create">Vender</a>
         </li>
       </ul>
+
+      <div class="create-product" id="create-product">
+        <% if (locals.userLogged) { %>
+          <a href="/users/logout">logout</a>
+          <% } %>
+      </div>
+
     </div>
   </div>
 </header>

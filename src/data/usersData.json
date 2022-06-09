@@ -1,38 +1,46 @@
 [
-  {
-    "id": 1,
-    "firstName": "David",
-    "lastName": "Nunez",
-    "email": "ndavidj@higge.com",
-    "password": "123456",
-    "category": "admin",
-    "image": ""
-  },
-  {
-    "id": 2,
-    "firstName": "Sebastian",
-    "lastName": "Pereyra",
-    "email": "sebasPereyra@higge.com",
-    "password": "123456",
-    "category": "admin",
-    "image":""
-  },
-  {
-    "id": 3,
-    "firstName": "Mayda",
-    "lastName": "Mutura",
-    "email": "maydamutura@higge.com",
-    "password": "123456",
-    "category": "admin",
-    "image":""
-  },
-  {
-    "id": 4,
-    "firstName": "Esther",
-    "lastName": "Sanz",
-    "email": "esthersanz@higge.com",
-    "password": "123456",
-    "category": "client",
-    "image":""
-  }
+ {
+  "id": 1,
+  "firstName": "choco",
+  "lastName": "torta",
+  "email": "chocotorta@higge.com",
+  "birthdate": "2022-06-06",
+  "address": "ese",
+  "interest": [
+   "Arte",
+   "Deportes"
+  ],
+  "password": "$2a$10$5uvLNmNNKPPBYqnP0tvLIeijb/l6jLIGKoLj7VFUyTCdZAkhAGLAe",
+  "avatar": "1654731292003_img.jpg"
+ },
+ {
+  "id": 2,
+  "firstName": "Pedro",
+  "lastName": "amarillo",
+  "email": "PEPE@PEPELANDIA.COM",
+  "birthdate": "2022-05-30",
+  "address": "asd",
+  "interest": [
+   "Naturaleza",
+   "Arte",
+   "Deportes"
+  ],
+  "password": "$2a$10$7y4gm/saUpCJ1zMlyyizne4mr2xZhf1gu4/ywg/dbN1pKlGsZ0H22",
+  "avatar": "1654732006262_img.jpg"
+ },
+ {
+  "id": 3,
+  "firstName": "asd",
+  "lastName": "asd",
+  "email": "asd@asd.com",
+  "birthdate": "2022-05-29",
+  "address": "asd",
+  "interest": [
+   "Cine",
+   "Música",
+   "Naturaleza"
+  ],
+  "password": "$2a$10$t8v3wpHd.Fetgq9FnTflk.qNmU3lHtf.Uk03tgDbzgcM0PRCJWST.",
+  "avatar": "1654732496383_img.jpg"
+ }
 ]
