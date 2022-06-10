@@ -10,6 +10,11 @@
 }
 
 .container-user-information {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 250, 250, 1) 7%,
+    rgba(255, 255, 255, 1) 87%
+  );
   line-height: 5px;
   margin: 20px auto;
   box-shadow: 4px 9px 8px -4px rgb(0 0 0 / 75%);
@@ -20,15 +25,58 @@
 
 .first-container {
   display: flex;
-  width: 80%;
+  width: 85%;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
 }
 
 .avatar-user img {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 120px;
+  max-height: 120px;
   border-radius: 10%;
+}
+
+.user-information p,
+.user-details ul li,
+.user-data-access p,
+.user-password p {
+  font-size: 15px;
+  margin: 10px;
+}
+
+.user-details ul li ul li {
+  margin: 5px 15px;
+  font-size: 13px;
+}
+
+.user-details p {
+  font-size: 13px;
+  margin: auto 10px;
+}
+
+.user-information,
+.user-details,
+.user-data-access,
+.user-password,
+.user-setting-account {
+  margin: 20px auto;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-setting-account h3 {
+  margin-bottom: 10px;
+}
+
+.edit-profile a {
+  margin-bottom: 5px;
+}
+
+.edit-profile a:hover,
+.user-delete form button:hover {
+  text-decoration: underline;
+  margin: auto 10px;
 }
