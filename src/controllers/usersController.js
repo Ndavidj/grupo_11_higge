@@ -71,7 +71,7 @@ const controller = {
 		return res.render('users/login', {
 			errors: {
 				email: {
-					msg: 'No se encuentra este email en nuestra base de datos'
+					msg: 'email no registrado'
 				}
 			}
 		});
