@@ -389,7 +389,7 @@ section article:hover {
 
   .usser-management {
     display: flex;
-    width: 23%;
+    width: 20%;
     flex-direction: row;
     margin-right: 3px;
     margin-top: 50px;
@@ -416,7 +416,7 @@ section article:hover {
     font-size: 28px;
     position: relative;
     top: -3px;
-    right: 19px;
+    right: 40px;
   }
 
   .form-search {

@@ -9,16 +9,25 @@
     </figure>
 
     <div class="usser-management">
-      <ul class="account-management">
-        <li class="login"><a href="/users/login">Iniciar sesión</a></li>
-        <li class="register"><a href="/users/register">Crear cuenta</a></li>
-      </ul>
+      <% if (locals.userLogged) { %>
+        <ul class="account-management">
+          <li class="login"><a href="/users/profile">mi perfil</a></li>
+          <li class="register"><a href="/users/logout">logout</a></li>
+        </ul>
+        <div class="cart-shop">
+          <button class="cart-shopping">
+            <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+          </button>
+        </div>
 
-      <div class="cart-shop">
-        <button class="cart-shopping">
-          <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-        </button>
-      </div>
+        <% } else { %>
+          <ul class="account-management">
+            <li class="login"><a href="/users/login">Iniciar sesión</a></li>
+            <li class="register"><a href="/users/register">Crear cuenta</a></li>
+          </ul>
+
+          <% } %>
+
     </div>
   </div>
 
@@ -50,16 +59,14 @@
         <li class="about-us" id="about-us">
           <a href="/aboutUs">Acerca de nosotros</a>
         </li>
+
+        <% if (locals.userLogged) { %>
         <li class="create-product" id="create-product">
           <a href="/products/create">Vender</a>
         </li>
+        <% } %>
+        
       </ul>
-
-      <div class="user-loged" id="user-loged">
-        <% if (locals.userLogged) { %>
-          <a href="/users/logout">logout</a>
-          <% } %>
-      </div>
 
     </div>
   </div>

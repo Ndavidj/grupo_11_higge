@@ -1,0 +1,30 @@
+<div class="usser-management">
+    <% if (locals.userLogged) { %>
+        <div id="user-account">
+            <a href="/users/profile">
+                <p id="user-greeting">Tu cuenta</p>
+            </a>
+        </div>
+
+        <div class="user-loged" id="user-loged">
+            <a href="/users/logout">
+                <p id="user-greeting">Tu perfil</p>
+            </a>
+        </div>
+
+        <div class="cart-shop">
+            <button class="cart-shopping">
+                <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            </button>
+        </div>
+
+
+        <% } else { %>
+            <ul class="account-management">
+                <li class="login"><a href="/users/login">Iniciar sesión</a></li>
+                <li class="register"><a href="/users/register">Crear cuenta</a></li>
+            </ul>
+
+            <% } %>
+
+</div>
