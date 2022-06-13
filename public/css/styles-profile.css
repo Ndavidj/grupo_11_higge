@@ -79,4 +79,5 @@
 .user-delete form button:hover {
   text-decoration: underline;
   margin: auto 10px;
+  cursor: pointer
 }
