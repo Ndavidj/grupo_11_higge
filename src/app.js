@@ -4,18 +4,28 @@ const path = require ("path");
 const methodOverride = require('method-override');
 const session = require ("express-session");
 const cookieParser = require('cookie-parser');
+const userLoggedMiddleware = require('./middlewares/routes/users/userLoggedMiddleware')
 
+// Middlewares application importados y nativos 
+
+
+app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
+app.use(express.urlencoded({ extended: false })); // Para poder leer el body
+app.use(express.json()); // Para poder leer el body
+app.use(session ({ //Para poder iniciar session
+    secret: "Secret",
+    resave: true,
+    saveUninitialized: false  
+}));
+app.use(cookieParser()); // Para poder usar Cookies
+app.use(methodOverride("_method"));
+
+
+// ************ Template Engine ************
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
-// Middlewares
-
-app.use(express.static("public"));
-//Para que pueda tomar el body de formularios
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(methodOverride("_method"));
+app.use(userLoggedMiddleware);
 
 // --Routes--
 
@@ -30,9 +40,7 @@ app.use("/users", usersRouter);
 // Products routes
 const productsRouter = require("./routes/productsRouter.js");
 app.use("/products", productsRouter);
-
 // Listen to server for server up!
-app.listen(process.env.PORT || 4000, () => {
-  console.log("Servidor corriendo en el puerto http://localhost:4000");
-});
+app.set("port", process.env.PORT || 4000);
+app.listen (app.get("port"), () => console.log ("Server running in http://localhost:" + app.get("port")));
 

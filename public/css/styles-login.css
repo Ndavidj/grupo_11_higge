@@ -39,6 +39,9 @@
 .field input {
   width: 60%;
   border: 1px solid grey;
+  text-transform: lowercase;
+  font-size: 22px;
+  margin-left: 5px;
 }
 
 .check-remember {
@@ -84,6 +87,7 @@
   text-decoration: none;
   color: white;
 }
+
 
 @media (min-width: 768px) {
   .login-form {

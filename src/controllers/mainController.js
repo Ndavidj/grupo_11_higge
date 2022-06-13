@@ -33,6 +33,11 @@ const mainController = {
   aboutUs: (req, res) => {
     res.render("aboutUs");
   },
+  
+  contact: (req, res) => {
+		res.render('contact')
+	},
+
 };
 
 module.exports = mainController;
