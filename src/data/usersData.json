@@ -1,38 +1,63 @@
 [
-  {
-    "id": 1,
-    "firstName": "David",
-    "lastName": "Nunez",
-    "email": "ndavidj@higge.com",
-    "password": "123456",
-    "category": "admin",
-    "image": ""
-  },
-  {
-    "id": 2,
-    "firstName": "Sebastian",
-    "lastName": "Pereyra",
-    "email": "sebasPereyra@higge.com",
-    "password": "123456",
-    "category": "admin",
-    "image":""
-  },
-  {
-    "id": 3,
-    "firstName": "Mayda",
-    "lastName": "Mutura",
-    "email": "maydamutura@higge.com",
-    "password": "123456",
-    "category": "admin",
-    "image":""
-  },
-  {
-    "id": 4,
-    "firstName": "Esther",
-    "lastName": "Sanz",
-    "email": "esthersanz@higge.com",
-    "password": "123456",
-    "category": "client",
-    "image":""
-  }
+ {
+  "id": 1,
+  "firstName": "David",
+  "lastName": "Nunez",
+  "email": "ndavidj@higge.com",
+  "password": "123456",
+  "category": "admin",
+  "image": ""
+ },
+ {
+  "id": 2,
+  "firstName": "Sebastian",
+  "lastName": "Pereyra",
+  "email": "sebasPereyra@higge.com",
+  "password": "123456",
+  "category": "admin",
+  "image": ""
+ },
+ {
+  "id": 3,
+  "firstName": "Mayda",
+  "lastName": "Mutura",
+  "email": "maydamutura@higge.com",
+  "password": "123456",
+  "category": "admin",
+  "image": ""
+ },
+ {
+  "id": 4,
+  "firstName": "Esther",
+  "lastName": "Sanz",
+  "email": "esthersanz@higge.com",
+  "password": "123456",
+  "category": "client",
+  "image": ""
+ },
+ {
+  "id": 5,
+  "birthdate": "Wed Jun 08 2022 18:37:53 GMT-0300 (hora estándar de Argentina)",
+  "image": "userDefaultImage.png"
+ },
+ {
+  "id": 6,
+  "birthdate": "Wed Jun 08 2022 18:41:33 GMT-0300 (hora estándar de Argentina)",
+  "image": "userDefaultImage.png"
+ },
+ {
+  "id": 7,
+  "birthdate": "Wed Jun 08 2022 19:05:23 GMT-0300 (hora estándar de Argentina)",
+  "image": "userDefaultImage.png"
+ },
+ {
+  "id": 8,
+  "birthdate": "Mon Jun 13 2022 09:02:00 GMT-0300 (hora estándar de Argentina)",
+  "image": "userDefaultImage.png"
+ },
+ {
+  "id": 9,
+  "birthdate": "Mon Jun 13 2022 09:11:29 GMT-0300 (hora estándar de Argentina)",
+  "image": "userDefaultImage.png"
+ }
 ]
