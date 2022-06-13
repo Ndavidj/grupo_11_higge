@@ -35,7 +35,7 @@ const controller = {
 			password: bcryptjs.hashSync(req.body.password, 10),
 			avatar: req.file ? req.file.filename : "default-image.png"
 		}
-
+		//aplicar la lógica para que el checkbox al marcar uno solo venga dentro de un array
 		let userCreated = User.create(userToCreate);
 
 		return res.redirect('login');

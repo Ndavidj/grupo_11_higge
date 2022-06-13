@@ -12,5 +12,16 @@
   ],
   "password": "$2a$10$ejOz/PeXYwXaQjvPtWvmQ.7V5.NswBMHokNNqxtTPohHoz14v5Ina",
   "avatar": "1654814064760_img.jpg"
+ },
+ {
+  "id": 2,
+  "firstName": "sebas",
+  "lastName": "pereyra ",
+  "email": "spereyrairaola@gmail.com",
+  "birthdate": "1987-06-10",
+  "address": "mi casa 123",
+  "interest": "Deportes",
+  "password": "$2a$10$V7LT.79AJTUi48avkh2v/.CQgIKyo5RU47Qyihpo/O3qERhn1X3lK",
+  "avatar": "1655139272980_img.jpg"
  }
 ]
