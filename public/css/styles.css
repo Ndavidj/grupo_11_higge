@@ -9,6 +9,13 @@
   line-height: 20px;
 }
 
+.text-alert {
+  margin-top: 10 px;
+  font-size: 12px;
+  color: red;
+  margin-left: 5px;
+}
+
 /* --------- HEADER -- */
 .main-header {
   width: 100%;

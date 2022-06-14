@@ -14,26 +14,27 @@
           <div>
             <h4 class="login-title">iniciar sesión</h4>
           </div>
+         
           <div class="field">
             <label for="email">email</label>
             <input type="email" name="email" id="email" placeholder=" ejemplo@mail.com" />
-            <% if (locals.errors && errors.email) { %>
-									<div class="text-danger">
-										<%= errors.email.msg %>
-									</div>
-								<% } %>
           </div>
+          <% if (locals.errors && errors.email) { %>
+            <div class="text-alert">
+              <%= errors.email.msg %>
+            </div>
+          <% } %>
           <div class="field">
             <label for="password">Contraseña</label>
             <input type="password" name="password" id="password" 
               placeholder=" ingrese su Contraseña" />
-              <% if (locals.errors && errors.password) { %>
-                <div class="text-alert">
-                  <%= errors.password.msg %>
-                </div>
-                <% } %>
           </div>
-          </div>
+          <% if (locals.errors && errors.password) { %>
+            <div class="text-alert">
+              <%= errors.password.msg %>
+            </div>
+            <% } %>
+        </div>
           <div class="check-remember">
             <label>
               <input type="checkbox" name="remember" value="remember" />Recordarme
