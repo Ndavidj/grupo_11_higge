@@ -1,13 +1,16 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
-const User = require('../models/User')
+// const User = require('../models/User')
+// Se requiere el modelo de Users
+const db = requiere('../database/models')
 
 const controller = {
 	register: (req, res) => {
 		return res.render('users/register');
 	},
-	processRegister: (req, res) => {
+
+	processRegister: async (req, res) => {
 		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
@@ -15,37 +18,46 @@ const controller = {
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			});
-		}
+		} else {
 
-		let userInDB = User.findByField('email', req.body.email);
+			let newUser = req.body;
 
-		if (userInDB) {
-			return res.render('users/register', {
-				errors: {
-					email: {
-						msg: 'Este email ya está registrado'
-					}
+			let userInDB = await Users.findOne({
+				where: {
+					user_email: newUser.user_email
 				},
-				oldData: req.body
-			});
-		}
 
-		let userToCreate = {
-			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: req.file ? req.file.filename : "default-image.png"
-		}
-		//aplicar la lógica para que el checkbox al marcar uno solo venga dentro de un array
-		let userCreated = User.create(userToCreate);
+			})
+				.catch((error) => console.log(error));
 
-		return res.redirect('login');
+			if (userInDB) {
+				return res.render("users/register", {
+					errors: {
+						email: { msg: "*Este email ya está en uso" },
+					},
+					oldData: req.body,
+				});
+			}
+
+
+			let userToCreate = {
+				...req.body,
+				password: bcryptjs.hashSync(req.body.password, 10),
+				avatar: req.file ? req.file.filename : "default-image.png"
+			}
+			//aplicar la lógica para que el checkbox al marcar uno solo venga dentro de un array
+			let userCreated = Users.create(userToCreate);
+
+
+			return res.redirect('login');
+		}
 	},
 	login: (req, res) => {
 		return res.render('users/login');
 	},
 
 	loginProcess: (req, res) => {
-		let userToLogin = User.findByField('email', req.body.email);
+		let userToLogin = Users.findByField('email', req.body.email);
 
 		if (userToLogin) {
 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -99,7 +111,7 @@ const controller = {
 	},
 
 	delete: (req, res) => {
-		User.delete(req.params.id);
+		Users.delete(req.params.id);
 		res.redirect("/");
 	},
 
