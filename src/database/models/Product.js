@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product';
     let cols = {
-        idProduct: {
+        id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -27,10 +27,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: true
         },
-        idSize: {
-            type: dataTypes.INTEGER,
-            allowNull: true
-        },
         idCategory: {
             type: dataTypes.INTEGER,
             allowNull: true
@@ -42,25 +38,13 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Product = sequelize.define(alias, cols, config);
 
-      Product.associate = function (models){
-        Product.belongsToMany (models.Cart, {
-            as: "products",
-            through: "cartsProducts",
-            foreingKey: "idProduct",
-            otherKey: "idCart",
-            timestamps: false
-        })
+    Product.associate = function (models) {
 
-        Product.belongsTo (models.Size, {
-            as: "size",
-            foreingKey: "idSize"
-        })
-
-        Product.belongsTo (models.Category, {
-            as: "category",
+        Product.belongsTo(models.Category, {
+            as: "categories",
             foreingKey: "idCategory"
         })
-    }  
+    }
 
 
     return Product;

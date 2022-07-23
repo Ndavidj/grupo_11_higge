@@ -3,55 +3,67 @@ const { validationResult } = require('express-validator');
 
 // const User = require('../models/User')
 // Se requiere el modelo de Users
-const db = requiere('../database/models')
+const db = require('../database/models')
+const User = db.User;
 
 const controller = {
 	register: (req, res) => {
 		return res.render('users/register');
 	},
 
+	// Creación del usuario
 	processRegister: async (req, res) => {
-		const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
 
-		if (resultValidation.errors.length > 0) {
-			return res.render('users/register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		} else {
+        //Valida si pasan errores de validacion en la creacion del usuario
 
-			let newUser = req.body;
+        if (resultValidation.errors.length > 0) {
+            return  res.render('users/register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
 
-			let userInDB = await Users.findOne({
-				where: {
-					user_email: newUser.user_email
-				},
+        } else {
+            let newUser = req.body;
+            // Valida que el email no esté en uso
+            let userInDB = await User.findOne({
+                where: {
+                    email: newUser.email
+                }
+            })
+                .catch((error) => console.log(error));
 
-			})
-				.catch((error) => console.log(error));
+            if (userInDB) {
+                return res.render("users/register", {
+                    errors: {
+                        email: { msg: "Este email ya está en uso" },
+                    },
+                    oldData: req.body,
+                });
+            } else {
+            User.create({
+                firstName: newUser.firstName,
+                lastName: newUser.lastName,
+                email: newUser.email,
+                dateBirthday: newUser.birthdate,
+                address: newUser.address,
+                interest: newUser.interest,
+                avatar: req.file ? req.file.filename : "default-image.png",
+                password: bcryptjs.hashSync(newUser.password, 10),
+				roleId: newUser.roleId
 
-			if (userInDB) {
-				return res.render("users/register", {
-					errors: {
-						email: { msg: "*Este email ya está en uso" },
-					},
-					oldData: req.body,
-				});
-			}
+            })
+                .then(() => {
+                    return res.redirect('login');
+                })
 
+                .catch((error) => {
+                    return res.send(error);
+                })
+        }}
 
-			let userToCreate = {
-				...req.body,
-				password: bcryptjs.hashSync(req.body.password, 10),
-				avatar: req.file ? req.file.filename : "default-image.png"
-			}
-			//aplicar la lógica para que el checkbox al marcar uno solo venga dentro de un array
-			let userCreated = Users.create(userToCreate);
-
-
-			return res.redirect('login');
-		}
 	},
+
 	login: (req, res) => {
 		return res.render('users/login');
 	},

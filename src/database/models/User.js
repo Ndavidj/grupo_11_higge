@@ -1,7 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
+    
     let cols = {
-        idUser: {
+        id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -19,19 +20,27 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        password: {
-            type: dataTypes.STRING,
-            allowNull: false
-        },
         dateBirthday: {
             type: dataTypes.DATE,
+            allowNull: true
+        },
+        address: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
+        interest: {
+            type: dataTypes.STRING,
             allowNull: true
         },
         avatar: {
             type: dataTypes.STRING,
             allowNull: true
         },
-        idRole: {
+        password: {
+            type: dataTypes.STRING,
+            allowNull: false
+        },
+        roleId: {
             type: dataTypes.INTEGER,
             allowNull: true
         }
@@ -44,15 +53,10 @@ module.exports = (sequelize, dataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
-    User.associate = function (models) {
+    User.associate = function(models) {
         User.belongsTo(models.Role, {
             as: "role",
-            foreingKey: "idRole"
-        })
-
-        User.hasMany(models.Cart, {
-            as: "userCart",
-            foreingKey: "idUser"
+            foreignKey: 'roleId'
         })
     }
 

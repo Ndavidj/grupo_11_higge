@@ -9,6 +9,7 @@ module.exports = [
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
     body('address').notEmpty().withMessage('Tienes que escribir una direccion'),
+	// body('roleId').notEmpty().withMessage('Tienes que seleccionar un tipo de usuario'),
     body('avatar').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];

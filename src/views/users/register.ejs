@@ -121,7 +121,7 @@
         <div class="control-form">
           <label for="password">Contraseña</label>
           <input type="password" name="password"
-            class="password <%= locals.errors && errors.address ? 'is-invalid' : null %>" placeholder="Contraseña">
+            class="password <%= locals.errors && errors.password ? 'is-invalid' : null %>" placeholder="Contraseña">
 
           <% if (locals.errors && errors.password) { %>
             <div class="text-alert">
@@ -130,6 +130,25 @@
             <% } %>
 
         </div>
+
+        <div class="control-form">
+          <input type="radio" name="roleId" class="roleId" value="1">
+          Admin <br>
+          <input type="radio" name="roleId" class="roleId" value="2">
+          Invitado
+
+          <% if (locals.errorMessages && errorMessages.roleId) { %>
+            <p class="error">
+              <%= errorMessages.roleId.msg %>
+            </p>
+            <% } %>
+        </div>
+
+
+
+
+        </br>
+
 
         <div class="control-form">
           <button type="submit" class="button-form">Enviar</button>
