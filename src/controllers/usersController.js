@@ -1,5 +1,8 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
+//Se importan librerúas
+const bcrypt = require("bcryptjs");
+
 
 // const User = require('../models/User')
 // Se requiere el modelo de Users
@@ -13,54 +16,55 @@ const controller = {
 
 	// Creación del usuario
 	processRegister: async (req, res) => {
-        const resultValidation = validationResult(req);
+		const resultValidation = validationResult(req);
 
-        //Valida si pasan errores de validacion en la creacion del usuario
+		//Valida si pasan errores de validacion en la creacion del usuario
 
-        if (resultValidation.errors.length > 0) {
-            return  res.render('users/register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
+		if (resultValidation.errors.length > 0) {
+			return res.render('users/register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
 
-        } else {
-            let newUser = req.body;
-            // Valida que el email no esté en uso
-            let userInDB = await User.findOne({
-                where: {
-                    email: newUser.email
-                }
-            })
-                .catch((error) => console.log(error));
+		} else {
+			let newUser = req.body;
+			// Valida que el email no esté en uso
+			let userInDB = await User.findOne({
+				where: {
+					email: newUser.email
+				}
+			})
+				.catch((error) => console.log(error));
 
-            if (userInDB) {
-                return res.render("users/register", {
-                    errors: {
-                        email: { msg: "Este email ya está en uso" },
-                    },
-                    oldData: req.body,
-                });
-            } else {
-            User.create({
-                firstName: newUser.firstName,
-                lastName: newUser.lastName,
-                email: newUser.email,
-                dateBirthday: newUser.birthdate,
-                address: newUser.address,
-                interest: newUser.interest,
-                avatar: req.file ? req.file.filename : "default-image.png",
-                password: bcryptjs.hashSync(newUser.password, 10),
-				roleId: newUser.roleId
+			if (userInDB) {
+				return res.render("users/register", {
+					errors: {
+						email: { msg: "Este email ya está en uso" },
+					},
+					oldData: req.body,
+				});
+			} else {
+				User.create({
+					firstName: newUser.firstName,
+					lastName: newUser.lastName,
+					email: newUser.email,
+					dateBirthday: newUser.birthdate,
+					address: newUser.address,
+					interest: newUser.interest,
+					avatar: req.file ? req.file.filename : "default-image.png",
+					password: bcryptjs.hashSync(newUser.password, 10),
+					//roleId: newUser.roleId
 
-            })
-                .then(() => {
-                    return res.redirect('login');
-                })
+				})
+					.then(() => {
+						return res.redirect('login');
+					})
 
-                .catch((error) => {
-                    return res.send(error);
-                })
-        }}
+					.catch((error) => {
+						return res.send(error);
+					})
+			}
+		}
 
 	},
 
@@ -68,8 +72,11 @@ const controller = {
 		return res.render('users/login');
 	},
 
-	loginProcess: (req, res) => {
-		let userToLogin = Users.findByField('email', req.body.email);
+	loginProcess: async (req, res) => {
+		let userToLogin = await User.findOne({
+			where: { email: req.body.email },
+		}).catch((error) => console.log(error));
+;
 
 		if (userToLogin) {
 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -123,7 +130,7 @@ const controller = {
 	},
 
 	delete: (req, res) => {
-		Users.delete(req.params.id);
+		User.delete(req.params.id);
 		res.redirect("/");
 	},
 
