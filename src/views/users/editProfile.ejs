@@ -17,6 +17,25 @@
                     <div class="user-data">
                         <form id="formEditProfile" action="/users/edit?_method=PUT" method="POST"
                             enctype="multipart/form-data">
+                            <div>
+                                <div class="flex-desktop">
+                                    <div class="first-flex">
+                                        <div class="form-class">
+                                            <label for="firstName" class="form-label">Nombre:</label>
+                                            <br>
+                                            <input type="text" name="firstName" class="form-input" value="<%= locals.userLogged.firstName %>" id="name">
+                                        </div>
+                                        <% if (locals.errorMessages && errorMessages.firstName) { %>
+                                            <p class="error"> <%= errorMessages.firstName.msg %> </p>
+                                        <% } %>
+                                  
+                                        <div class="form-class">
+                                            <button type="submit" class="submitButton">Guardar cambios</button>
+        
+                                        </div>
+                                    </div>
+                                </div>       
+                            </div>
                             
                         </form>
                     </div>

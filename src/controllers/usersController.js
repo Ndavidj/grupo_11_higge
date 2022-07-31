@@ -1,10 +1,9 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-//Se importan librerúas
-const bcrypt = require("bcryptjs");
+const path = require('path')
+const fs = require("fs");
 
-
-// const User = require('../models/User')
+const Users = require('../models/User')
 // Se requiere el modelo de Users
 const db = require('../database/models')
 const User = db.User;
@@ -53,7 +52,7 @@ const controller = {
 					interest: newUser.interest,
 					avatar: req.file ? req.file.filename : "default-image.png",
 					password: bcryptjs.hashSync(newUser.password, 10),
-					//roleId: newUser.roleId
+					roleId: newUser.roleId
 
 				})
 					.then(() => {
@@ -73,39 +72,53 @@ const controller = {
 	},
 
 	loginProcess: async (req, res) => {
-		let userToLogin = await User.findOne({
-			where: { email: req.body.email },
-		}).catch((error) => console.log(error));
-;
+		const resultValidation = validationResult(req);
 
-		if (userToLogin) {
-			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-			if (isOkThePassword) {
-				delete userToLogin.password;
-				req.session.userLogged = userToLogin;
+		//Valida si pasan errores de validacion en la creacion del usuario
+		if (resultValidation.errors.length > 0) {
+			res.render("users/login", {
+				errors: resultValidation.mapped(),
+				oldData: req.body,
+			});
+		} else {
+			let userToLogin = await User.findOne({
+				where: { email: req.body.email },
 
-				if (req.body.remember) {
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+			}).catch((error) => console.log(error));
+
+
+			/* Comparing the password that the user entered with the password that is stored in the database. */
+			if (userToLogin) {
+				let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+				if (isOkThePassword) {
+					delete userToLogin.password;
+					req.session.userLogged = userToLogin;
+
+					if (req.body.rememberUser) {
+						res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+					}
+
+					return res.redirect('/');
 				}
 
-				return res.redirect('/');
+				return res.render('users/login', {
+					errors: {
+						email: {
+							msg: 'Las credenciales son inválidas'
+						}
+					}
+				});
 			}
+
 			return res.render('users/login', {
 				errors: {
 					email: {
-						msg: 'Las credenciales son inválidas'
+						msg: 'No se encuentra este email en nuestra base de datos'
 					}
 				}
 			});
-		}
 
-		return res.render('users/login', {
-			errors: {
-				email: {
-					msg: 'email no registrado'
-				}
-			}
-		});
+		}
 	},
 
 	forgotPassword: (req, res) => {
@@ -119,19 +132,41 @@ const controller = {
 	},
 
 	edit: (req, res) => {
-		return res.render('users/profile', {
-			user: req.session.userLogged
-		});
+		return res.render("users/editProfile")
 	},
 
 	processEdit: (req, res) => {
-		const resultValidation = validationResult(req);
+		let errors = validationResult(req);
 
+		if (!errors.isEmpty()) {
+
+						return res.render("users/editProfile", { errorMessages: errors.mapped(), oldData: req.body });
+			// Si no hay errores, almacena las modificaciones
+		} else {
+			User.update({
+				...req.body,
+				
+			}, {
+				where: {
+					firstName: req.session.userLogged.firstName
+				}
+			})
+				.then(() => {
+					return res.redirect('/');
+				})
+				.catch((error) => {
+					console.log(error)
+				})
+		};
 	},
 
+
 	delete: (req, res) => {
-		User.delete(req.params.id);
-		res.redirect("/");
+		User.destroy({
+			where: { email: req.session.userLogged.email},
+
+		})
+			.then(res.redirect("/"));
 	},
 
 	logout: (req, res) => {

@@ -132,17 +132,24 @@
         </div>
 
         <div class="control-form">
-          <input type="radio" name="roleId" class="roleId" value="1">
-          Admin <br>
-          <input type="radio" name="roleId" class="roleId" value="2">
-          Invitado
-
-          <% if (locals.errorMessages && errorMessages.roleId) { %>
-            <p class="error">
-              <%= errorMessages.roleId.msg %>
-            </p>
+          <input type="radio" name="roleId" class="roleId" value="2" <% if (!locals.oldData || (locals.oldData &&
+            (!oldData.roleId || oldData.roleId==="2" ))) { %>
+          checked
+          <% } %>
+            > Cliente <br>
+            <input type="radio" name="roleId" class="roleId" value="1" <% if (locals.oldData && oldData.roleId==="1" ) {
+              %>
+            checked
             <% } %>
+              > Admin
+
+              <% if (locals.errorMessages && errorMessages.roleId) { %>
+                <div class="text-alert">
+                  <%= errorMessages.roleId.msg %>
+                </div>
+                <% } %>
         </div>
+
 
 
 
