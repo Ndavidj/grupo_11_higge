@@ -90,6 +90,9 @@ const controller = {
 			/* Comparing the password that the user entered with the password that is stored in the database. */
 			if (userToLogin) {
 				let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+				console.log(req.body.password)
+				console.log(userToLogin.password)
+				console.log(isOkThePassword)
 				if (isOkThePassword) {
 					delete userToLogin.password;
 					req.session.userLogged = userToLogin;
@@ -126,9 +129,7 @@ const controller = {
 	},
 
 	profile: (req, res) => {
-		return res.render('users/profile', {
-			user: req.session.userLogged
-		});
+		return res.render('users/profile');
 	},
 
 	edit: (req, res) => {
@@ -140,19 +141,19 @@ const controller = {
 
 		if (!errors.isEmpty()) {
 
-						return res.render("users/editProfile", { errorMessages: errors.mapped(), oldData: req.body });
-			// Si no hay errores, almacena las modificaciones
+			return res.render("users/editProfile", { errorMessages: errors.mapped(), oldData: req.body });
+			
 		} else {
 			User.update({
 				...req.body,
-				
 			}, {
 				where: {
-					firstName: req.session.userLogged.firstName
+					id: req.session.userLogged.id
 				}
 			})
 				.then(() => {
-					return res.redirect('/');
+
+					return res.redirect('users/profile');
 				})
 				.catch((error) => {
 					console.log(error)
@@ -163,7 +164,7 @@ const controller = {
 
 	delete: (req, res) => {
 		User.destroy({
-			where: { email: req.session.userLogged.email},
+			where: { email: req.session.userLogged.email },
 
 		})
 			.then(res.redirect("/"));

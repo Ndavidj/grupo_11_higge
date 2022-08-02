@@ -18,7 +18,7 @@ CREATE TABLE `users` (
    `address` VARCHAR(255),
    `interest` VARCHAR(100),
    `avatar` VARCHAR(255),
-   `password` VARCHAR(50) NOT NULL,
+   `password` VARCHAR(255) NOT NULL,
    `roleId` INT,
    PRIMARY KEY (`id`)
 );

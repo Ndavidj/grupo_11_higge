@@ -13,11 +13,11 @@
 			<div class="container-user-information">
 				<div class="first-container">
 					<div class="user-greeting">
-						<h2>Hola <%= user.firstName %>!</h2>
+						<h2>Hola <%= locals.userLogged.firstName %>!</h2>
 					</div>
 
 					<div class="avatar-user">
-						<img src="/images/users/<%= user.avatar %>" alt="imagen de usuario" />
+						<img src="/images/users/<%=locals.userLogged.avatar%>" alt="imagen de usuario" />
 					</div>
 
 				</div>
@@ -32,16 +32,16 @@
 					<h3>detalles</h3>
 					<ul>
 						<li>
-							<%= user.firstName %>
-								<%= user.lastName %>
+							<%= locals.userLogged.firstName %>
+								<%= locals.userLogged.lastName %>
 						</li>
 						<li>
-							<%= user.birthdate %>
+							<%= locals.userLogged.birthdate %>
 						</li>
 						<li>
 							<ul>Tus intereses:
 								<li>
-									<%= user.interest %>
+									<%= locals.userLogged.interest %>
 								</li>
 							</ul>
 						</li>
@@ -50,7 +50,7 @@
 
 				<div class="user-data-access">
 					<h3>correo electrónico</h3>
-				<p><%= user.email %></p>
+				<p><%= locals.userLogged.email %></p>
 				</div>
 
 				<div class="user-password">
