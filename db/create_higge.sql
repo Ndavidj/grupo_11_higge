@@ -4,13 +4,13 @@ CREATE DATABASE higge_db;
 use higge_db;
 
 CREATE TABLE `categories` (
-   `id` INT,
+   `id` INT AUTO_INCREMENT NOT NULL,
    `category` VARCHAR(100),
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `users` (
-   `id` INT AUTO_INCREMENT,
+   `id` INT AUTO_INCREMENT NOT NULL,
    `firstName` VARCHAR(50) NOT NULL,
    `lastName` VARCHAR(255) NOT NULL,
    `email` VARCHAR(40) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `products` (
-   `id` INT NOT NULL,
+   `id` INT AUTO_INCREMENT NOT NULL,
    `name` VARCHAR(60) NOT NULL,
    `description` VARCHAR(255) NOT NULL,
    `price` INT NOT NULL,
@@ -35,13 +35,13 @@ CREATE TABLE `products` (
 );
 
 CREATE TABLE `roles` (
-   `id` INT AUTO_INCREMENT,
+   `id` INT AUTO_INCREMENT NOT NULL,
    `role` VARCHAR(100) NOT NULL,
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `users_products` (
-   `id` INT,
+   `id` INT AUTO_INCREMENT NOT NULL,
    `userId` INT NOT NULL,
    `productsId` INT NOT NULL,
    PRIMARY KEY (`id`)

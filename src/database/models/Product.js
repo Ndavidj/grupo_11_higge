@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: true
         },
-        idCategory: {
+        categoryId: {
             type: dataTypes.INTEGER,
             allowNull: true
         }
@@ -38,13 +38,14 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function (models) {
+    //La implementacion de las asociaciones esta creando columnas fantasma!!!
+    /*Product.associate = function (models) {
 
         Product.belongsTo(models.Category, {
             as: "categories",
-            foreingKey: "idCategory"
+            foreingKey: "categoryId"
         })
-    }
+    }*/
 
 
     return Product;

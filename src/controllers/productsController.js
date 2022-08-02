@@ -4,7 +4,101 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+// Empiezamos a trabajar con la base de datos
+let db = require('../database/models');
 
+const productsController = {
+  index: function (req, res) {
+    db.Product.findAll()
+    .then(function(products){
+      return res.render("products/catalogue", {products:products});
+    })
+  },
+
+  productsStore: function (req, res) {
+   db.Product.create({
+      name: req.body.name,
+      description: req.body.description,
+      price: parseInt(req.body.price),
+      discount: parseInt(req.body.discount),
+      image: req.file ? req.file.filename : "defaultImage.png",
+      categoryId: req.body.category,
+    })
+    .then(function(){
+      res.redirect('/products')
+    });
+
+  },
+
+  productsDetail: function (req, res) {
+    db.Product.findByPk(req.params.id)
+      .then(function(product){
+        res.render('productsDetails', {product:product})
+      })
+  },
+
+  edit: function(req, res){
+    let productRequest = db.Product.findByPk(req.params.id)
+    .then(function(product){
+      res.render('productsEditForm', {product:product})
+    })
+
+  },
+
+  update: function(req, res){
+    db.Product.update({
+      name: req.body.name,
+      description: req.body.description,
+      price: parseInt(req.body.price),
+      discount: parseInt(req.body.discount),
+      image: req.file ? req.file.filename : "defaultImage.png",
+      categoryId: req.body.category,
+    }, {
+      where: {
+        id: req.params.id
+      }
+    });
+
+    res.redirect('/productsDetail' + req.params.id)
+  },
+
+  delete: function(req, res){
+    db.Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.redirect('/catalogue');
+  },
+  productsDetail: (req, res) => {
+    let id = req.params.id
+    let product = products.find(product => product.id == id)
+    res.render('products/productsDetails', {
+      product
+    })
+  },
+  productsCart: (req, res) => {
+    res.render("products/productsCart");
+  },
+
+  productsCreateForm: (req, res) => {
+    db.Category.findAll()
+    .then(function(categories){
+        res.render("products/productsCreateForm", ({categories: categories}));
+    })
+  },
+
+  productsEditForm: (req, res) => {
+    let id = req.params.id
+    let productToEdit = products.find(product => product.id == id)
+    res.render("../views/products/productsEditForm", ({ productToEdit: productToEdit }));
+  },
+  
+
+}
+
+
+/*
 // agrego lo de aqui para arriba
 const productsController = {
   // Root - Show all products
@@ -30,7 +124,7 @@ const productsController = {
     res.render("products/productsCreateForm");
   },
 
-
+//Reemplazar x CREATE con metodo base de datos
   productsStore: (req, res) => {
    
     let newProduct = {
@@ -39,9 +133,8 @@ const productsController = {
       description: req.body.description,
       price: parseInt(req.body.price),
       discount: parseInt(req.body.discount),
-      size: req.body.size,
-      category: req.body.category,
       image: req.file ? req.file.filename : "defaultImage.png",
+      categoryId: req.body.category,
     };
 
     products.push(newProduct);
@@ -51,7 +144,7 @@ const productsController = {
     res.redirect('/products');
 
   },
-
+// Reemplazar x UPDATE
   productsEditForm: (req, res) => {
     let id = req.params.id
     let productToEdit = products.find(product => product.id == id)
@@ -94,5 +187,6 @@ const productsController = {
 
 
 };
+*/
 
 module.exports = productsController;

@@ -42,8 +42,12 @@
                 <label for="category" class="control">Categoría></label>
                 <select name="category" id="category" class="control">
                 <option value="">Elegí</option>
-                <option value="novedad">Nuestras Novedades</option>
-                <option value="en oferta">En Oferta</option>
+                <% categories.forEach(category => { %>
+                  <option value="<%= category.id %> "><%= category.category %> </option>
+                <% }) %>
+                <!--<option value="1">Cine</option>
+                <option value="2">En Oferta</option>
+                <option value="3">Prueba</option>-->
                 <!-- <option value="limitedEdition">Edición Limitada</option> -->
             </select>
             </div>
