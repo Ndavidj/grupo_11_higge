@@ -61,7 +61,7 @@
           <a href="/aboutUs">Acerca de nosotros</a>
         </li>
 
-        <% if (locals.userLogged) { %>
+        <% if (locals.userLogged && locals.userLogged.roleId == 1) { %>
         <li class="create-product" id="create-product">
           <a href="/products/create">Vender</a>
         </li>
