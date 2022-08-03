@@ -129,7 +129,9 @@ const controller = {
 	},
 
 	profile: (req, res) => {
-		return res.render('users/profile');
+		return res.render('users/profile', {
+			user: req.session.userLogged,
+		});
 	},
 
 	edit: (req, res) => {
@@ -142,18 +144,19 @@ const controller = {
 		if (!errors.isEmpty()) {
 
 			return res.render("users/editProfile", { errorMessages: errors.mapped(), oldData: req.body });
-			
+
 		} else {
 			User.update({
 				...req.body,
+				"avatar": req.file ? req.file.filename : req.session.userLogged.avatar,
 			}, {
 				where: {
-					id: req.session.userLogged.id
-				}
+					email: req.session.userLogged.email
+				},
 			})
 				.then(() => {
 
-					return res.redirect('users/profile');
+					return res.redirect('profile');
 				})
 				.catch((error) => {
 					console.log(error)
@@ -164,10 +167,13 @@ const controller = {
 
 	delete: (req, res) => {
 		User.destroy({
-			where: { email: req.session.userLogged.email },
-
+			where: { email: req.session.userLogged.email }
 		})
-			.then(res.redirect("/"));
+		let userAvatar = req.session.userLogged.avatar;
+		fs.unlinkSync(path.resolve(__dirname, "../../public/images/users/") + '/' + userAvatar);
+		req.session.destroy();
+		res.clearCookie('userEmail');
+		(res.redirect("/"));
 	},
 
 	logout: (req, res) => {

@@ -35,6 +35,6 @@ INSERT INTO higge_db.products (id, name, description, price, discount, image, ca
 
 -- users --
 INSERT INTO higge_db.users (id, firstName, lastName, email, dateBirthday, address, interest, avatar, password, roleId) VALUES 
-(1, "Admin", "Higge", "admin@higge.com.ar", "1991-01-01", 'asd 123', 'cine', "admin.jpg", "$2a$12$0a.pwY7sEmoEOJfXmvR6du7frjT8CfzVvWMBSTXzEee6G2mM2TYta", 1),
-(2, "Cliente", "Higge", "cliente@higge.com.ar", "1990-01-01", 'asd 123', 'cine', "cliente.jpg", "$2a$12$/iEIHkW756A025eKoD8PD.xyHVsohSoEgBiD61Q.sDxIc0bLyC56i", 2)
+(1, "Admin", "Higge", "admin@higge.com.ar", "1991-01-01", 'asd 123', 'Cine', "admin.jpg", "$2a$12$0a.pwY7sEmoEOJfXmvR6du7frjT8CfzVvWMBSTXzEee6G2mM2TYta", 1),
+(2, "Cliente", "Higge", "cliente@higge.com.ar", "1990-01-01", 'asd 123', 'Deportes', "cliente.jpg", "$2a$12$/iEIHkW756A025eKoD8PD.xyHVsohSoEgBiD61Q.sDxIc0bLyC56i", 2)
 

@@ -1,52 +1,139 @@
 <!DOCTYPE html>
 <html lang="en-es">
 
-<%- include('../partials/head', {titleWeb: 'Edita tu perfil' }) %>
+<%- include('../partials/head', {titleWeb: 'Modifica tus datos' }) %>
 
     <body>
-
         <!-- ------------ Comienzo del HEADER  -->
         <%- include('../partials/header') %>
-            <!-- ------------ fin del HEADER  -->
 
-            <!-- comienzo Main editProfile -->
-            <div class="form-container edit-profile-container">
-                <h5>Actualice sus datos</h5>
-                <div class="edit-profile">
+            <!-- ------------ Fin del HEADER  -->
+            <!-- ------------ Inicio del Formulario de registro  -->
+            <div class="control-form">
+                <h3>Modifica aca tus datos para mantenerlos actualizados</h3>
+                <form id="formEditProfile" action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
 
-                    <div class="user-data">
-                        <form id="formEditProfile" action="/users/edit?_method=PUT" method="POST"
-                            enctype="multipart/form-data">
-                            <div>
-                                <div class="flex-desktop">
-                                    <div class="first-flex">
-                                        <div class="form-class">
-                                            <label for="firstName" class="form-label">Nombre:</label>
-                                            <br>
-                                            <input type="text" name="firstName" class="form-input" value="<%= locals.userLogged.firstName %>" id="name">
-                                        </div>
-                                        <% if (locals.errorMessages && errorMessages.firstName) { %>
-                                            <p class="error"> <%= errorMessages.firstName.msg %> </p>
-                                        <% } %>
-                                  
-                                        <div class="form-class">
-                                            <button type="submit" class="submitButton">Guardar cambios</button>
-        
-                                        </div>
-                                    </div>
-                                </div>       
+                    <div class="control-form">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="firstName" class="form-input"
+                            value="<%= locals.userLogged.firstName %>" id="name">
+
+                        <% if (locals.errors && errors.firstName) { %>
+                            <div class="text-alert">
+                                <%= errors.firstName.msg %>
                             </div>
-                            
-                        </form>
+                            <% } %>
+
                     </div>
-                </div>
+
+                    <div class="control-form">
+                        <label for="name">Apellido</label>
+                        <input type="text" name="lastName" value="<%= locals.userLogged.lastName %>" class="form-input"
+                            id="lastname">
+
+                        <% if (locals.errors && errors.lastName) { %>
+                            <div class="text-alert">
+                                <%= errors.lastName.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+
+
+
+                    <div class="control-form">
+                        <label for="date" id="fecha-nacimiento">Fecha de nacimiento</label>
+                        <div class="campo-texto" id="date">
+                            <input type="date" name="birthdate" value="<%= locals.userLogged.birthdate %>"
+                                class="form-input">
+                            <% if (locals.errors && errors.birthdate) { %>
+                                <div class="text-alert">
+                                    <%= errors.birthdate.msg %>
+                                </div>
+                                <% } %>
+
+                        </div>
+                    </div>
+
+
+                    <div class="control-form">
+                        <label for="address"> Domicilio </label>
+                        <input type="text" name="address" value="<%= locals.userLogged.address %>" class="form-input">
+
+                        <% if (locals.errors && errors.address) { %>
+                            <div class="text-alert">
+                                <%= errors.address.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+
+                    <div class="control-form">
+                        <h5>Tu categoría actual es: <%= locals.userLogged.interest %>
+                        </h5>
+
+                        <label for="interest">Tu nuevo interés puede ser:</label>
+                        <select name='interest' id="interest">
+                            <option value="Cine">Cine</option>
+                            <option value="Música">Música</option>
+                            <option value="Naturaleza">Naturaleza</option>
+                            <option value="Arte">Arte</option>
+                            <option value="Deportes">Deportes</option>
+                        </select>
+
+                        <% if (locals.errors && errors.interest) { %>
+                            <div class="text-alert">
+                                <%= errors.interest.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+
+                    <div class="control-form">
+                        <label for="avatar">Elige tu foto de perfil</label>
+                        <input type="file" class="avatar" name="avatar" value="avatar" id="avatar">
+
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="text-alert">
+                                <%= errors.avatar.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+
+                    </br>
+
+
+                    <div class="control-form">
+                        <button type="submit" class="button-form">Guardar cambios</button>
+                        <button type="reset" class="button-form">Reiniciar</button>
+                    </div>
+
+                </form>
+
             </div>
-            <!-- fin del Main editProfile -->
+
+
+            <!-- ------------ Final del Formulario de registro  -->
+
+            <div class="banner-divisor">
+                <div class="logo-insta">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div class="mensaje">
+                    <p>buscanos en instagram</p>
+                    <h4>@higge_11</h4>
+                </div>
+
+            </div>
+
 
             <!-- ------------ comienzo del FOOTER  -->
             <%- include('../partials/footer') %>
 
                 <!-- ------------ Fin del FOOTER  -->
+
 
     </body>
 
