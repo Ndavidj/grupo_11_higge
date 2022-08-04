@@ -51,7 +51,7 @@ const productsController = {
       description: req.body.description,
       price: parseInt(req.body.price),
       discount: parseInt(req.body.discount),
-      image: req.file ? req.file.filename : "defaultImage.png",
+      image: req.file ? req.file.filename : req.session.image,
       categoryId: req.body.category,
     },
     {
@@ -71,7 +71,7 @@ const productsController = {
         id: req.params.id
       }})
       .then(function(){
-    res.redirect('products/catalogue')
+    res.redirect('/')
   })
   },
 
