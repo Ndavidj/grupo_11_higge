@@ -42,13 +42,13 @@
 .user-details ul li,
 .user-data-access p,
 .user-password p {
-  font-size: 15px;
+  font-size: 18px;
   margin: 10px;
 }
 
 .user-details ul li ul li {
   margin: 5px 15px;
-  font-size: 13px;
+  font-size: 22px;
 }
 
 .user-details p {

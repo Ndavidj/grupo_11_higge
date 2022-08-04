@@ -13,7 +13,7 @@
                 <h3>Modifica aca tus datos para mantenerlos actualizados</h3>
                 <form id="formEditProfile" action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
 
-                    <div class="control-form">
+                    <div class="data-form">
                         <label for="name">Nombre</label>
                         <input type="text" name="firstName" class="form-input"
                             value="<%= locals.userLogged.firstName %>" id="name">
@@ -26,7 +26,7 @@
 
                     </div>
 
-                    <div class="control-form">
+                    <div class="data-form">
                         <label for="name">Apellido</label>
                         <input type="text" name="lastName" value="<%= locals.userLogged.lastName %>" class="form-input"
                             id="lastname">
@@ -41,7 +41,7 @@
 
 
 
-                    <div class="control-form">
+                    <div class="data-form">
                         <label for="date" id="fecha-nacimiento">Fecha de nacimiento</label>
                         <div class="campo-texto" id="date">
                             <input type="date" name="birthdate" value="<%= locals.userLogged.birthdate %>"
@@ -56,7 +56,7 @@
                     </div>
 
 
-                    <div class="control-form">
+                    <div class="data-form">
                         <label for="address"> Domicilio </label>
                         <input type="text" name="address" value="<%= locals.userLogged.address %>" class="form-input">
 
@@ -68,12 +68,13 @@
 
                     </div>
 
-                    <div class="control-form">
-                        <h5>Tu categoría actual es: <%= locals.userLogged.interest %>
-                        </h5>
-
+                    <div class="data-form">
+                        <label>Tu interes actual es: <b><%= locals.userLogged.interest %></b>
+                        </label>
+           
                         <label for="interest">Tu nuevo interés puede ser:</label>
                         <select name='interest' id="interest">
+                            <option value="">Selecciona una opción</option>
                             <option value="Cine">Cine</option>
                             <option value="Música">Música</option>
                             <option value="Naturaleza">Naturaleza</option>
@@ -89,7 +90,7 @@
 
                     </div>
 
-                    <div class="control-form">
+                    <div class="data-form">
                         <label for="avatar">Elige tu foto de perfil</label>
                         <input type="file" class="avatar" name="avatar" value="avatar" id="avatar">
 
@@ -104,7 +105,7 @@
                     </br>
 
 
-                    <div class="control-form">
+                    <div class="dataSend">
                         <button type="submit" class="button-form">Guardar cambios</button>
                         <button type="reset" class="button-form">Reiniciar</button>
                     </div>
