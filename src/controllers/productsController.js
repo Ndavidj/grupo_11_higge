@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const productsFilePath = path.join(__dirname, '../data/products.json');
+//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 // Empiezamos a trabajar con la base de datos
 let db = require('../database/models');
@@ -30,17 +30,17 @@ const productsController = {
 
   },
 
-  productsDetail: function (req, res) {
+  productsDetails: function (req, res) {
     db.Product.findByPk(req.params.id)
       .then(function(product){
-        res.render('productsDetails', {product:product})
+        res.render('../views/products/productsDetails', {product:product})
       })
   },
 
-  edit: function(req, res){
-    let productRequest = db.Product.findByPk(req.params.id)
+  productsEditForm: function(req, res){
+    db.Product.findByPk(req.params.id)
     .then(function(product){
-      res.render('productsEditForm', {product:product})
+      res.render('products/productsEditForm', {productToEdit:product})
     })
 
   },
@@ -51,31 +51,42 @@ const productsController = {
       description: req.body.description,
       price: parseInt(req.body.price),
       discount: parseInt(req.body.discount),
-      image: req.file ? req.file.filename : "defaultImage.png",
+      image: req.file ? req.file.filename : req.session.image,
       categoryId: req.body.category,
-    }, {
+    },
+    {
       where: {
         id: req.params.id
       }
-    });
+    })
+    .then(function(){
+      res.redirect('/products/detail/' + req.params.id)
+    })
 
-    res.redirect('/productsDetail' + req.params.id)
   },
 
-  delete: function(req, res){
+  delete: function(req, res) {
     db.Product.destroy({
       where: {
         id: req.params.id
-      }
-    })
-    res.redirect('/catalogue');
+      }})
+      .then(function(){
+    res.redirect('/')
+  })
   },
-  productsDetail: (req, res) => {
-    let id = req.params.id
-    let product = products.find(product => product.id == id)
+
+  productsDetail: function(req,res) {
+    db.Product.findByPk(req.params.id)
+      .then(function(product) {
+        res.render('product/productsDetail', {product:product})
+
+      })
+    /*
+        let id = req.params.id
+        let product = products.find(product => product.id == id)
     res.render('products/productsDetails', {
       product
-    })
+    })*/
   },
   productsCart: (req, res) => {
     res.render("products/productsCart");
@@ -88,11 +99,6 @@ const productsController = {
     })
   },
 
-  productsEditForm: (req, res) => {
-    let id = req.params.id
-    let productToEdit = products.find(product => product.id == id)
-    res.render("../views/products/productsEditForm", ({ productToEdit: productToEdit }));
-  },
   
 
 }

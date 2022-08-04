@@ -13,6 +13,7 @@ const inOffer = products.filter(function (product) {
 
 const mainController = {
   index: (req, res) => {
+    //products.findAll
     res.render("index", {
       newArrivals,
       inOffer,
