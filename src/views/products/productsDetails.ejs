@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-es">
 
-  <%- include('../partials/head', {titleWeb: 'Detalle del producto'}) %>
+<%- include('../partials/head', {titleWeb: 'Detalle del producto' }) %>
 
-<body>
-  <!-- ------------ Comienzo del HEADER  -->
-  <%- include('../partials/header') %>
-    <!-- ------------ fin del HEADER  -->
+  <body>
+    <!-- ------------ Comienzo del HEADER  -->
+    <%- include('../partials/header') %>
+      <!-- ------------ fin del HEADER  -->
 
-    <!----------------  Cominzo del MAIN -->
-    <main class="contenedor">
-      <article class="imagen-descripciones">
-        <div>
-          <img src="/images/products/<%= product.image %>" alt="product image"/>
-        </div>
-        <section class="descripciones">
-          <h1><%= product.name %></h1>
-
-          <h2>$<%= product.price %></h2>
-
-          <h2><%= product.description %></h2>
-
-
+      <!----------------  Cominzo del MAIN -->
+      <main class="contenedor">
+        <article class="imagen-descripciones">
           <div>
-            <h3>Cantidad:</h3>
-            <label> <input type="number" name="cantidades" min="1" /></label>
+            <img src="/images/products/<%= product.image %>" alt="product image" />
           </div>
-          <div class="carrito">
-            <form action="/carrito-de-compras" method="GET">
-              <button type="submit">AGREGAR AL CARRITO</button>
-            </form>
-          </div>
-          <div class="carrito">
-            <form action="/products/productsEditForm/<%=product.id%>" method="GET">
-              <button type="submit">EDITAR PRODUCTO</button>
-            </form>
-          </div>
-          <div class="carrito">
-            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
-						</form>
-        </section>
-      </article>
+          <section class="descripciones">
+            <h1>
+              <%= product.name %>
+            </h1>
 
-      <article class="informacion">
-        <h4>El poster es de la siguiente medida 60 x 80 centímetros.</h4>
-        <h1>POSTER LISTO PARA COLGAR.</h1>
-        <p>
-          Imprimimos en papel satinado premium (200g), que es un papel de alta
-          calidad. Todos nuestros carteles son impresos por Higge en Córdoba
-          (Argentina) en impresoras de gran formato que tienen el certificado
-          GREENGUARD Gold por sus bajas emisiones de compuestos orgánicos
-          volátiles. El color del marco puede ser Natural, Negro o Blanco. Las
-          imágenes son de alta calidad. Todos los productos se producen a
-          pedido. No se arrugan ni amarillentan. Son lavables.
-        </p>
-        <h1>
-          EXCLUSIVAMENTE PARA VOS. HECHO EN ARGENTINA. ENVIOS A TODO EL PAÍS.
-        </h1>
-        <h5>
-          Códigos de Imágenes: En el caso de querer cambiar algún diseño de
-          lámina por otro, detallarlo una vez hecha la compra mediante un
-          mensaje privado a info@higge.com.ar
-        </h5>
-      </article>
-    </main>
+            <h2>$<%= product.price %>
+            </h2>
+
+            <h2>
+              <%= product.description %>
+            </h2>
+
+            <div>
+              <h3>Cantidad:</h3>
+              <label> <input type="number" name="cantidades" min="1" /></label>
+            </div>
+            <div class="carrito">
+              <form action="/carrito-de-compras" method="GET">
+                <button type="submit">AGREGAR AL CARRITO</button>
+              </form>
+            </div>
+            <div class="carrito">
+              <form action="/products/productsEditForm/<%=product.id%>" method="GET">
+                <button type="submit">EDITAR PRODUCTO</button>
+              </form>
+            </div>
+            <div class="carrito">
+              <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"
+                style="display: inline-flex">
+                <button type="submit" class="action-button delete">ELIMINAR</button>
+              </form>
+          </section>
+        </article>
+
+        <article class="informacion">
+
+          <h1>POSTER LISTO PARA COLGAR.</h1>
+          <p>
+            Imprimimos en papel satinado premium (200g), que es un papel de alta
+            calidad. Todos nuestros carteles son impresos por Higge en Córdoba
+            (Argentina) en impresoras de gran formato que tienen el certificado
+            GREENGUARD Gold por sus bajas emisiones de compuestos orgánicos
+            volátiles. El color del marco puede ser Natural, Negro o Blanco. Las
+            imágenes son de alta calidad. Todos los productos se producen a
+            pedido. No se arrugan ni amarillentan. Son lavables.
+          </p>
+          <h1>
+            EXCLUSIVAMENTE PARA VOS. HECHO EN ARGENTINA. ENVIOS A TODO EL PAÍS.
+          </h1>
+          <h5>
+            Códigos de Imágenes: En el caso de querer cambiar algún diseño de
+            lámina por otro, detallarlo una vez hecha la compra mediante un
+            mensaje privado a info@higge.com.ar
+          </h5>
+        </article>
+      </main>
   </body>
 
   <!-- ---------- fin del MAIN -->
 
- <!-- ------------ comienzo del FOOTER  -->
- <%- include('../partials/footer') %>
- 
- <!-- ------------ Fin del FOOTER  -->
+  <!-- ------------ comienzo del FOOTER  -->
+  <%- include('../partials/footer') %>
+
+    <!-- ------------ Fin del FOOTER  -->
+
 </html>
