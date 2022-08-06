@@ -30,21 +30,27 @@
               <h3>Cantidad:</h3>
               <label> <input type="number" name="cantidades" min="1" /></label>
             </div>
+            <% if (locals.userLogged && locals.userLogged.roleId==2) { %>
             <div class="carrito">
               <form action="/carrito-de-compras" method="GET">
                 <button type="submit">AGREGAR AL CARRITO</button>
               </form>
             </div>
-            <div class="carrito">
-              <form action="/products/productsEditForm/<%=product.id%>" method="GET">
-                <button type="submit">EDITAR PRODUCTO</button>
-              </form>
-            </div>
-            <div class="carrito">
-              <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"
-                style="display: inline-flex">
-                <button type="submit" class="action-button delete">ELIMINAR</button>
-              </form>
+            <% } %>
+            <% if (locals.userLogged && locals.userLogged.roleId==1) { %>
+              <div class="carrito">
+                <form action="/products/productsEditForm/<%=product.id%>" method="GET">
+                  <button type="submit">EDITAR PRODUCTO</button>
+                </form>
+              </div>
+
+              <div class="carrito">
+                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"
+                  style="display: inline-flex">
+                  <button type="submit" class="action-button delete">ELIMINAR</button>
+                </form>
+              </div>
+              <% } %>
           </section>
         </article>
 

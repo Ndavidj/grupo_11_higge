@@ -88,6 +88,31 @@
   color: white;
 }
 
+.is-valid {
+  color: #198754;
+}
+
+.is-invalid {
+  color: #842029;
+}
+
+.alert-warning,
+.alert-warning ul {
+  color: #842029;
+  background-color: #f8d7da;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.alert-warning li {
+  margin-bottom: 5px;
+}
+
+.errores {
+  font-size: 15px;
+}
+
 
 
 @media (min-width: 768px) {

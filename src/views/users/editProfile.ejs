@@ -69,9 +69,11 @@
                     </div>
 
                     <div class="data-form">
-                        <label>Tu interes actual es: <b><%= locals.userLogged.interest %></b>
+                        <label>Tu interes actual es: <b>
+                                <%= locals.userLogged.interest %>
+                            </b>
                         </label>
-           
+
                         <label for="interest">Tu nuevo interés puede ser:</label>
                         <select name='interest' id="interest">
                             <option value="">Selecciona una opción</option>
@@ -134,7 +136,6 @@
             <%- include('../partials/footer') %>
 
                 <!-- ------------ Fin del FOOTER  -->
-
 
     </body>
 
