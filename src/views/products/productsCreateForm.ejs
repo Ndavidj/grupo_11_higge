@@ -14,19 +14,37 @@
   <!-- ------------ Inicio del Formulario de Creación de Producto  -->
 
 	<h2 class="product-title">Crear nuevo Producto</h2>
-    <form action="/products/" method="POST" enctype="multipart/form-data">
-            <div class="control-form">
+    <form class = "productCreationForm" action="/products/" method="POST" enctype="multipart/form-data" id="productCreationForm">
+      <ul class="errors" id="errors">
+      </ul>
+
+      <div class="control-form">
               <label for="name"> Nombre del Producto Nuevo </label>
-              <input type="text" name="name" id="name" class="control">
+              <input type="text" name="name" id="name" class="control"  value="<%= locals.errors && errors.name ? 'is-invalid' : null %>" placeholder="Ingrese el nombre del producto">
+
+              <% if (locals.errors && errors.name) { %>
+                <div class="text-alert">
+                  <%= errors.name.msg %>
+                </div>
+                <% } %>>
+              
             </div>
+          
             <div class="control-form">
                 <label for="description"> Descripción </label>
                 <input type="text" name="description" id="description" class="control">
               </div>
             <div class="control-form">
               <label for="price"> Precio </label>
-              <input type="number" name="price" id="price" class="control">
+              <input type="number" name="price" id="price" class="control" value="<%= locals.errors && errors.price ? 'is-invalid' : null %>" placeholder="Ingrese el precio del producto">
+
+              <% if (locals.errors && errors.price) { %>
+                <div class="text-alert">
+                  <%= errors.price.msg %>
+                </div>
+                <% } %>>
             </div>
+           
             <div class="control-form">
                 <label for="discount"> Descuento </label>
                 <input type="number" name="discount" id="discount" class="control">
@@ -47,11 +65,18 @@
             </div>
             <div class="control-form">
               <label for="productImage"> Imagen del producto</label>
-              <input type="file" name="productImage" id="productImage" class="control">
+              <input type="file" name="productImage" id="productImage" class="control" value="<%=locals.errors && errors.productImage ? 'is-invalid'
+              : null %>">
+
+            <% if (locals.errors && errors.productImage) { %>
+              <div class="text-alert">
+                <%= errors.productImage.msg %>
+              </div>
+              <% } %>>
             </div>
 
             <div class="control-form">
-              <button href='' type="submit" class="button-form">Guardar Producto</button>
+              <button href='' type="submit" class="button-form" value="create">Guardar Producto</button>
             </div>
         
           </form>-->
@@ -59,5 +84,6 @@
 	<!-- footer -->
     <%- include('../partials/footer') %>
 	<!-- /footer -->
+  <script src="/js/validationProduct.js"></script>
 </body>	
 </html>

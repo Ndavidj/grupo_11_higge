@@ -43,7 +43,7 @@ router.put('/productsEditForm/:id', upload.single('productImage'), productsContr
 
 
 //Elimina un producto en cuestion.
-router.post('/delete/:id', productsController.delete);
+router.delete('/delete/:id', productsController.delete);
 
 
 
