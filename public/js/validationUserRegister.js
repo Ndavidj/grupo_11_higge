@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
     let formRegister = document.querySelector(".registro");
+    let alarmErrors = document.querySelector(".errores");
 
     formRegister.addEventListener("submit", function (e) {
 
@@ -12,7 +13,7 @@ window.addEventListener('load', function () {
         let avatar = document.querySelector("#avatar");
 
         let expressions = {
-            firstName: new RegExp("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")
+            firstName: new RegExp("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i")
         }
 
 
@@ -87,11 +88,11 @@ window.addEventListener('load', function () {
         // --------- avatar ------------
 
         if (avatar.value) {
-            let acceptedExtensions = ['jpeg', 'jpg', 'png'];
+            let acceptedExtensions = ['jpeg', 'jpg', 'gif', 'png'];
             let parts = avatar.value.split('.');
-            let extension = parts[parts.length - 1];
-            if (!acceptedExtensions.includes(extension)) {
-                errors.push("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
+            let extension = parts[parts.length-1];
+            if (!acceptedExtensions.includes(extension)){
+            errors.push ("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
             }
         }
 
@@ -104,8 +105,9 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>";
             };
-            formRegister.errors.focus();
-        } else {
+            alarmErrors.focus();
+        } 
+        else {
             formRegister.submit();
         }
     })

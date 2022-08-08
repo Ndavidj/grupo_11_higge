@@ -46,13 +46,13 @@
 
 
                     <div class="data-form">
-                        <label for="date" id="fecha-nacimiento">Fecha de nacimiento</label>
-                        <div class="campo-texto" id="date">
-                            <input type="date" name="birthdate" value="<%= locals.userLogged.birthdate %>"
+                        <label for="dateBirthday" id="fecha-nacimiento">Fecha de nacimiento</label>
+                        <div class="campo-texto" id="dateBirthday">
+                            <input type="dateBirthday" name="dateBirthday" value="<%= locals.userLogged.dateBirthday %>"
                                 class="form-input">
-                            <% if (locals.errors && errors.birthdate) { %>
+                            <% if (locals.errors && errors.dateBirthday) { %>
                                 <div class="text-alert">
-                                    <%= errors.birthdate.msg %>
+                                    <%= errors.dateBirthday.msg %>
                                 </div>
                                 <% } %>
 

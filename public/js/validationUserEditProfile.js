@@ -7,15 +7,11 @@ window.addEventListener('load', function () {
 
         let firstName = document.querySelector("#firstName");
         let lastName = document.querySelector("#lastName");
-        let email = document.querySelector("#email");
-        let password = document.querySelector("#password");
         let avatar = document.querySelector("#avatar");
 
         let expressions = {
             firstName: new RegExp("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")
         }
-
-
 
 
         // --------- FIRST NAME ------------
@@ -58,32 +54,6 @@ window.addEventListener('load', function () {
             formEditProfile.email.focus();
         };
 
-        // --------- EMAIL (regex) ------------
-        let regEmail = /\S+@\S+\.\S+/;
-        if (!regEmail.test(email.value)) {
-            errors.push("Debe ingresar un email válido");
-            email.classList.add("is-invalid");
-        } else {
-            email.classList.add("is-valid");
-            email.classList.remove("is-invalid");
-            formEditProfile.password.focus();
-        };
-
-        // --------- PASSWORD ------------
-        if (password.value == "") {
-            errors.push("El campo contraseña no puede estar vacío");
-            password.classList.remove("is-valid");
-            password.classList.add("is-invalid");
-        } else if (password.value.length < 8) {
-            errors.push("El campo contraseña debe tener al menos 8 caracteres");
-            password.classList.remove("is-valid");
-            password.classList.add("is-invalid");
-        } else {
-            password.classList.add("is-valid");
-            password.classList.remove("is-invalid");
-            formEditProfile.avatar.focus();
-        };
-
         // --------- avatar ------------
 
         if (avatar.value) {
@@ -104,8 +74,11 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>";
             };
+
+        } else if (errors.length > 0) {
             formEditProfile.errors.focus();
-        } else {
+        }
+        else {
             formEditProfile.submit();
         }
     })

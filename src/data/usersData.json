@@ -4,7 +4,7 @@
   "firstName": "choco",
   "lastName": "torta",
   "email": "chocotorta@higge.com",
-  "birthdate": "2007-08-26",
+  "dateBirthday": "2007-08-26",
   "address": "calle falsa 123",
   "interest": [
    "Cine",
@@ -18,7 +18,7 @@
   "firstName": "sebas",
   "lastName": "pereyra ",
   "email": "spereyrairaola@gmail.com",
-  "birthdate": "1987-06-10",
+  "dateBirthday": "1987-06-10",
   "address": "mi casa 123",
   "interest": "Deportes",
   "password": "$2a$10$V7LT.79AJTUi48avkh2v/.CQgIKyo5RU47Qyihpo/O3qERhn1X3lK",

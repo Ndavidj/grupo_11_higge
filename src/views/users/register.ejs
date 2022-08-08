@@ -9,8 +9,10 @@
 
       <div class="control-form">
         <!-- ------------ Fin del HEADER  -->
+
         <!-- ------------ Inicio del Formulario de registro  -->
         <form class="registro" action="/users/register" method="POST" enctype="multipart/form-data">
+
           <ul class="errores" id="errores">
           </ul>
 
@@ -60,14 +62,14 @@
 
 
           <div class="data-form">
-            <label for="date" id="fecha-nacimiento">Fecha de nacimiento</label>
+            <label for="dateBirthday" id="fecha-nacimiento">Fecha de nacimiento</label>
             <div class="campo-texto">
-              <input type="date" name="birthdate" class="birthdate" id="date"
-                value="<%= locals.errors && errors.birthdate ? 'is-invalid' : null %>">
+              <input type="date" name="dateBirthday" class="dateBirthday" id="dateBirthday"
+                value="<%= locals.errors && errors.dateBirthday ? 'is-invalid' : null %>">
 
-              <% if (locals.errors && errors.birthdate) { %>
+              <% if (locals.errors && errors.dateBirthday) { %>
                 <div class="text-alert">
-                  <%= errors.birthdate.msg %>
+                  <%= errors.dateBirthday.msg %>
                 </div>
                 <% } %>
 
@@ -121,7 +123,6 @@
               <% } %>
 
           </div>
-          <br>
 
           <div class="data-form">
             <label for="password">Contraseña</label>
@@ -194,10 +195,10 @@
       </div>
 
 
-      <!-- ------------ comienzo del FOOTER  -->
+      <!-- ------------ comienzo del FOOTER  --> */
       <%- include('../partials/footer') %>
 
-        <!-- ------------ Fin del FOOTER  -->
+        <!-- ------------ Fin del FOOTER  --> */
 
         <script src="/js/validationUserRegister.js"></script>
   </body>

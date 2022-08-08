@@ -47,10 +47,10 @@ const controller = {
 					firstName: newUser.firstName,
 					lastName: newUser.lastName,
 					email: newUser.email,
-					dateBirthday: newUser.birthdate,
+					dateBirthday: newUser.dateBirthday,
 					address: newUser.address,
 					interest: newUser.interest,
-					avatar: req.file ? req.file.filename : "default-image.png",
+					avatar: req.file ? req.file.filename : 'default-image.png',
 					password: bcryptjs.hashSync(newUser.password, 10),
 					roleId: newUser.roleId
 

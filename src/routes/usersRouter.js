@@ -7,6 +7,7 @@ const usersController = require ("../controllers/usersController");
 const uploadFile = require('../middlewares/routes/users/multerMiddleware');
 const validations = require('../middlewares/routes/users/validateRegisterMiddleware');
 const validateLogin = require('../middlewares/routes/users/validateLoginMiddleware')
+const validateEdit = require("../middlewares/routes/users/validateEditUserMiddleware");
 const guestMiddleware = require('../middlewares/routes/users/guestMiddleware');
 const authMiddleware = require('../middlewares/routes/users/authMiddleware');
 
@@ -20,7 +21,7 @@ router.post('/register', uploadFile.single('avatar'), validations, usersControll
 
 // Formulario de edición de perfil
 router.get("/edit", authMiddleware, usersController.edit);
-router.put("/edit", uploadFile.single ('avatar'), /* validateEdit,  */usersController.processEdit);
+router.put("/edit", uploadFile.single ('avatar'), validateEdit, usersController.processEdit);
 router.post("/delete", usersController.delete);
 
 
