@@ -3,7 +3,9 @@ const express = require("express");
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
-
+// Middlewares
+const uploadFile = require('../middlewares/routes/products/multerProdMiddleware');
+const validateProductMiddleware = require('../middlewares/routes/products/validateProductMiddleware');
 const productsController = require("../controllers/productsController.js")
 
 
@@ -33,7 +35,7 @@ router.get('/cart', productsController.productsCart);
 router.get('/create', productsController.productsCreateForm);
 
 //Ruta para el Procesamiento del formulario que crea un nuevo producto -viaja por POST- .
-router.post('/', upload.single('productImage'), productsController.productsStore);
+router.post('/', upload.single('productImage'),validateProductMiddleware, productsController.productsStore);
 
 //Ruta para ver el Formulario de edición del producto 
 router.get('/productsEditForm/:id', productsController.productsEditForm);

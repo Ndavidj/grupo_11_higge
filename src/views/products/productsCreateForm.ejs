@@ -32,18 +32,18 @@
           
             <div class="control-form">
                 <label for="description"> Descripción </label>
-                <input type="text" name="description" id="description" class="control">
+                <input type="text" name="description" id="description" class="control" value="<%= locals.errors && errors.description ? 'is-invalid' : null %>" placeholder="Ingrese la descripción del producto">
+
+                <% if (locals.errors && errors.description) { %>
+                  <div class="text-alert">
+                    <%= errors.description.msg %>
+                  </div>
+                  <% } %>>
+              </div>>
               </div>
             <div class="control-form">
               <label for="price"> Precio </label>
-              <input type="number" name="price" id="price" class="control" value="<%= locals.errors && errors.price ? 'is-invalid' : null %>" placeholder="Ingrese el precio del producto">
-
-              <% if (locals.errors && errors.price) { %>
-                <div class="text-alert">
-                  <%= errors.price.msg %>
-                </div>
-                <% } %>>
-            </div>
+              <input type="number" name="price" id="price" class="control"> 
            
             <div class="control-form">
                 <label for="discount"> Descuento </label>

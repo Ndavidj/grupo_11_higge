@@ -5,8 +5,9 @@ window.addEventListener('load', function() {
 
         let errors = [];
 
-        let name = document.querySelector(".name");
-        let price = document.querySelector(".price");   
+        let name = document.querySelector("#name");
+        let description = document.querySelector("#description");   
+        let productImage = document.querySelector("#productImage");
 
         //VALIDAMOS QUE EL NOMBRE DEL PRODUCTO ESTE COMPLETO
         if (name.value == ''){
@@ -28,30 +29,45 @@ window.addEventListener('load', function() {
         name.classList.remove("is-invalid");
         newProduct.name.focus();
     }
-        //VALIDAMOS QUE EL PRECIO ESTE COMPLETO
+        //VALIDAMOS LA DESCRIPCIÓN 
         
-        if (price.value == ''){
-            errors.push("El precio del producto no debe estar vacío")
-            price.classList.remove("is-valid");
-            price.classList.add("is-invalid");
+        if (description.value == ''){
+            errors.push("La descripción del producto debe estar completa")
+            description.classList.remove("is-valid");
+            description.classList.add("is-invalid");
         
-    } else if (price.value.length < 4) {
-        errors.push("El precio debe ser superior a 1000");
-        price.classList.remove("is-valid");
-        price.classList.add("is-invalid");}
+    } else if (description.value.length < 20) {
+        errors.push("La descripción del producto debe tener al menos 20 caracteres");
+        description.classList.remove("is-valid");
+        description.classList.add("is-invalid");}
         else {
-            price.classList.add("is-valid");
-            price.classList.remove("is-invalid");
-            newProduct.price.focus();
+            description.classList.add("is-valid");
+            description.classList.remove("is-invalid");
+            newProduct.description.focus();
         };
+
+        // VALIDAMOS QUE LA IMAGEN SEA UN ARCHIVO VÁLIDO
+
+        if (productImage.value) {
+            let acceptedExtensions = ['jpeg', 'jpg', 'png'];
+            let parts = productImage.value.split('.');
+            let extension = parts[parts.length - 1];
+            if (!acceptedExtensions.includes(extension)) {
+                errors.push("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
+            }
+        }
+
+//VEMOS SI HAY ERRORES
 
         if (errors.length > 0){
             e.preventDefault();
-
             let ulErrors = document.querySelector (".errors");
+            ulErrors.classList.add("alert-warning");
+            ulErrors.innerHTML = "";
             for (let i =0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
-            }
+            };
+            newProduct.errors.focus();
             } else {
                 create.submit();
             }
