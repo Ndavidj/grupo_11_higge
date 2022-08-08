@@ -33,7 +33,7 @@
 }
 
 .avatar-user img {
-  max-width: 120px;
+  max-width: 100px;
   max-height: 120px;
   border-radius: 10%;
 }
@@ -81,3 +81,21 @@
   margin: auto 10px;
   cursor: pointer
 }
+
+/* MEDIA QUERY */
+
+@media (min-width: 767px) {
+  .avatar-user img {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 10%;
+  }
+  }
+@media (min-width: 1020px) {
+.avatar-user img {
+  max-width: 160px;
+  max-height: 120px;
+  border-radius: 10%;
+}
+}
+

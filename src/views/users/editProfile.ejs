@@ -11,12 +11,16 @@
             <!-- ------------ Inicio del Formulario de registro  -->
             <div class="control-form">
                 <h3>Modifica aca tus datos para mantenerlos actualizados</h3>
-                <form id="formEditProfile" action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class='formEditProfile' id="formEditProfile" action="/users/edit?_method=PUT" method="POST"
+                    enctype="multipart/form-data">
+
+                    <ul class="errores" id="errores">
+                    </ul>
 
                     <div class="data-form">
                         <label for="name">Nombre</label>
-                        <input type="text" name="firstName" class="form-input"
-                            value="<%= locals.userLogged.firstName %>" id="name">
+                        <input type="text" name="firstName" class="form-input" id="firstName"
+                            value="<%= locals.userLogged.firstName %>">
 
                         <% if (locals.errors && errors.firstName) { %>
                             <div class="text-alert">
@@ -28,8 +32,8 @@
 
                     <div class="data-form">
                         <label for="name">Apellido</label>
-                        <input type="text" name="lastName" value="<%= locals.userLogged.lastName %>" class="form-input"
-                            id="lastname">
+                        <input type="text" class="form-input" name="lastName" id="lastName"
+                            value="<%= locals.userLogged.lastName %>">
 
                         <% if (locals.errors && errors.lastName) { %>
                             <div class="text-alert">
@@ -136,6 +140,8 @@
             <%- include('../partials/footer') %>
 
                 <!-- ------------ Fin del FOOTER  -->
+
+                <script src="/js/validationUserEditProfile.js"></script>
 
     </body>
 

@@ -15,6 +15,10 @@
   margin: 10px;
 }
 
+.data-form input value{
+  color: red;
+}
+
 .data-form .email {
   width: 100%;
   height: 40px;
@@ -58,12 +62,16 @@
   color: #fff;
   background-color: #262626;
   padding: 10px;
-  transition: all 450ms;
+  transition: all 0.1s ease;
   cursor: pointer;
   border: none;
   border-radius: 10px;
   box-shadow: 4px 9px 8px -4px rgb(0 0 0 / 75%);
   margin: 15px 0;
+}
+
+.button-form:hover {
+  opacity: 0.8;
 }
 
 .button-form a {
@@ -81,11 +89,12 @@
 
 .alert-warning,
 .alert-warning ul {
+  padding: 10px;
   color: #842029;
   background-color: #f8d7da;
   text-align: center;
   border-radius: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   list-style: disc;
 }
 

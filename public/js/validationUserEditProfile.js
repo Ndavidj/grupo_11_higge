@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
-    let formRegister = document.querySelector(".registro");
+    let formEditProfile = document.querySelector(".formEditProfile");
 
-    formRegister.addEventListener("submit", function (e) {
+    formEditProfile.addEventListener("submit", function (e) {
 
         let errors = [];
 
@@ -35,7 +35,7 @@ window.addEventListener('load', function () {
         else {
             firstName.classList.add("is-valid");
             firstName.classList.remove("is-invalid");
-            formRegister.lastName.focus();
+            formEditProfile.lastName.focus();
         };
 
         // --------- LAST NAME ------------
@@ -55,7 +55,7 @@ window.addEventListener('load', function () {
         else {
             lastName.classList.add("is-valid");
             lastName.classList.remove("is-invalid");
-            formRegister.email.focus();
+            formEditProfile.email.focus();
         };
 
         // --------- EMAIL (regex) ------------
@@ -66,7 +66,7 @@ window.addEventListener('load', function () {
         } else {
             email.classList.add("is-valid");
             email.classList.remove("is-invalid");
-            formRegister.password.focus();
+            formEditProfile.password.focus();
         };
 
         // --------- PASSWORD ------------
@@ -81,7 +81,7 @@ window.addEventListener('load', function () {
         } else {
             password.classList.add("is-valid");
             password.classList.remove("is-invalid");
-            formRegister.avatar.focus();
+            formEditProfile.avatar.focus();
         };
 
         // --------- avatar ------------
@@ -104,9 +104,9 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>";
             };
-            formRegister.errors.focus();
+            formEditProfile.errors.focus();
         } else {
-            formRegister.submit();
+            formEditProfile.submit();
         }
     })
 
