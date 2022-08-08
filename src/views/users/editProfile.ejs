@@ -7,19 +7,23 @@
         <!-- ------------ Comienzo del HEADER  -->
         <%- include('../partials/header') %>
 
-            <!-- ------------ Fin del HEADER  -->
-            <!-- ------------ Inicio del Formulario de registro  -->
             <div class="control-form">
-                <h3>Modifica aca tus datos para mantenerlos actualizados</h3>
+                <!-- ------------ Fin del HEADER  -->
+
+                <!-- ------------ Inicio del Formulario de registro  -->
                 <form class='formEditProfile' id="formEditProfile" action="/users/edit?_method=PUT" method="POST"
                     enctype="multipart/form-data">
+
 
                     <ul class="errores" id="errores">
                     </ul>
 
+                    <h3>Modifica aca tus datos para mantenerlos actualizados</h3>
+                    <br>
+
                     <div class="data-form">
                         <label for="name">Nombre</label>
-                        <input type="text" name="firstName" class="form-input" id="firstName"
+                        <input type="text" name="firstName" class="firstName" id="firstName"
                             value="<%= locals.userLogged.firstName %>">
 
                         <% if (locals.errors && errors.firstName) { %>
@@ -32,7 +36,7 @@
 
                     <div class="data-form">
                         <label for="name">Apellido</label>
-                        <input type="text" class="form-input" name="lastName" id="lastName"
+                        <input type="text" name="lastName" class="lastName" id="lastName"
                             value="<%= locals.userLogged.lastName %>">
 
                         <% if (locals.errors && errors.lastName) { %>
@@ -44,12 +48,12 @@
                     </div>
 
 
-
                     <div class="data-form">
                         <label for="dateBirthday" id="fecha-nacimiento">Fecha de nacimiento</label>
-                        <div class="campo-texto" id="dateBirthday">
-                            <input type="dateBirthday" name="dateBirthday" value="<%= locals.userLogged.dateBirthday %>"
-                                class="form-input">
+                        <div class="campo-texto">
+                            <input type="date" name="dateBirthday" class="dateBirthday" id="dateBirthday"
+                                value="<%= locals.userLogged.dateBirthday %>">
+
                             <% if (locals.errors && errors.dateBirthday) { %>
                                 <div class="text-alert">
                                     <%= errors.dateBirthday.msg %>
@@ -62,7 +66,8 @@
 
                     <div class="data-form">
                         <label for="address"> Domicilio </label>
-                        <input type="text" name="address" value="<%= locals.userLogged.address %>" class="form-input">
+                        <input type="text" name="address" class="control" id="address"
+                            value="<%= locals.userLogged.address %>">
 
                         <% if (locals.errors && errors.address) { %>
                             <div class="text-alert">
@@ -96,9 +101,11 @@
 
                     </div>
 
+
                     <div class="data-form">
                         <label for="avatar">Elige tu foto de perfil</label>
-                        <input type="file" class="avatar" name="avatar" value="avatar" id="avatar">
+                        <input type="file" name="avatar" class="avatar" id="avatar"
+                            value="<%= locals.userLogged.interest %>">
 
                         <% if (locals.errors && errors.avatar) { %>
                             <div class="text-alert">
@@ -107,6 +114,7 @@
                             <% } %>
 
                     </div>
+
 
                     </br>
 
@@ -120,23 +128,9 @@
 
             </div>
 
-
             <!-- ------------ Final del Formulario de registro  -->
 
-            <div class="banner-divisor">
-                <div class="logo-insta">
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-
-                <div class="mensaje">
-                    <p>buscanos en instagram</p>
-                    <h4>@higge_11</h4>
-                </div>
-
-            </div>
-
-
-            <!-- ------------ comienzo del FOOTER  -->
+            <!-- ------------ comienzo del banner divisor y FOOTER  -->
             <%- include('../partials/footer') %>
 
                 <!-- ------------ Fin del FOOTER  -->

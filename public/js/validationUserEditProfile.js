@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
     let formEditProfile = document.querySelector(".formEditProfile");
+    let alarmErrors = document.querySelector(".errores");
 
     formEditProfile.addEventListener("submit", function (e) {
 
@@ -10,8 +11,10 @@ window.addEventListener('load', function () {
         let avatar = document.querySelector("#avatar");
 
         let expressions = {
-            firstName: new RegExp("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")
+            firstName: new RegExp("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i")
         }
+
+
 
 
         // --------- FIRST NAME ------------
@@ -57,11 +60,11 @@ window.addEventListener('load', function () {
         // --------- avatar ------------
 
         if (avatar.value) {
-            let acceptedExtensions = ['jpeg', 'jpg', 'png'];
+            let acceptedExtensions = ['jpeg', 'jpg', 'gif', 'png'];
             let parts = avatar.value.split('.');
-            let extension = parts[parts.length - 1];
-            if (!acceptedExtensions.includes(extension)) {
-                errors.push("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
+            let extension = parts[parts.length-1];
+            if (!acceptedExtensions.includes(extension)){
+            errors.push ("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
             }
         }
 
@@ -74,10 +77,8 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>";
             };
-
-        } else if (errors.length > 0) {
-            formEditProfile.errors.focus();
-        }
+            alarmErrors.focus();
+        } 
         else {
             formEditProfile.submit();
         }
