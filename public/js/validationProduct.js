@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
     let newProduct = document.querySelector("form.productCreationForm");
+console.log("hola");
 
     newProduct.addEventListener("submit", function(e) {
 
@@ -55,7 +56,9 @@ window.addEventListener('load', function() {
             if (!acceptedExtensions.includes(extension)) {
                 errors.push("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
             }
-        }
+        } 
+        
+         console.log(errors);
 
 //VEMOS SI HAY ERRORES
 
@@ -67,7 +70,7 @@ window.addEventListener('load', function() {
             for (let i =0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
             };
-            newProduct.errors.focus();
+            //newProduct.errors.focus();
             } else {
                 create.submit();
             }
