@@ -24,6 +24,7 @@
 }
 
 .first-container {
+  margin-top: 15px;
   display: flex;
   width: 85%;
   flex-direction: row;

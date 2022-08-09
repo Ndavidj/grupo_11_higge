@@ -10,10 +10,10 @@
 
     <div class="usser-management">
       <% if (locals.userLogged) { %>
-        <p class="register"><%="¡Hola " + locals.userLogged.firstName + "!"%> </p>
+        <p class="sayHi"><%="¡Hola " + locals.userLogged.firstName + "!"%> </p>
         <ul class="account-management">
-          <li class="login"><a href="/users/profile">mi perfil</a></li>
-          <li class="register"><a href="/users/logout">logout</a></li>
+          <li class="login"><a href="/users/profile"> mi perfil</a></li>
+          <li class="register"><a href="/users/logout"> logout</a></li>
         </ul>
         <div class="cart-shop">
           <button class="cart-shopping">

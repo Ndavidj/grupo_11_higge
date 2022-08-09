@@ -62,7 +62,7 @@ header div img {
 
 .usser-management {
   display: flex;
-  width: 33%;
+  width: 40%;
   flex-direction: column-reverse;
   align-items: center;
   margin-top: 35px;
@@ -406,7 +406,7 @@ section article:hover {
 
   .account-management {
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-direction: row;
     font-size: 0.9em;
     margin: auto;
@@ -421,12 +421,12 @@ section article:hover {
     padding-left: 8px;
   }
 
-  .fa-cart-shopping {
+/*   .fa-cart-shopping {
     font-size: 28px;
     position: relative;
     top: -3px;
     right: 40px;
-  }
+  } */
 
   .form-search {
     width: 15%;

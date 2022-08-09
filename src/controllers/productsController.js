@@ -71,7 +71,7 @@ const productsController = {
         id: req.params.id
       }})
       .then(function(){
-    res.redirect('/')
+    res.redirect('catalogue')
   })
   },
 

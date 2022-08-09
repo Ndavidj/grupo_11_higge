@@ -1,10 +1,9 @@
 /* REGISTRO  */
 
-.control-form {
-  /* line-height: 5px; */
+.control-formUser {
+  text-decoration: underline;
   margin: 40px auto;
   padding: 15px;
-  /* box-shadow: 4px 9px 8px -4px rgb(0 0 0 / 75%); */
   display: flex;
   flex-direction: column;
   align-items: center;

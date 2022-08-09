@@ -7,7 +7,7 @@
     <!-- ------------ Comienzo del HEADER  -->
     <%- include('../partials/header') %>
 
-      <div class="control-form">
+      <div class="control-formUser">
         <!-- ------------ Fin del HEADER  -->
 
         <!-- ------------ Inicio del Formulario de registro  -->
@@ -22,41 +22,50 @@
 
           <div class="data-form">
             <label for="name">Nombre</label>
-            <input type="text" name="firstName" class="firstName" id="firstName"
-              value="<%= locals.errors && errors.firstName ? 'is-invalid' : null %>" placeholder="Ingrese su nombre">
-
-            <% if (locals.errors && errors.firstName) { %>
-              <div class="text-alert">
-                <%= errors.firstName.msg %>
-              </div>
+            <input type="text" name="firstName" class="firstName" id="firstName" placeholder="Ingrese su nombre" <% if
+              (locals.oldData && oldData.firstName) { %>
+            value="<%= oldData.firstName %>"
               <% } %>
+                >
+
+                <% if (locals.errors && errors.firstName) { %>
+                  <div class="text-alert">
+                    <%= errors.firstName.msg %>
+                  </div>
+                  <% } %>
 
           </div>
 
           <div class="data-form">
             <label for="name">Apellido</label>
-            <input type="text" name="lastName" class="lastName" id="lastName"
-              value="<%= locals.errors && errors.lastName ? 'is-invalid' : null %>" placeholder="Ingrese su apellido">
-
-            <% if (locals.errors && errors.lastName) { %>
-              <div class="text-alert">
-                <%= errors.lastName.msg %>
-              </div>
+            <input type="text" name="lastName" class="lastName" id="lastName" placeholder="Ingrese su apellido" <% if
+              (locals.oldData && oldData.lastName){ %>
+            value="<%= oldData.lastName %>"
               <% } %>
+                >
+
+                <% if (locals.errors && errors.lastName) { %>
+                  <div class="text-alert">
+                    <%= errors.lastName.msg %>
+                  </div>
+                  <% } %>
 
           </div>
 
 
           <div class="data-form">
             <label for="email">E-mail</label>
-            <input type="email" name="email" class="email" id="email"
-              value="<%= locals.errors && errors.email ? 'is-invalid' : null %>" placeholder="Correo electrónico">
-
-            <% if (locals.errors && errors.email) { %>
-              <div class="text-alert">
-                <%= errors.email.msg %>
-              </div>
+            <input type="email" name="email" class="email" id="email" placeholder="Correo electrónico" <% if
+              (locals.oldData && oldData.email) { %>
+            value="<%= oldData.email %>"
               <% } %>
+                >
+
+                <% if (locals.errors && errors.email) { %>
+                  <div class="text-alert">
+                    <%= errors.email.msg %>
+                  </div>
+                  <% } %>
 
           </div>
 
@@ -64,14 +73,17 @@
           <div class="data-form">
             <label for="dateBirthday" id="fecha-nacimiento">Fecha de nacimiento</label>
             <div class="campo-texto">
-              <input type="date" name="dateBirthday" class="dateBirthday" id="dateBirthday"
-                value="<%= locals.errors && errors.dateBirthday ? 'is-invalid' : null %>">
-
-              <% if (locals.errors && errors.dateBirthday) { %>
-                <div class="text-alert">
-                  <%= errors.dateBirthday.msg %>
-                </div>
+              <input type="date" name="dateBirthday" class="dateBirthday" id="dateBirthday" <% if (locals.oldData &&
+                oldData.dateBirthday) { %>
+              value="<%= oldData.dateBirthday %>"
                 <% } %>
+                  >
+
+                  <% if (locals.errors && errors.dateBirthday) { %>
+                    <div class="text-alert">
+                      <%= errors.dateBirthday.msg %>
+                    </div>
+                    <% } %>
 
             </div>
           </div>
@@ -79,20 +91,26 @@
 
           <div class="data-form">
             <label for="address"> Domicilio </label>
-            <input type="text" name="address" class="control" id="address"
-              value="<%= locals.errors && errors.address ? 'is-invalid' : null %>">
-
-            <% if (locals.errors && errors.address) { %>
-              <div class="text-alert">
-                <%= errors.address.msg %>
-              </div>
+            <input type="text" name="address" class="control" id="address" <% if (locals.oldData && oldData.address) {
+              %>
+            value="<%= oldData.address %>"
               <% } %>
+                >
+
+                <% if (locals.errors && errors.address) { %>
+                  <div class="text-alert">
+                    <%= errors.address.msg %>
+                  </div>
+                  <% } %>
 
           </div>
 
           <div class="data-form">
-            <div class="interest" value="<%= locals.errors && errors.interest ? 'is-invalid' : null %>" id="interest">
-              Categorías de interés
+            <div class="interest" <% if (locals.oldData && oldData.interest) { %>
+              value="<%= oldData.interest %>"
+                <% } %>
+                  >
+                  <p> Categorías de interés </p>
             </div>
             <select name='interest' id="interest">
               <option value="">Selecciona una opción</option>
@@ -113,8 +131,7 @@
 
           <div class="data-form">
             <label for="avatar">Elige tu foto de perfil</label>
-            <input type="file" name="avatar" class="avatar" id="avatar" value="<%=locals.errors && errors.avatar ? 'is-invalid'
-              : null %>">
+            <input type="file" name="avatar" class="avatar" id="avatar">
 
             <% if (locals.errors && errors.avatar) { %>
               <div class="text-alert">
@@ -126,8 +143,7 @@
 
           <div class="data-form">
             <label for="password">Contraseña</label>
-            <input type="password" name="password" class="password" id="password"
-              value="<%= locals.errors && errors.password ? 'is-invalid' : null %>" placeholder="Contraseña">
+            <input type="password" name="password" class="password" id="password" placeholder="Contraseña">
 
             <% if (locals.errors && errors.password) { %>
               <div class="text-alert">
@@ -182,7 +198,7 @@
 
       <!-- ------------ Final del Formulario de registro  -->
 
-  
+
       <!-- ------------ comienzo del banner divisor y FOOTER  -->
       <%- include('../partials/footer') %>
 
