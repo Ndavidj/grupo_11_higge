@@ -67,6 +67,10 @@
   flex-direction: column;
 }
 
+.interest-impressed{
+  margin-top: 5px
+}
+
 .user-setting-account h3 {
   margin-bottom: 10px;
 }
@@ -75,13 +79,16 @@
   margin-bottom: 5px;
 }
 
-
+.user-delete .delete-account button {
+  transition: all 1000ms;
+  font-weight: 400;
+}
 
 .edit-profile a:hover,
 .user-delete form button:hover {
   text-decoration: underline;
   margin: auto 10px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 /* MEDIA QUERY */
@@ -92,12 +99,11 @@
     max-height: 120px;
     border-radius: 10%;
   }
-  }
+}
 @media (min-width: 1020px) {
-.avatar-user img {
-  max-width: 160px;
-  max-height: 120px;
-  border-radius: 10%;
+  .avatar-user img {
+    max-width: 160px;
+    max-height: 120px;
+    border-radius: 10%;
+  }
 }
-}
-

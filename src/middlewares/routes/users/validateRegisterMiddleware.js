@@ -32,13 +32,13 @@ module.exports = [
 	body('avatar')
 		.custom((value, { req }) => {
 			let file = req.file;
-			let acceptedExtendions = ['.jpg', '.png', '.gif', '.JPG', '.PNG', '.GIF'];
+			let acceptedExtensions = ['.jpg', '.png', '.gif', '.JPG', '.PNG', '.GIF'];
 			if (!file) {
 				throw new Error('Tienes que subir una imagen de perfil');
 			} else {
 				let fileExtension = path.extname(file.originalname);
-				if (!acceptedExtendions.includes(fileExtension)) {
-					throw new Error('Las extensiones de archivo permitidas son ' + acceptedExtendions.join(', '))
+				if (!acceptedExtensions.includes(fileExtension)) {
+					throw new Error('Las extensiones de archivo permitidas son ' + acceptedExtensions.join(', '))
 				}
 			}
 

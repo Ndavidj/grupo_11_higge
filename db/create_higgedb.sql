@@ -23,7 +23,7 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `products` (
-   `id` INT NOT NULL,
+   `id` INT AUTO_INCREMENT,
    `name` VARCHAR(60) NOT NULL,
    `description` VARCHAR(255) NOT NULL,
    `price` INT NOT NULL,
