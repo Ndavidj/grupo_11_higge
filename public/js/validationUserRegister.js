@@ -1,6 +1,5 @@
 window.addEventListener('load', function () {
     let formRegister = document.querySelector(".registro");
-    let alarmErrors = document.querySelector(".errores");
 
     formRegister.addEventListener("submit", function (e) {
 
@@ -105,7 +104,6 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>";
             };
-            alarmErrors.focus();
         } 
         else {
             formRegister.submit();

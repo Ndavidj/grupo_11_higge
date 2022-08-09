@@ -1,6 +1,5 @@
 window.addEventListener('load', function () {
     let formEditProfile = document.querySelector(".formEditProfile");
-    let alarmErrors = document.querySelector(".errores");
 
     formEditProfile.addEventListener("submit", function (e) {
 
@@ -77,7 +76,6 @@ window.addEventListener('load', function () {
             for (let i = 0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>";
             };
-            alarmErrors.focus();
         } 
         else {
             formEditProfile.submit();
