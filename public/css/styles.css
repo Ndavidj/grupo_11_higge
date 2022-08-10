@@ -42,6 +42,43 @@
   padding: 5px;
   cursor: pointer;
   margin-left: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.burger-menu span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.5s;
+}
+
+.burger-menu span:nth-child(1){
+  transform: translateY(-15px);
+  width: 25px;
+  left: 15px;
+}
+
+.burger-menu.active span:nth-child(1){
+  width: 40px;
+  transform: translateY(0px) rotate(45deg);
+  transition-delay: 0.125s;
+}
+
+.burger-menu span:nth-child(2){
+  transform: translateY(15px);
+  width: 25px;
+  left: 15px;
+}
+
+.burger-menu.active span:nth-child(2){
+  width: 40px;
+  transform: translateY(0px) rotate(315deg);
+  transition-delay: 0.25s;
+}
+
+.burger-menu.active span:nth-child(3){
+  transform: translateX(60px);
 }
 
 .logo {
@@ -100,14 +137,21 @@ button {
 .register {
   margin-top: 5px;
 }
+
+.sayHi {
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
 .bottom-header {
   width: 100%;
   display: flex;
   position: relative;
 }
 
+
 .form-search {
-  width: 100%;
+  width: 50%;
   height: 50px;
   border-top: solid 1px #ebebeb;
   border-left: solid 1px #ebebeb;

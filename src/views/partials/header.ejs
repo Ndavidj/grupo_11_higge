@@ -10,10 +10,10 @@
 
     <div class="usser-management">
       <% if (locals.userLogged) { %>
-        <p class="sayHi"><%="¡Hola " + locals.userLogged.firstName + "!"%> </p>
+        <p class="sayHi"><b><%="¡Hola " + locals.userLogged.firstName + "!"%></b></p>
         <ul class="account-management">
-          <li class="login"><a href="/users/profile"> mi perfil</a></li>
-          <li class="register"><a href="/users/logout"> logout</a></li>
+          <li class="login"><a href="/users/profile">mi perfil</a></li>
+          <li class="register"><a href="/users/logout">logout</a></li>
         </ul>
         <div class="cart-shop">
           <button class="cart-shopping">
@@ -44,6 +44,11 @@
       <a href="/products/">
         <p>catálogo</p>
       </a>
+      <% if (locals.userLogged && locals.userLogged.roleId == 1) { %>
+        <li class="create-product" id="create-product">
+          <a href="/products/create">Vender</a>
+        </li>
+        <% } %>
     </div>
 
     <div class="main-navbar">

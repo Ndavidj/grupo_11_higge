@@ -1,7 +1,6 @@
 /* REGISTRO  */
 
 .control-formUser {
-  text-decoration: underline;
   margin: 40px auto;
   padding: 15px;
   display: flex;
@@ -27,8 +26,12 @@
   border-radius: 3px;
 }
 
-.registerTittle {
+.registerTittle, .editProfileTittle {
   margin-bottom: 30px;
+}
+
+.registerTittle h3, .editProfileTittle h3 {
+  text-decoration: underline;
 }
 
 .field {

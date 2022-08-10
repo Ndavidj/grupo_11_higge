@@ -170,7 +170,7 @@ const controller = {
 			where: { email: req.session.userLogged.email }
 		})
 		let userAvatar = req.session.userLogged.avatar;
-		fs.unlinkSync(path.resolve(__dirname, "../../public/images/users/") + '/' + userAvatar);
+		fs.unlinkSync(path.resolve(__dirname, "../../public/images/users/") /* + '/' */ + userAvatar);
 		req.session.destroy();
 		res.clearCookie('userEmail');
 		(res.redirect("/"));

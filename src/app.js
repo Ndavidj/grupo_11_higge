@@ -40,6 +40,12 @@ app.use("/users", usersRouter);
 // Products routes
 const productsRouter = require("./routes/productsRouter.js");
 app.use("/products", productsRouter);
+
+// Error 404 handler
+app.use((req, res, next) => {
+    res.status(404).render('error404')
+})
+
 // Listen to server for server up!
 app.set("port", process.env.PORT || 4000);
 app.listen (app.get("port"), () => console.log ("Server running in http://localhost:" + app.get("port")));
