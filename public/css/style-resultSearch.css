@@ -1,0 +1,118 @@
+/* --------- comienzo MAIN -- */
+
+main-resultSearch {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.tittle-products {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.articles {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main-resultSearch section article {
+  max-height: 500px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+  transition: all 450ms;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.articles article img {
+  max-width: 300px;
+  max-height: 250px;
+/*   width: 90%;
+  height: 30%; */
+  margin: 10px;
+}
+
+section article:hover {
+  background-color: #f9fafc;
+  padding: 0;
+  box-shadow: 0px 0px 5px rgb(100, 100, 100);
+}
+
+.info-producto {
+  border-top: 1px solid #ebebeb;
+  width: 100%;
+  padding: 15px;
+  transition: all 450ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.precios {
+  font-size: 24px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.products-description {
+  color: #262626;
+  line-height: 5px;
+}
+
+.products-description span {
+  font-size: 16px;
+  color: #39b54a;
+  margin-bottom: 10px;
+}
+
+.precios-discount {
+  text-decoration: line-through;
+}
+
+.products-description h2 {
+  margin: 10px 0 0 0;
+}
+
+.banner-divisor {
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 40px 0;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.mensaje {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-insta {
+  font-size: 50px;
+  margin: 0 15px;
+}
+
+.mensaje p {
+  font-size: 14px;
+}
+
+.mensaje h4 {
+  font-size: 20px;
+}

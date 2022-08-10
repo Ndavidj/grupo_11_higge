@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-es">
+<%- include('partials/head', {titleWeb: 'Resultados de la búsqueda' }) %>
+
+    <body>
+        <!-- headerMain y headerSidebar-->
+        <%- include('partials/header') %>
+
+
+            <!-- Main -->
+
+            <main class="main-resultSearch">
+
+                <h1 class="tittle-products">Resultados de su búsqueda</h1>
+
+                <section class="articles">
+                    <% higgeProducts.forEach(higgeProduct=> { %>
+                        <% if (higgeProduct==null) { %>
+
+                            <span>No se han encontrado resultados</span>
+                            <% } %>
+
+                                <article>
+                                    <a href="/products/detail/<%= higgeProduct.id %>">
+                                        <img src="/images/products/<%= higgeProduct.image %>"
+                                            alt="imagen de producto" /></a>
+                                    <div class="info-producto">
+                                        <div class="products-description">
+                                            <p class="descripcion">
+                                                <%= higgeProduct.name %>
+                                            </p>
+                                            <p class="precios">$ <%= higgeProduct.price %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <% }) %>
+
+
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <%- include('partials/footer') %>
+
+                <!-- fin del footer -->
+
+
+    </body>
+
+
+</html>
