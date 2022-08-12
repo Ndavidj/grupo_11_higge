@@ -1,8 +1,8 @@
 window.addEventListener('load', function() {
-    let newProduct = document.querySelector("form.productCreationForm");
+    let editedProduct = document.querySelector("form.productEditForm");
 //console.log("hola");
 
-    newProduct.addEventListener("submit", function(e) {
+    editedProduct.addEventListener("submit", function(e) {
 
         let errors = [];
 
@@ -28,7 +28,7 @@ window.addEventListener('load', function() {
     else {
         name.classList.add("is-valid");
         name.classList.remove("is-invalid");
-        newProduct.name.focus();
+        editedProduct.name.focus();
     }
         //VALIDAMOS LA DESCRIPCIÓN 
         
@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
         else {
             description.classList.add("is-valid");
             description.classList.remove("is-invalid");
-            newProduct.description.focus();
+            editedProduct.description.focus();
         };
 
         // VALIDAMOS QUE LA IMAGEN SEA UN ARCHIVO VÁLIDO
@@ -71,9 +71,9 @@ window.addEventListener('load', function() {
             for (let i =0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
             };
-            //newProduct.errors.focus();
+         
             } else {
-                create.submit();
+                Editar.submit();
             }
     }
     )}

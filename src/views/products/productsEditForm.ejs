@@ -14,7 +14,7 @@
   <!-- ------------ Inicio del Formulario de Creación de Producto  -->
 
 	<h2 class="product-title">Editar Producto <%= productToEdit.name%></h2>
-    <form action="/products/productsEditForm/<%=productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/products/productsEditForm/<%=productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="productEditForm">
             <div class="control-form">
               <label for="name"> Nombre del Producto </label>
               <input type="text" name="name" id="name" class="control" value="<%= productToEdit.name %>">
@@ -56,5 +56,6 @@
 	<!-- footer -->
     <%- include('../partials/footer') %>
 	<!-- /footer -->
+  <script src="/js/validationProductEdit.js"></script>
 </body>	
 </html>
