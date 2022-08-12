@@ -12,69 +12,68 @@ window.addEventListener('load', function() {
 
         //VALIDAMOS QUE EL NOMBRE DEL PRODUCTO ESTE COMPLETO
         if (name.value == ''){
-            errors.push("El nombre del producto no puede estar vacío");
-            name.classList.remove("is-valid");
-            name.classList.add("is-invalid");
+        errors.push("El nombre del producto no puede estar vacío");
+        name.classList.remove("is-valid");
+        name.classList.add("is-invalid");
         }
-     else if (name.value.length < 5) {
+        else if (name.value.length < 5) {
         errors.push("El nombre del producto debe tener al menos 5 caracteres");
         name.classList.remove("is-valid");
         name.classList.add("is-invalid");
-    } else if (!expressions.name.test(name.value)) {
-        errors.push("Debe ingresar un nombre válido");
-        name.classList.remove("is-valid");
-        name.classList.add("is-invalid");
-    }
-    else {
+        } 
+        else {
         name.classList.add("is-valid");
         name.classList.remove("is-invalid");
         newProduct.name.focus();
-    }
+        }
+
         //VALIDAMOS LA DESCRIPCIÓN 
         
         if (description.value == ''){
-            errors.push("La descripción del producto no puede estar vacía")
-            description.classList.remove("is-valid");
-            description.classList.add("is-invalid");
-        
-    } else if (description.value.length < 20) {
+        errors.push("La descripción del producto no puede estar vacía")
+        description.classList.remove("is-valid");
+        description.classList.add("is-invalid");
+        } 
+        else if (description.value.length < 20) {
         errors.push("La descripción del producto debe tener al menos 20 caracteres");
         description.classList.remove("is-valid");
-        description.classList.add("is-invalid");}
-
+        description.classList.add("is-invalid");
+        }
         else {
-            description.classList.add("is-valid");
-            description.classList.remove("is-invalid");
-            newProduct.description.focus();
+        description.classList.add("is-valid");
+        description.classList.remove("is-invalid");
+        newProduct.description.focus();
         };
 
         // VALIDAMOS QUE LA IMAGEN SEA UN ARCHIVO VÁLIDO
+        if (!productImage.value){
+        errors.push("Debe cargarse una imagen de producto");
+        productImage.classList.remove("is-valid");
+        productImage.classList.add("is-invalid");
 
-        if (productImage.value) {
-            let acceptedExtensions = ['jpeg', 'jpg', 'png'];
-            let parts = productImage.value.split('.');
-            let extension = parts[parts.length - 1];
-            if (!acceptedExtensions.includes(extension)) {
-                errors.push("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
-            }
+        }
+        else if (productImage.value) {
+        let acceptedExtensions = ['jpeg', 'jpg', 'png'];
+        let parts = productImage.value.split('.');
+        let extension = parts[parts.length - 1];
+        if (!acceptedExtensions.includes(extension)) {
+        errors.push("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
+        }
         } 
-        
-         //console.log(errors);
 
-//VEMOS SI HAY ERRORES
+        //VEMOS SI HAY ERRORES
 
         if (errors.length > 0){
-            e.preventDefault();
-            let ulErrors = document.querySelector (".errors");
-            ulErrors.classList.add("alert-warning");
-            ulErrors.innerHTML = "";
-            for (let i =0; i < errors.length; i++) {
+        e.preventDefault();
+        let ulErrors = document.querySelector (".errors");
+        ulErrors.classList.add("alert-warning");
+        ulErrors.innerHTML = "";
+        for (let i =0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
-            };
-            //newProduct.errors.focus();
-            } else {
-                create.submit();
-            }
-    }
-    )}
+        };
+        } else {
+        create.submit();
+        }
+        }
+)}
 )

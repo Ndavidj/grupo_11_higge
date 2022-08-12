@@ -1,8 +1,8 @@
 window.addEventListener('load', function() {
-    let editedProduct = document.querySelector("form.productEditForm");
-//console.log("hola");
+    let editProduct = document.querySelector("form.productsEditForm");
 
-    editedProduct.addEventListener("submit", function(e) {
+    editProduct.addEventListener("submit", function(e) {
+       
 
         let errors = [];
 
@@ -20,16 +20,14 @@ window.addEventListener('load', function() {
         errors.push("El nombre del producto debe tener al menos 5 caracteres");
         name.classList.remove("is-valid");
         name.classList.add("is-invalid");
-    } else if (!expressions.name.test(name.value)) {
-        errors.push("Debe ingresar un nombre válido");
-        name.classList.remove("is-valid");
-        name.classList.add("is-invalid");
     }
     else {
         name.classList.add("is-valid");
         name.classList.remove("is-invalid");
-        editedProduct.name.focus();
-    }
+        description.focus();
+    };
+
+
         //VALIDAMOS LA DESCRIPCIÓN 
         
         if (description.value == ''){
@@ -45,35 +43,42 @@ window.addEventListener('load', function() {
         else {
             description.classList.add("is-valid");
             description.classList.remove("is-invalid");
-            editedProduct.description.focus();
+            productImage.focus();
         };
 
         // VALIDAMOS QUE LA IMAGEN SEA UN ARCHIVO VÁLIDO
 
-        if (productImage.value) {
+        if (!productImage.value){
+            errors.push("Debe cargarse una imagen de producto");
+            productImage.classList.remove("is-valid");
+            productImage.classList.add("is-invalid");
+            }
+        else if (productImage.value) {
             let acceptedExtensions = ['jpeg', 'jpg', 'png'];
             let parts = productImage.value.split('.');
             let extension = parts[parts.length - 1];
             if (!acceptedExtensions.includes(extension)) {
                 errors.push("Las extensiones de avatar deben ser " + acceptedExtensions.join(", "));
             }
-        } 
+        }; 
         
-         //console.log(errors);
 
 //VEMOS SI HAY ERRORES
 
+       
         if (errors.length > 0){
+
             e.preventDefault();
+            
             let ulErrors = document.querySelector (".errors");
             ulErrors.classList.add("alert-warning");
             ulErrors.innerHTML = "";
             for (let i =0; i < errors.length; i++) {
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
             };
-         
+
             } else {
-                Editar.submit();
+                e.submit();
             }
     }
     )}

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es"></html>
 
-<link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="../css/styles-productsCreateForm.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles-productsEditForm.css">
 
 
-    <%- include('../partials/head', {titleWeb: 'Formulario Creación Nuevo Producto', cssSheet:'styles-productsCreateForm'}) %>
+    <%- include('../partials/head', {titleWeb: 'Formulario Edición de Producto', cssSheet:'styles-productsEditForm'}) %>
 
     <body>
       <!-- ------------ Comienzo del HEADER  -->
@@ -14,15 +14,34 @@
   <!-- ------------ Inicio del Formulario de Creación de Producto  -->
 
 	<h2 class="product-title">Editar Producto <%= productToEdit.name%></h2>
-    <form action="/products/productsEditForm/<%=productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="productEditForm">
-            <div class="control-form">
+    <form class = "productsEditForm" action="/products/productsEditForm/<%=productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="productsEditForm">
+      <ul class="errors" id="errors">
+      </ul>     
+
+      <div class="control-form">
               <label for="name"> Nombre del Producto </label>
               <input type="text" name="name" id="name" class="control" value="<%= productToEdit.name %>">
+            
+              <% if (locals.errors && errors.name) { %>
+                <div class="text-alert">
+                  <%= errors.name.msg %>
+                </div>
+                <% } %>
+
             </div>
+
             <div class="control-form">
                 <label for="description"> Descripción </label>
                 <input type="text" name="description" id="description" class="control" value="<%= productToEdit.description %>">
               </div>
+
+              <% if (locals.errors && errors.description) { %>
+                <div class="text-alert">
+                  <%= errors.description.msg %>
+                </div>
+                <% } %> 
+              </div>
+            </div>
             <div class="control-form">
               <label for="price"> Precio </label>
               <input type="number" name="price" id="price" class="control" value="<%= productToEdit.price %>">
@@ -31,20 +50,28 @@
                 <label for="discount"> Descuento </label>
                 <input type="number" name="discount" id="discount" class="control" value="<%= productToEdit.discount %>">
               </div>
-            
+            <!--
             <div class="control-form">
                 <label for="category" class="control">Categoría></label>
                 <select name="category" id="category" class="control">
-                <option value="" selected disabled>Elegí</option>
-                <option value="">Elegí</option>
-               <option value="novedad">Nuestras Novedades</option>
-                <option value="en oferta">En Oferta</option>
-              <!--<option value="limitedEdition">Edición Limitada</option> -->
-            </select>
+                  <select name="category" id="category" class="control">
+                  <option value="">Elegí</option>
+                  <option value="1">Cine</option>
+                  <option value="2">En Oferta</option>
+                  <option value="3">Prueba</option>
+              
+                  </select>
+
             </div>
+            -->
             <div class="control-form">
               <label for="productImage"> Imagen del producto</label>
               <input type="file" name="productImage" id="productImage" class="control" value="<%= productToEdit.productImage %>">
+              <% if (locals.errors && errors.productImage) { %>
+                <div class="text-alert">
+                  <%= errors.productImage.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="control-form">

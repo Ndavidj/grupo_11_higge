@@ -68,11 +68,12 @@
               <input type="file" name="productImage" id="productImage" class="control" value="<%=locals.errors && errors.productImage ? 'is-invalid'
               : null %>">
 
-            <% if (locals.errors && errors.productImage) { %>
-              <div class="text-alert">
-                <%= errors.productImage.msg %>
-              </div>
-              <% } %>
+<% if (locals.errors && errors.productImage) { %>
+<div class="text-alert">
+  <%= errors.productImage.msg %>
+</div>
+<% } %>
+</div>
             </div>
 
             <div class="control-form">
