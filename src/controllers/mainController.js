@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const db = require("../database/models")
+const db = require("../database/models");
+const Products = db.Product;
 const Op = db.Sequelize.Op;
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -13,13 +14,22 @@ const inOffer = products.filter(function (product) {
   return product.category == "en oferta";
 });
 
+
 const mainController = {
   index: (req, res) => {
-    //products.findAll
+/*  TRATAR DE QUE MUESTRE PRODUCTOS SEGUN GUSTO DEL USUARIO
+    Products.findAll({
+      include:[{association: 'category'}],
+      where: {category : req.session.userLogged.interest}
+    })
+    .then(function (products) {
+      res.render('index', {products,newArrivals,inOffer})
+    }) */
+
     res.render("index", {
       newArrivals,
       inOffer,
-    });
+    }); 
   },
 
   /*   search: (req, res) => {

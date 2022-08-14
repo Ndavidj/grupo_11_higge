@@ -6,6 +6,7 @@ function userLoggedMiddleware(req, res, next) {
 
 	let emailInCookie = "";
 	if (req.cookies.userEmail) emailInCookie = req.cookies.userEmail;
+	
 	User.findOne({ where: { email: emailInCookie } })
 		.then((userFromCookie) => {
 			if (userFromCookie) {

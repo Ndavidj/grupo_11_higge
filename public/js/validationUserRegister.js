@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
         let avatar = document.querySelector("#avatar");
 
         let expressions = {
-            firstName: new RegExp("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i")
+            checkName: new RegExp("/^([a-AZ-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i")
         }
 
 
@@ -27,7 +27,7 @@ window.addEventListener('load', function () {
             errors.push("El campo nombre debe tener al menos 2 caracteres");
             firstName.classList.remove("is-valid");
             firstName.classList.add("is-invalid");
-        } else if (!expressions.firstName.test(firstName.value)) {
+        } else if (!expressions.checkName.test(firstName.value)) {
             errors.push("Debe ingresar un nombre válido");
             firstName.classList.remove("is-valid");
             firstName.classList.add("is-invalid");
@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
             errors.push("El campo apellido debe tener al menos 2 caracteres");
             lastName.classList.remove("is-valid");
             lastName.classList.add("is-invalid");
-        } else if (!expressions.lastName.test(lastName.value)) {
+        } else if (!expressions.checkName.test(lastName.value)) {
             errors.push("Debe ingresar un apellido válido");
             lastName.classList.remove("is-valid");
             lastName.classList.add("is-invalid");

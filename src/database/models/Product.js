@@ -39,13 +39,13 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     //La implementacion de las asociaciones esta creando columnas fantasma!!!
-    /*Product.associate = function (models) {
+    Product.associate = function (models) {
 
         Product.belongsTo(models.Category, {
-            as: "categories",
+            as: "category",
             foreingKey: "categoryId"
         })
-    }*/
+    }
 
 
     return Product;

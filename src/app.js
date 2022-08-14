@@ -13,8 +13,8 @@ app.use(express.static(path.join(__dirname, '../public')));  // Necesario para l
 app.use(express.urlencoded({ extended: false })); // Para poder leer el body
 app.use(express.json()); // Para poder leer el body
 app.use(session ({ //Para poder iniciar session
-    secret: "Secret",
-    resave: true,
+    secret: "Es top secret",
+    resave: false,
     saveUninitialized: false  
 }));
 app.use(cookieParser()); // Para poder usar Cookies

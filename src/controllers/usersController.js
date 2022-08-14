@@ -139,23 +139,27 @@ const controller = {
 	},
 
 	processEdit: (req, res) => {
-		let errors = validationResult(req);
 
-		if (!errors.isEmpty()) {
+		const resultValidation = validationResult(req);
 
-			return res.render("users/editProfile", { errorMessages: errors.mapped(), oldData: req.body });
+		if (resultValidation.errors.length > 0) {
+			return res.render('users/editProfile', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
 
 		} else {
 			User.update({
 				...req.body,
-				"avatar": req.file ? req.file.filename : req.session.userLogged.avatar,
+				avatar: req.file ? req.file.filename : req.session.userLogged.avatar,
 			}, {
 				where: {
 					email: req.session.userLogged.email
 				},
+				
 			})
 				.then(() => {
-
+					
 					return res.redirect('profile');
 				})
 				.catch((error) => {

@@ -21,7 +21,7 @@ router.post('/register', uploadFile.single('avatar'), validations, usersControll
 
 // Formulario de edición de perfil
 router.get("/edit", authMiddleware, usersController.edit);
-router.put("/edit", uploadFile.single ('avatar'), validateEdit, usersController.processEdit);
+router.put("/edit", uploadFile.single('avatar'), validateEdit, usersController.processEdit);
 router.post("/delete", usersController.delete);
 
 

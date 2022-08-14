@@ -87,7 +87,7 @@
                         </label>
 
                         <label for="interest">Tu nuevo interés puede ser:</label>
-                        <select name='interest' id="interest">
+                        <select name='interest' id="interest" value="<% locals.userLogged.interest %>">
                             <option value="">Selecciona una opción</option>
                             <option value="Cine">Cine</option>
                             <option value="Música">Música</option>
@@ -108,10 +108,10 @@
                     <div class="data-form">
                         <label for="avatar">Elige tu foto de perfil</label>
                         <input type="file" name="avatar" class="avatar" id="avatar"
-                            value="<%= locals.userLogged.interest %>">
+                            value="<%= locals.userLogged.avatar %>">
 
                         <% if (locals.errors && errors.avatar) { %>
-                            <div class="text-alert">
+                            <div class=" text-alert">
                                 <%= errors.avatar.msg %>
                             </div>
                             <% } %>
